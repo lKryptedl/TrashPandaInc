@@ -821,7 +821,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36654
+  m_Name: pb_Mesh44702
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11031,14 +11031,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponment: {fileID: 1538676899}
   lines:
-  - Welcome To Basic Training!
-  - Lets start by getting you moving,
-  - Use the 'Left Stick' to walk around
-  - Great! Some places are hard to reach...
-  - You can Jump with 'A'
-  - Perfect!
-  - Now, get moving to the checkpoint...
-  - We still have a lot to learn!
+  - Great job on moving.
+  - Now lets teach you about your main tool...
+  - The Hoovernator 3000!
   textSpeed: 0.05
 --- !u!1001 &1013207315
 PrefabInstance:
@@ -13029,10 +13024,6 @@ PrefabInstance:
     - target: {fileID: 5813052141717261000, guid: 7470a29193f320a44abe0c4b67ad8039, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813052141717261004, guid: 7470a29193f320a44abe0c4b67ad8039, type: 3}
-      propertyPath: SceneToLoad
-      value: SuckAndShoot
       objectReference: {fileID: 0}
     - target: {fileID: 5813052141717261005, guid: 7470a29193f320a44abe0c4b67ad8039, type: 3}
       propertyPath: m_Name
@@ -16304,7 +16295,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884367432}
-  m_LocalRotation: {x: 0.22975291, y: -0.0000000187227, z: 0.0000000044198294, w: 0.973249}
+  m_LocalRotation: {x: 0.22975291, y: 0.0000000187227, z: -0.0000000044198294, w: 0.973249}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
