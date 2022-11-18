@@ -60,7 +60,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""id"": ""d01b52cd-9f49-417d-94b3-40c2efddb7e4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -77,7 +77,25 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""b6f8c9ff-cac2-4c0e-a95b-7f86001d8e3e"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""NormalizeVector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Change"",
+                    ""type"": ""Button"",
+                    ""id"": ""8c9648d5-0b5a-4d1d-b82b-226eeee6712c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rocket"",
+                    ""type"": ""Button"",
+                    ""id"": ""19f8279d-3866-44a7-a98e-850069a0db92"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 }
@@ -313,6 +331,28 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Gravity"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40afe291-2f84-4855-8d01-902af2b7aeda"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Change"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11a3aba9-d7b3-4b27-9032-4781ee8b9b1d"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rocket"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -327,6 +367,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Newactionmap_Suck = m_Newactionmap.FindAction("Suck", throwIfNotFound: true);
         m_Newactionmap_Shoot = m_Newactionmap.FindAction("Shoot", throwIfNotFound: true);
         m_Newactionmap_Look = m_Newactionmap.FindAction("Look", throwIfNotFound: true);
+        m_Newactionmap_Change = m_Newactionmap.FindAction("Change", throwIfNotFound: true);
+        m_Newactionmap_Rocket = m_Newactionmap.FindAction("Rocket", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -392,6 +434,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Newactionmap_Suck;
     private readonly InputAction m_Newactionmap_Shoot;
     private readonly InputAction m_Newactionmap_Look;
+    private readonly InputAction m_Newactionmap_Change;
+    private readonly InputAction m_Newactionmap_Rocket;
     public struct NewactionmapActions
     {
         private @PlayerControls m_Wrapper;
@@ -402,6 +446,8 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Suck => m_Wrapper.m_Newactionmap_Suck;
         public InputAction @Shoot => m_Wrapper.m_Newactionmap_Shoot;
         public InputAction @Look => m_Wrapper.m_Newactionmap_Look;
+        public InputAction @Change => m_Wrapper.m_Newactionmap_Change;
+        public InputAction @Rocket => m_Wrapper.m_Newactionmap_Rocket;
         public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -429,6 +475,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnLook;
+                @Change.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnChange;
+                @Change.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnChange;
+                @Change.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnChange;
+                @Rocket.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnRocket;
+                @Rocket.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnRocket;
+                @Rocket.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnRocket;
             }
             m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
             if (instance != null)
@@ -451,6 +503,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @Change.started += instance.OnChange;
+                @Change.performed += instance.OnChange;
+                @Change.canceled += instance.OnChange;
+                @Rocket.started += instance.OnRocket;
+                @Rocket.performed += instance.OnRocket;
+                @Rocket.canceled += instance.OnRocket;
             }
         }
     }
@@ -463,5 +521,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnSuck(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnChange(InputAction.CallbackContext context);
+        void OnRocket(InputAction.CallbackContext context);
     }
 }
