@@ -17253,6 +17253,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Jordan
 --- !u!1001 &1268192331235831379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17325,6 +17330,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1666103510}
     - target: {fileID: 6174695958293198921, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: _speed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958293198921, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+>>>>>>> Jordan
       propertyPath: Camera1
       value: 
       objectReference: {fileID: 1172349971}
@@ -17348,3 +17360,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6174695958515200794, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
   m_PrefabInstance: {fileID: 1268192331235831379}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> Jordan
