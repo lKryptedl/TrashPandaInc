@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rb;
-    [SerializeField] private float _speed;
+    [SerializeField] private float _speed = 500f;
     [SerializeField] private float _JumpForce;
     public bool AllowInput = true;
     private bool Pause = true;
@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     public Transform MovePosition;
     public bool Jump = false;
     public bool isGrounded = true;
-    public bool Mode = false;
-    public GameObject Camera1, Camera2, Gun, Sphere;
+    public static bool Mode = false;
+    public GameObject Gun;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -86,10 +86,14 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Vector3 Movement = (transform.forward * move.y) * _speed * Time.fixedDeltaTime;
-            Movement.y = _rb.velocity.y;
-            _rb.velocity = Movement;
-            transform.Rotate((transform.up * move.x) * rotationSpeed * Time.fixedDeltaTime);
+            Vector3 ForwardMovement = Camera.main.transform.forward;
+            Vector3 RightMovement = Camera.main.transform.right;
+            ForwardMovement.y = 0;
+            RightMovement.y = 0;
+            Vector3 ForwardMovementY = move.y * ForwardMovement;
+            Vector3 ForwardMovementX = move.x * RightMovement;
+            Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+            _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
         }
     }
     private void Update()
@@ -161,23 +165,6 @@ public class PlayerController : MonoBehaviour
     void Change()
     {
         Mode = !Mode;
-        if (Mode == true)
-        {
-            _speed = 1000f;
-            Gun.GetComponent<AimControl>().OnAimReset();
-            Gun.GetComponent<AimControl>().enabled = false;
-            Camera2.SetActive(false);
-            Camera1.SetActive(true);
-            Sphere.SetActive(false);
-        }
-        else
-        {
-            _speed = 300f;
-            Gun.GetComponent<AimControl>().enabled = true;
-            Camera1.SetActive(false);
-            Camera2.SetActive(true);
-            Sphere.SetActive(true);
-        }
-        Debug.Log(Mode);
+        Gun.GetComponent<AimControl>().Change();
     }
 }

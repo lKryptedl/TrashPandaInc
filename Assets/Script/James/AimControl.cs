@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class AimControl : MonoBehaviour
 {
+    public GameObject Player, hitMarker, shotPoint, Camera1, Camera2;
+    public Transform followPoint;
     ShootingControls controls;
-    Vector3 aim, rotate, rotateChange;
-    int maxRotate = 30;
-    int minRotate = -30;
-
-    public GameObject hitMarker, shotPoint, Player;
-    public Transform aimPoint;
-    public bool Camera = true;
-    public LayerMask Ignore;
+    Vector3 aim;
+    public Cinemachine.AxisState xAxis;
+    public Cinemachine.AxisState yAxis;
+    public Camera aimCamera;
+    public float yaw;
     void Awake()
     {
         controls = new ShootingControls();
@@ -20,44 +19,38 @@ public class AimControl : MonoBehaviour
         controls.Control.Aim.performed += ctx => aim = ctx.ReadValue<Vector2>();
         controls.Control.Aim.canceled += ctx => aim = Vector2.zero;
     }
-    
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
-        
-        rotateChange = new Vector3(aim.y * -1.5f, aim.x * 1.5f, 0);
-        rotate += rotateChange;
-        rotate.x = Mathf.Clamp(rotate.x, minRotate, maxRotate);
-        rotate.y = Mathf.Clamp(rotate.y, minRotate, maxRotate);
-        transform.localEulerAngles = rotate;
-        
         RaycastHit hit;
-        if (Physics.Raycast(shotPoint.transform.position, transform.forward, out hit, 5, ~Ignore))
+        if (Physics.Raycast(shotPoint.transform.position, transform.forward, out hit))
         {
             hitMarker.transform.position = hit.point;
-            hitMarker.GetComponent<Renderer>().material.color = Color.red;
         }
-        else
+        if (PlayerController.Mode == false)
         {
-            hitMarker.transform.position = shotPoint.transform.position + transform.forward * 5;
-            hitMarker.GetComponent<Renderer>().material.color = Color.white;
+            xAxis.Update(Time.fixedDeltaTime);
+            yAxis.Update(Time.fixedDeltaTime);
+            xAxis.m_InputAxisValue = aim.x;
+            yAxis.m_InputAxisValue = aim.y;
+            followPoint.eulerAngles = new Vector3(yAxis.Value, xAxis.Value, 0);
+            yaw = aimCamera.transform.rotation.eulerAngles.y;
+            Player.transform.rotation = Quaternion.Slerp(Player.transform.rotation, Quaternion.Euler(0, yaw, 0), 15 * Time.fixedDeltaTime);
+            transform.eulerAngles = new Vector3(yAxis.Value, xAxis.Value, 0);
         }
-
-        if (rotate.y == maxRotate && aim.x != 0)
-        {
-            Player.transform.Rotate((Player.transform.up * 0.5f) * 100f * Time.fixedDeltaTime);
-            hitMarker.GetComponent<Renderer>().material.color = Color.blue;
-        }
-        else if (rotate.y == minRotate && aim.x != 0)
-        {
-            Player.transform.Rotate((Player.transform.up * -0.5f) * 100f * Time.fixedDeltaTime);
-            hitMarker.GetComponent<Renderer>().material.color = Color.blue;
-        }
-        
     }
 
-    public void OnAimReset()
+    public void Change()
     {
-        rotate = new Vector3(0f, 0f, 0f);
-        transform.localEulerAngles = rotate;
+        if (PlayerController.Mode == true) //Move
+        {
+            Camera2.SetActive(true);
+            Camera1.SetActive(false);
+        }
+        else //Aim
+        {
+            Camera1.SetActive(true);
+            Camera2.SetActive(false);
+        }
     }
 }
