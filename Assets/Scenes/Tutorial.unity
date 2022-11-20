@@ -17170,3 +17170,105 @@ Mesh:
     offset: 0
     size: 0
     path: 
+<<<<<<< Updated upstream
+=======
+--- !u!1001 &1268192331235831379
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6174695957513948549, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: Camera1
+      value: 
+      objectReference: {fileID: 1956089411}
+    - target: {fileID: 6174695957513948549, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: Camera2
+      value: 
+      objectReference: {fileID: 1172349971}
+    - target: {fileID: 6174695957513948549, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: aimCamera
+      value: 
+      objectReference: {fileID: 1779249222}
+    - target: {fileID: 6174695957513948549, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: hitMarker
+      value: 
+      objectReference: {fileID: 1666103510}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.102
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958293198921, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: Sphere
+      value: 
+      objectReference: {fileID: 1666103510}
+    - target: {fileID: 6174695958293198921, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: _speed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174695958293198921, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: Camera1
+      value: 
+      objectReference: {fileID: 1172349971}
+    - target: {fileID: 6174695958293198921, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: Camera2
+      value: 
+      objectReference: {fileID: 1956089411}
+    - target: {fileID: 6174695958293198923, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_Name
+      value: Racoon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+--- !u!4 &4911575025569342130 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6174695958133214433, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+  m_PrefabInstance: {fileID: 1268192331235831379}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4911575025883618633 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6174695958515200794, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+  m_PrefabInstance: {fileID: 1268192331235831379}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes
