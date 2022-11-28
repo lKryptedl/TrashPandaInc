@@ -32457,6 +32457,14 @@ PrefabInstance:
       propertyPath: hitMarker
       value: 
       objectReference: {fileID: 1666103510}
+    - target: {fileID: 3425942720383043757, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: yAxis.m_AccelTime
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425942720383043757, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: yAxis.m_DecelTime
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
       propertyPath: aimCam
       value: 
