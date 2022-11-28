@@ -19,11 +19,11 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Changes the gravity on k press, Original gravity is -9.81")]
     public float ChangeInGravity;
     public float rotationSpeed = 100f;
-    public Transform MovePosition;
+    public Transform MovePosition, FollowPoint;
     public bool Jump = false;
     public bool isGrounded = true;
     public static bool Mode = false;
-    public GameObject Gun;
+    public GameObject Gun, aimCam, moveCam;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        
         MovePlayer();
     }
     private void MovePlayer()
@@ -70,19 +71,25 @@ public class PlayerController : MonoBehaviour
             Vector3 RightMovement = Camera.main.transform.right;
             ForwardMovement.y = 0;
             RightMovement.y = 0;
-            ForwardMovement = ForwardMovement.normalized;
-            RightMovement = RightMovement.normalized;
             Vector3 ForwardMovementY = move.y * ForwardMovement;
             Vector3 ForwardMovementX = move.x * RightMovement;
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
+            
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
             }
+            Quaternion targetRotation = FollowPoint.rotation;
+            targetRotation.z = 0;
+            targetRotation.x = 0;
+            _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 15 * Time.fixedDeltaTime);
+            /*
             Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
             targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
             _rb.MoveRotation(targetRotation);
+            */
+
         }
         else
         {
@@ -95,6 +102,7 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
         }
+        
     }
     private void Update()
     {
@@ -158,13 +166,23 @@ public class PlayerController : MonoBehaviour
             Nogravity = true;
         }
     }
-    private void OnChange()
+    void OnChange()
     {
         Change();
     }
     void Change()
     {
         Mode = !Mode;
-        Gun.GetComponent<AimControl>().Change();
+        if (Mode == true)
+        {
+            Gun.transform.rotation = transform.rotation;
+            moveCam.SetActive(true);
+            aimCam.SetActive(false);
+        }
+        else
+        {
+            aimCam.SetActive(true);
+            moveCam.SetActive(false);
+        }
     }
 }
