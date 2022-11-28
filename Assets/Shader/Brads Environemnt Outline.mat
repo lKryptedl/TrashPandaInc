@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: outline
+  m_Name: Brads Environemnt Outline
   m_Shader: {fileID: -6465566751694194690, guid: feecb44e742f7bf49b7f4d49d5b1cdcb, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -94,7 +94,7 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0.06
+    - _Outline_Thickness: 0.1
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
