@@ -11,4 +11,12 @@ public class LimitFramerate : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = TargetFramerate;
     }
+
+    private void Update()
+    {
+        if(Application.targetFrameRate != TargetFramerate)
+        {
+            Application.targetFrameRate = TargetFramerate;
+        }
+    }
 }
