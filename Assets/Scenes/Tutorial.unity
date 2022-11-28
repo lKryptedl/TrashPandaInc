@@ -3619,7 +3619,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4369735dc61d50445996c163aa839613, type: 2}
+  - {fileID: 2100000, guid: 4ce4eee24a7ece14e835dc2460df3323, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25857,7 +25857,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4369735dc61d50445996c163aa839613, type: 2}
+  - {fileID: 2100000, guid: 8c6f5b90a74d2994ba4f6b61d3f00171, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -32473,9 +32473,17 @@ PrefabInstance:
       propertyPath: moveCam
       value: 
       objectReference: {fileID: 449055241}
+    - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: ChangeInGravity
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3425942720646462819, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
       propertyPath: m_Name
       value: Racoon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425942720646462823, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3425942721074727369, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
       propertyPath: m_RootOrder
