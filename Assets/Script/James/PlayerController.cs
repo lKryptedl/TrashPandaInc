@@ -18,12 +18,15 @@ public class PlayerController : MonoBehaviour
     [Header("Gravity Change")]
     [Tooltip("Changes the gravity on k press, Original gravity is -9.81")]
     public float ChangeInGravity;
-    public float rotationSpeed = 100f;
+    [Header("Player Rotation Speed")]
+    [Tooltip("The speed of the players rotation when rotating the camera")]
+    public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
     public bool Jump = false;
     public bool isGrounded = true;
     public static bool Mode = false;
     public GameObject Gun, aimCam, moveCam;
+    public bool CancelMovement;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -31,17 +34,29 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == ("Ground"))
+        if(collision.gameObject.CompareTag(("Ground")))
         {
             isGrounded = true;
+            CancelMovement = false;
+        }
+        if (collision.gameObject.CompareTag(("Wall")))
+        {
+            if (Mathf.Abs(_rb.velocity.y) > 0.0001f)
+            {
+                CancelMovement = true;
+            }
         }
     }
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == ("Ground"))
+        if (collision.gameObject.CompareTag(("Ground")))
         {
             isGrounded = false;
             Jump = false;
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            CancelMovement = false;
         }
     }
     private void Awake()
@@ -60,8 +75,10 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        
-        MovePlayer();
+        if (!CancelMovement)
+        {
+            MovePlayer();
+        }
     }
     private void MovePlayer()
     {
@@ -74,7 +91,7 @@ public class PlayerController : MonoBehaviour
             Vector3 ForwardMovementY = move.y * ForwardMovement;
             Vector3 ForwardMovementX = move.x * RightMovement;
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-            _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
+            _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
             
             if (MovementBasedOnCamera == Vector3.zero)
             {
@@ -83,7 +100,7 @@ public class PlayerController : MonoBehaviour
             Quaternion targetRotation = FollowPoint.rotation;
             targetRotation.z = 0;
             targetRotation.x = 0;
-            _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 15 * Time.fixedDeltaTime);
+            _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
             /*
             Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
             targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);

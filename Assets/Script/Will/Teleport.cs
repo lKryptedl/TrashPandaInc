@@ -7,25 +7,14 @@ public class Teleport : MonoBehaviour
     public Transform TeleportLocation;
     [SerializeField] private float AdditionalX;
     public bool Teleported = false;
-    StopInputAfterTeleport StopTeleport;
-
-    private void Start()
-    {
-        GameObject HasTeleported = GameObject.FindGameObjectWithTag("GameManager");
-        StopTeleport = HasTeleported.GetComponent<StopInputAfterTeleport>();
-    }
-
-    private void Update()
-    {
-        //print(Teleported);
-    }
+    
 
     void OnTriggerEnter(Collider player)
     {
         if (!player.CompareTag("Player")) return;
 
         TeleportMethod(player);
-        StopTeleport.isTeleported = true;
+        StopInputAfterTeleport.isTeleported = true;
 
     }
     void TeleportMethod(Collider player)
