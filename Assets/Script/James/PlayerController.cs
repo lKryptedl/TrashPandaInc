@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     public static bool Mode = false;
     public GameObject Gun, aimCam, moveCam;
     public bool CancelMovement;
+    public bool DontMove;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -41,10 +42,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag(("Wall")))
         {
-            if (Mathf.Abs(_rb.velocity.y) > 0.0001f)
-            {
-                CancelMovement = true;
-            }
+            CancelMovement = true;
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -75,11 +73,12 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!CancelMovement)
+        if (!DontMove)
         {
             MovePlayer();
         }
     }
+
     private void MovePlayer()
     {
         if (Mode == true)
@@ -138,6 +137,17 @@ public class PlayerController : MonoBehaviour
         if (!SlowTime)
         {
             Time.timeScale = 1f;
+        }
+        if (CancelMovement)
+        {
+            if (Mathf.Abs(_rb.velocity.y) > 0.0001f)
+            {
+                DontMove = true;
+            }
+        }
+        if (!CancelMovement)
+        {
+            DontMove = false;
         }
     }
     public void OnPause()
