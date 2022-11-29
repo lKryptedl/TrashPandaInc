@@ -22,29 +22,24 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The speed of the players rotation when rotating the camera")]
     public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
-    public bool Jump = false;
-    public bool isGrounded = true;
+   // public bool Jump = false;
+   // public bool isGrounded = true;
     public static bool Mode = false;
     public GameObject Gun, aimCam, moveCam;
-    public bool CancelMovement;
+    [Header("Changes The Speed of low gravity in the air")]
+    public float SlowDownTime;
+    [Header("How much more you can jump in low gravity")]
+    public float JumpMultiplier;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         Change();
     }
-    private void OnCollisionEnter(Collision collision)
+   /* private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag(("Ground")))
         {
             isGrounded = true;
-            CancelMovement = false;
-        }
-        if (collision.gameObject.CompareTag(("Wall")))
-        {
-            if (Mathf.Abs(_rb.velocity.y) > 0.0001f)
-            {
-                CancelMovement = true;
-            }
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -54,11 +49,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             Jump = false;
         }
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            CancelMovement = false;
-        }
-    }
+    }*/
     private void Awake()
     {
         controls = new PlayerControls();
@@ -75,10 +66,9 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!CancelMovement)
-        {
+      
             MovePlayer();
-        }
+        
     }
     private void MovePlayer()
     {
@@ -106,7 +96,6 @@ public class PlayerController : MonoBehaviour
             targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
             _rb.MoveRotation(targetRotation);
             */
-
         }
         else
         {
@@ -123,6 +112,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        print(Time.timeScale);
         if (SlowTime)
         {
             if (Mathf.Abs(_rb.velocity.y) < 0.001f)
@@ -131,7 +121,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Mathf.Abs(_rb.velocity.y) > 0.001f)
             {
-                Time.timeScale = 0.8f;
+                Time.timeScale = SlowDownTime;
                 print("Change Time");
             }
         }
@@ -168,9 +158,9 @@ public class PlayerController : MonoBehaviour
         {
             Physics.gravity = new Vector3(0f, ChangeInGravity, 0f);
             
-                Time.timeScale = 1f;
+            Time.timeScale = 1f;
             Nogravity = false;
-            _JumpForce *= 2f;
+            _JumpForce *= JumpMultiplier;
             SlowTime = true;
             
             
@@ -178,7 +168,7 @@ public class PlayerController : MonoBehaviour
         else if (Nogravity == false)
         {
             Physics.gravity = new Vector3(0f, -9.81f, 0);
-            _JumpForce /= 2f;
+            _JumpForce /= JumpMultiplier;
             SlowTime = false;
             Nogravity = true;
         }
