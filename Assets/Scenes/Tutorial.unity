@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25242,11 +25242,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1420377166}
-  - {fileID: 1619916509}
+  - {fileID: 1071051844}
   - {fileID: 1762067243}
   - {fileID: 1951465748}
   - {fileID: 951194857}
-  - {fileID: 1071051844}
+  - {fileID: 1619916509}
   - {fileID: 714322907}
   - {fileID: 1835061319}
   - {fileID: 412214821}
@@ -27452,6 +27452,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3425942720646462823, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
       propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425942720646462823, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3425942721074727369, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
