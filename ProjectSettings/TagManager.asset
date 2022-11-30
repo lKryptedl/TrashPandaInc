@@ -8,6 +8,7 @@ TagManager:
   - BigRubbish
   - Rubbish
   - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,9 +16,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Character
+  - Toms Environment Pieces
+  - Brads Environment Pieces
   - 
   - 
   - 
