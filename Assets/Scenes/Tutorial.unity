@@ -27519,6 +27519,10 @@ PrefabInstance:
       propertyPath: ChangeInGravity
       value: -4
       objectReference: {fileID: 0}
+    - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: SpeedMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3425942720646462819, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
       propertyPath: m_Name
       value: Racoon
