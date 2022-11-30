@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Dialogue : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        Gamepad gamepad = Gamepad.current;
+        if(gamepad.aButton.wasPressedThisFrame) //change abutton to whatever button you want to skip.
         {
             if (textComponment.text == lines[index])
             {
