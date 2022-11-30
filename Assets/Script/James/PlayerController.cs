@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     public float SlowDownTime;
     [Header("How much more you can jump in low gravity")]
     public float JumpMultiplier;
+    [Header("How much sprint multiplies ordinary movement")]
+    public float SpeedMultiplier;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -128,6 +130,15 @@ public class PlayerController : MonoBehaviour
         if (!SlowTime)
         {
             Time.timeScale = 1f;
+        }
+        Gamepad gamepad = Gamepad.current;
+        if (gamepad.leftStickButton.wasPressedThisFrame)
+        {
+            _speed *= SpeedMultiplier;
+        }
+        if (gamepad.leftStickButton.wasReleasedThisFrame)
+        {
+            _speed /= SpeedMultiplier;
         }
     }
     public void OnPause()
