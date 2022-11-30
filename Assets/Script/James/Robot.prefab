@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 987d4e86b3123d546a819a0eea889f13, type: 2}
+  - {fileID: 2100000, guid: f762ced0c55e5cb4c8757c7f23dbd39e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   TargetLocation: {x: 0, y: 0, z: 0}
   rubbish: {fileID: 8058542260377076183, guid: af0b780832f904043bf1f068a1fb1851, type: 3}
   spawnPoint: {fileID: 4865878926563528052}
+  health: 2
 --- !u!195 &4865878925054619599
 NavMeshAgent:
   m_ObjectHideFlags: 0
