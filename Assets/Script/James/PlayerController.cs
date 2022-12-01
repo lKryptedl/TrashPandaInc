@@ -40,9 +40,11 @@ public class PlayerController : MonoBehaviour
     public float TimerPassed2;
     public bool ApplyCooldown;
     public float InputDelay = 0.5f;
+    private Animator _animator;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
         Change();
         Timer = 0f;
         Timer2 = 0f;
@@ -147,6 +149,14 @@ public class PlayerController : MonoBehaviour
         if (gamepad.leftStickButton.wasReleasedThisFrame)
         {
             _speed /= SpeedMultiplier;
+        }
+        if (_rb.velocity.magnitude > 0)
+        {
+            _animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            _animator.SetBool("isWalking", false);
         }
         if (CheckTimer)
         {
