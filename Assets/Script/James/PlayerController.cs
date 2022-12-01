@@ -145,18 +145,20 @@ public class PlayerController : MonoBehaviour
         if (gamepad.leftStickButton.wasPressedThisFrame)
         {
             _speed *= SpeedMultiplier;
+            
         }
         if (gamepad.leftStickButton.wasReleasedThisFrame)
         {
             _speed /= SpeedMultiplier;
+                        
         }
         if (isGrounded)
         {
-            if (_rb.velocity.magnitude > 0)
+            if (gamepad.leftStick.left.wasPressedThisFrame || gamepad.leftStick.right.wasPressedThisFrame || gamepad.leftStick.up.wasPressedThisFrame || gamepad.leftStick.down.wasPressedThisFrame)
             {
                 _animator.SetBool("isWalking", true);
             }
-            else
+            if (gamepad.leftStick.left.wasReleasedThisFrame || gamepad.leftStick.right.wasReleasedThisFrame || gamepad.leftStick.up.wasReleasedThisFrame || gamepad.leftStick.down.wasReleasedThisFrame)
             {
                 _animator.SetBool("isWalking", false);
             }
