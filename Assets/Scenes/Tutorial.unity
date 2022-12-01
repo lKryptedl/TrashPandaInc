@@ -27639,7 +27639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147799348320}
   m_LocalRotation: {x: -0, y: -0.0005007982, z: -0, w: 0.99999994}
-  m_LocalPosition: {x: -94, y: 3, z: -105}
+  m_LocalPosition: {x: -94, y: 3, z: -98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28983,7 +28983,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.30036
+      value: 37.80036
       objectReference: {fileID: 0}
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28991,7 +28991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3550034
+      value: 4.6449966
       objectReference: {fileID: 0}
     - target: {fileID: 1336200275002814000, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_BiasX
@@ -29007,7 +29007,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336200275002814001, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: CameraDistance
-      value: 6
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336200275002814001, guid: 49c6508522f44814f838c1173952da48, type: 3}
+      propertyPath: ShoulderOffset.x
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 1336200275485038192, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_RootOrder
@@ -29059,7 +29063,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744875, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.30036
+      value: 37.80036
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744875, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29067,7 +29071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744875, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3550034
+      value: 4.6449966
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744884, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_Follow
@@ -29119,7 +29123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007463037937369980, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: CameraDistance
-      value: 6
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007463037937369980, guid: 49c6508522f44814f838c1173952da48, type: 3}
+      propertyPath: ShoulderOffset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4007463037937369980, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: CameraCollisionFilter.m_Bits
@@ -29131,7 +29139,7 @@ PrefabInstance:
       objectReference: {fileID: 4911575025883618633}
     - target: {fileID: 4007463038157573927, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.30036
+      value: 37.00036
       objectReference: {fileID: 0}
     - target: {fileID: 4007463038157573927, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -29139,7 +29147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4007463038157573927, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3550034
+      value: -2.3550034
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c6508522f44814f838c1173952da48, type: 3}
