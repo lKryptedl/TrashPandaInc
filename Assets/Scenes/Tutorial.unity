@@ -27504,8 +27504,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: InputDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: TimerPassed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
       propertyPath: SlowDownTime
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
+      propertyPath: TimerPassed2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3425942720646462817, guid: 4191724454e59c143a88d590f24a9b11, type: 3}
       propertyPath: rotationSpeed
