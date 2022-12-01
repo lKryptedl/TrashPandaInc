@@ -6,16 +6,12 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] public GameObject Canvas;
     
-    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             print("Hello!");
             Canvas.SetActive(true);
-            
-            //Destroy(gameObject, 5);
         }
     }
-    
 }
