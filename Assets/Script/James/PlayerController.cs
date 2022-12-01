@@ -40,7 +40,8 @@ public class PlayerController : MonoBehaviour
     public float TimerPassed2;
     public bool ApplyCooldown;
     public float InputDelay = 0.5f;
-    private Animator _animator;
+    public Animator _animator;
+    private bool isGrounded;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -49,7 +50,7 @@ public class PlayerController : MonoBehaviour
         Timer = 0f;
         Timer2 = 0f;
     }
-    /* private void OnCollisionEnter(Collision collision)
+     private void OnCollisionEnter(Collision collision)
      {
          if(collision.gameObject.CompareTag(("Ground")))
          {
@@ -61,9 +62,8 @@ public class PlayerController : MonoBehaviour
          if (collision.gameObject.CompareTag(("Ground")))
          {
              isGrounded = false;
-             Jump = false;
          }
-     }*/
+     }
     private void Awake()
     {
         controls = new PlayerControls();
@@ -150,13 +150,16 @@ public class PlayerController : MonoBehaviour
         {
             _speed /= SpeedMultiplier;
         }
-        if (_rb.velocity.magnitude > 0)
+        if (isGrounded)
         {
-            _animator.SetBool("isWalking", true);
-        }
-        else
-        {
-            _animator.SetBool("isWalking", false);
+            if (_rb.velocity.magnitude > 0)
+            {
+                _animator.SetBool("isWalking", true);
+            }
+            else
+            {
+                _animator.SetBool("isWalking", false);
+            }
         }
         if (CheckTimer)
         {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1082,6 +1082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &54739067 stripped
@@ -1499,6 +1503,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -2720,6 +2728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &232187403 stripped
@@ -2812,6 +2824,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -3690,6 +3706,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -4574,6 +4594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
 --- !u!4 &412214821 stripped
@@ -4810,6 +4834,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -5509,6 +5537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &476546503 stripped
@@ -5712,6 +5744,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -6095,6 +6131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &537496141 stripped
@@ -6172,6 +6212,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -7131,6 +7175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &637644217 stripped
@@ -7300,6 +7348,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -7699,6 +7751,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_NavMeshLayer
@@ -8219,6 +8275,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
@@ -10114,6 +10174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &811287473 stripped
@@ -10743,6 +10807,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -12620,6 +12688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &905457851 stripped
@@ -13628,6 +13700,10 @@ PrefabInstance:
       value: sm_Platform_solo_001 (20)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -13872,6 +13948,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
@@ -16205,6 +16285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
 --- !u!4 &1071051844 stripped
@@ -16819,6 +16903,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &1091933145 stripped
@@ -17096,6 +17184,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -18455,6 +18547,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -19908,6 +20004,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
 --- !u!4 &1420377166 stripped
@@ -20876,6 +20976,10 @@ PrefabInstance:
       value: sm_Platform_solo_001 (18)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -21048,6 +21152,10 @@ PrefabInstance:
       value: sm_Platform_solo_001 (19)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_NavMeshLayer
       value: 1
       objectReference: {fileID: 0}
@@ -21182,6 +21290,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -22433,6 +22545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
 --- !u!4 &1619916509 stripped
@@ -22612,6 +22728,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -23707,6 +23827,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
@@ -24952,6 +25076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &1824462611 stripped
@@ -25025,6 +25153,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
       propertyPath: m_Name
       value: sm_Floor_Solo_001 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
@@ -25108,6 +25240,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -25890,6 +26026,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Floor_Solo_001
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
 --- !u!4 &1951465748 stripped
@@ -25996,6 +26136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_Platform_solo_001 (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
 --- !u!4 &1960948895 stripped
@@ -26091,6 +26235,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -26996,6 +27144,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
       propertyPath: m_Name
       value: sm_Platform_solo_001 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
