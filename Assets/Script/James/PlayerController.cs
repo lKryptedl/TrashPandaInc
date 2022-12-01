@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The speed of the players rotation when rotating the camera")]
     public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
-   // public bool Jump = false;
-   // public bool isGrounded = true;
+    // public bool Jump = false;
+    // public bool isGrounded = true;
     public static bool Mode = false;
     public GameObject Gun, aimCam, moveCam;
     [Header("Changes The Speed of low gravity in the air")]
@@ -32,26 +32,36 @@ public class PlayerController : MonoBehaviour
     public float JumpMultiplier;
     [Header("How much sprint multiplies ordinary movement")]
     public float SpeedMultiplier;
+    private bool CanChange = true;
+    public bool CheckTimer = false;
+    public float Timer;
+    public float TimerPassed;
+    public float Timer2;
+    public float TimerPassed2;
+    public bool ApplyCooldown;
+    public float InputDelay = 0.5f;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         Change();
+        Timer = 0f;
+        Timer2 = 0f;
     }
-   /* private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag(("Ground")))
-        {
-            isGrounded = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(("Ground")))
-        {
-            isGrounded = false;
-            Jump = false;
-        }
-    }*/
+    /* private void OnCollisionEnter(Collision collision)
+     {
+         if(collision.gameObject.CompareTag(("Ground")))
+         {
+             isGrounded = true;
+         }
+     }
+     private void OnCollisionExit(Collision collision)
+     {
+         if (collision.gameObject.CompareTag(("Ground")))
+         {
+             isGrounded = false;
+             Jump = false;
+         }
+     }*/
     private void Awake()
     {
         controls = new PlayerControls();
@@ -60,17 +70,17 @@ public class PlayerController : MonoBehaviour
     }
     private void OnEnable()
     {
-         controls.Newactionmap.Enable();
+        controls.Newactionmap.Enable();
     }
     private void OnDisable()
     {
-         controls.Newactionmap.Disable();
+        controls.Newactionmap.Disable();
     }
     private void FixedUpdate()
     {
-      
-            MovePlayer();
-        
+
+        MovePlayer();
+
     }
     private void MovePlayer()
     {
@@ -84,7 +94,7 @@ public class PlayerController : MonoBehaviour
             Vector3 ForwardMovementX = move.x * RightMovement;
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
-            
+
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -110,11 +120,10 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
         }
-        
+
     }
     private void Update()
     {
-        print(Time.timeScale);
         if (SlowTime)
         {
             if (Mathf.Abs(_rb.velocity.y) < 0.001f)
@@ -124,7 +133,6 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(_rb.velocity.y) > 0.001f)
             {
                 Time.timeScale = SlowDownTime;
-                print("Change Time");
             }
         }
         if (!SlowTime)
@@ -139,6 +147,54 @@ public class PlayerController : MonoBehaviour
         if (gamepad.leftStickButton.wasReleasedThisFrame)
         {
             _speed /= SpeedMultiplier;
+        }
+        if (CheckTimer)
+        {
+
+            Timer += Time.deltaTime;
+            CanChange = false;
+
+            if (Timer > TimerPassed)
+            {
+                Physics.gravity = new Vector3(0f, -9.81f, 0);
+                _JumpForce /= JumpMultiplier;
+                Nogravity = true;
+                SlowTime = false;
+                CheckTimer = false;
+                Timer = 0;
+                ApplyCooldown = true;
+            }
+            if (Timer > InputDelay)
+            {
+                if (gamepad.xButton.isPressed)
+                {
+                    Timer = 0f;
+                    Physics.gravity = new Vector3(0f, -9.81f, 0);
+                    _JumpForce /= JumpMultiplier;
+                    Nogravity = true;
+                    SlowTime = false;
+                    CheckTimer = false;
+                    ApplyCooldown = true;
+
+                }
+            }
+        }
+
+        if (ApplyCooldown)
+        {
+            Timer = 0;
+            Timer2 += Time.deltaTime;
+
+            if (Timer2 < TimerPassed2)
+            {
+                CanChange = false;
+            }
+            if (Timer2 > TimerPassed2)
+            {
+                CanChange = true;
+                ApplyCooldown = false;
+                Timer2 = 0;
+            }
         }
     }
     public void OnPause()
@@ -156,7 +212,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnJump()
     {
-            if(Mathf.Abs(_rb.velocity.y) < 0.0001f)
+        if (Mathf.Abs(_rb.velocity.y) < 0.0001f)
         {
             Vector3 Jump = new(0f, _JumpForce);
             _rb.AddForce(Jump);
@@ -164,24 +220,29 @@ public class PlayerController : MonoBehaviour
     }
     public void OnGravity()
     {
-        SlowTime = true;
-        if (Nogravity == true)
+        if (CanChange)
         {
-            Physics.gravity = new Vector3(0f, ChangeInGravity, 0f);
-            
-            Time.timeScale = 1f;
-            Nogravity = false;
-            _JumpForce *= JumpMultiplier;
+
+
             SlowTime = true;
-            
-            
-        }
-        else if (Nogravity == false)
-        {
-            Physics.gravity = new Vector3(0f, -9.81f, 0);
-            _JumpForce /= JumpMultiplier;
-            SlowTime = false;
-            Nogravity = true;
+            if (Nogravity == true)
+            {
+                Physics.gravity = new Vector3(0f, ChangeInGravity, 0f);
+
+                Time.timeScale = 1f;
+                Nogravity = false;
+                _JumpForce *= JumpMultiplier;
+                SlowTime = true;
+                CheckTimer = true;
+            }
+            else if (Nogravity == false)
+            {
+                Physics.gravity = new Vector3(0f, -9.81f, 0);
+                _JumpForce /= JumpMultiplier;
+                SlowTime = false;
+                Nogravity = true;
+                CheckTimer = false;
+            }
         }
     }
     void OnChange()
