@@ -12,6 +12,12 @@ ModelImporter:
   - first:
       74: 7640120622881833465
     second: Armature|Walk&Shoot
+  - first:
+      74: -8009881845363507777
+    second: Armature|Walk&Shoot (1)
+  - first:
+      74: -8612994791844490777
+    second: Armature|ArmatureAction (1)
   externalObjects: {}
   materials:
     materialImportMode: 2
