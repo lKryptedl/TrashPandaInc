@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool Pause = true;
     public bool FreezeConstraints = false;
     PlayerControls controls;
-    Vector3 move;
+    Vector2 move;
     public bool SlowTime = false;
     public bool Nogravity = true;
     [Header("Gravity Change")]
@@ -154,11 +154,11 @@ public class PlayerController : MonoBehaviour
         }
         if (isGrounded)
         {
-            if (gamepad.leftStick.left.wasPressedThisFrame || gamepad.leftStick.right.wasPressedThisFrame || gamepad.leftStick.up.wasPressedThisFrame || gamepad.leftStick.down.wasPressedThisFrame)
+            if (move != Vector2.zero)
             {
                 _animator.SetBool("isWalking", true);
             }
-            if (gamepad.leftStick.left.wasReleasedThisFrame || gamepad.leftStick.right.wasReleasedThisFrame || gamepad.leftStick.up.wasReleasedThisFrame || gamepad.leftStick.down.wasReleasedThisFrame)
+            else
             {
                 _animator.SetBool("isWalking", false);
             }
