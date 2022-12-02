@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("isWalking", false);
         }*/
-        
+
 
     }
     private void MovePlayer()
@@ -164,13 +164,18 @@ public class PlayerController : MonoBehaviour
         if (gamepad.leftStickButton.wasPressedThisFrame)
         {
             _speed *= SpeedMultiplier;
+
         }
         if (gamepad.leftStickButton.wasReleasedThisFrame)
         {
             _speed /= SpeedMultiplier;
+
         }
         /*if (gamepad.aButton.isPressed)
         {
+<<<<<<< HEAD
+            if (move != Vector2.zero)
+=======
             print("A Pressed");
             _animator.SetBool("isWalking", false);
         }*/
@@ -200,26 +205,12 @@ public class PlayerController : MonoBehaviour
                 _animator.SetBool("isJumping", true);
             }
         }
-        if(Mathf.Abs(_rb.velocity.y) > 10f)
+        if (Mathf.Abs(_rb.velocity.y) > 10f)
         {
-<<<<<<< Updated upstream
-=======
             _animator.SetBool("isJumping", false);
         }
         print(isGrounded);
 
-        /*if (isGrounded)
-        {
->>>>>>> Stashed changes
-            if (_rb.velocity.magnitude > 0)
-            {
-                _animator.SetBool("isWalking", true);
-            }
-            else
-            {
-                _animator.SetBool("isWalking", false);
-            }
-        }*/
         if (CheckTimer)
         {
 
