@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     private bool Pause = true;
     public bool FreezeConstraints = false;
     PlayerControls controls;
-    Vector3 move;
     Vector2 move;
     public bool SlowTime = false;
     public bool Nogravity = true;
@@ -83,6 +82,25 @@ public class PlayerController : MonoBehaviour
     {
 
         MovePlayer();
+        if (Mathf.Abs(_rb.velocity.y) < 0.0001f)
+        {
+            if (move.x == -1 || move.x == 1 || move.y == -1 || move.y == 1)
+            {
+                _animator.SetBool("isWalking", true);
+
+            }
+            if (move.x == 0 && move.y == 0)
+            {
+                _rb.velocity = Vector3.zero;
+                _animator.SetBool("isWalking", false);
+            }
+        }
+
+        /*if (Mathf.Abs(_rb.velocity.y) > 0.001f)
+        {
+            _animator.SetBool("isWalking", false);
+        }*/
+
 
     }
     private void MovePlayer()
@@ -153,19 +171,38 @@ public class PlayerController : MonoBehaviour
             _speed /= SpeedMultiplier;
 
         }
-        if (isGrounded)
+        if (Mathf.Abs(_rb.velocity.y) > 0.01f)
         {
-            if (gamepad.leftStick.left.wasPressedThisFrame || gamepad.leftStick.right.wasPressedThisFrame || gamepad.leftStick.up.wasPressedThisFrame || gamepad.leftStick.down.wasPressedThisFrame)
-                if (move != Vector2.zero)
-                {
-                    _animator.SetBool("isWalking", true);
-                }
-            if (gamepad.leftStick.left.wasReleasedThisFrame || gamepad.leftStick.right.wasReleasedThisFrame || gamepad.leftStick.up.wasReleasedThisFrame || gamepad.leftStick.down.wasReleasedThisFrame)
-            else
-                    {
-                        _animator.SetBool("isWalking", false);
-                    }
+            _animator.SetBool("isWalking", false);
+            //_animator.SetBool("isJumping", true);
         }
+        /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
+        {
+            //print("Animation Play");
+            //_animator.SetBool("isWalking", true);
+
+        }
+        if (gamepad.leftStick.left.wasReleasedThisFrame || gamepad.leftStick.right.wasReleasedThisFrame || gamepad.leftStick.up.wasReleasedThisFrame || gamepad.leftStick.down.wasReleasedThisFrame)
+        {
+            _rb.velocity = Vector3.zero;
+        }*/
+        //print(_rb.velocity.y);
+        if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+        {
+            _animator.SetBool("isJumping", false);
+            if (gamepad.aButton.wasPressedThisFrame)
+            {
+                print("X");
+                _animator.SetBool("isWalking", false);
+                _animator.SetBool("isJumping", true);
+            }
+        }
+        if (Mathf.Abs(_rb.velocity.y) > 10f)
+        {
+            _animator.SetBool("isJumping", false);
+        }
+        print(isGrounded);
+
         if (CheckTimer)
         {
 
@@ -230,8 +267,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnJump()
     {
-        if (Mathf.Abs(_rb.velocity.y) < 0.0001f)
+        if (Mathf.Abs(_rb.velocity.y) < 0.01f)
         {
+            //_animator.SetBool("isWalking", false);
+            //_animator.SetBool("isJumping", true);
             Vector3 Jump = new(0f, _JumpForce);
             _rb.AddForce(Jump);
         }
