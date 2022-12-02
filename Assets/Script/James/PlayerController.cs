@@ -41,7 +41,9 @@ public class PlayerController : MonoBehaviour
     public bool ApplyCooldown;
     public float InputDelay = 0.5f;
     public Animator _animator;
-    private bool isGrounded;
+    private bool isGrounded; 
+    public float timer = 0f;
+    public float timerpassed = 0.5f;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -187,21 +189,36 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = Vector3.zero;
         }*/
         //print(_rb.velocity.y);
-        if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+        if (Mathf.Abs(_rb.velocity.y) < 0.001f)
         {
             _animator.SetBool("isJumping", false);
-            if (gamepad.aButton.wasPressedThisFrame)
+            timer = 0f;
+        }
+        else
+        {
+            _animator.SetBool("isWalking", false);
+            timer += Time.deltaTime;
+            if (timer < timerpassed)
             {
-                print("X");
-                _animator.SetBool("isWalking", false);
                 _animator.SetBool("isJumping", true);
             }
+            else
+            {
+                _animator.SetBool("isJumping", false);
+            }
         }
-        if (Mathf.Abs(_rb.velocity.y) > 10f)
+        print(_animator.GetBool("isJumping"));
+            /*if (gamepad.aButton.wasPressedThisFrame)
+            {
+                
+
+            }*/
+        
+        /*if (Mathf.Abs(_rb.velocity.y) > 10f)
         {
             _animator.SetBool("isJumping", false);
-        }
-        print(isGrounded);
+        }*/
+       // print(isGrounded);
 
         if (CheckTimer)
         {
