@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool Pause = true;
     public bool FreezeConstraints = false;
     PlayerControls controls;
+    Vector3 move;
     Vector2 move;
     public bool SlowTime = false;
     public bool Nogravity = true;
@@ -50,20 +51,20 @@ public class PlayerController : MonoBehaviour
         Timer = 0f;
         Timer2 = 0f;
     }
-     private void OnCollisionEnter(Collision collision)
-     {
-         if(collision.gameObject.CompareTag(("Ground")))
-         {
-             isGrounded = true;
-         }
-     }
-     private void OnCollisionExit(Collision collision)
-     {
-         if (collision.gameObject.CompareTag(("Ground")))
-         {
-             isGrounded = false;
-         }
-     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(("Ground")))
+        {
+            isGrounded = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(("Ground")))
+        {
+            isGrounded = false;
+        }
+    }
     private void Awake()
     {
         controls = new PlayerControls();
@@ -145,23 +146,25 @@ public class PlayerController : MonoBehaviour
         if (gamepad.leftStickButton.wasPressedThisFrame)
         {
             _speed *= SpeedMultiplier;
-            
+
         }
         if (gamepad.leftStickButton.wasReleasedThisFrame)
         {
             _speed /= SpeedMultiplier;
-                        
+
         }
         if (isGrounded)
         {
-            if (move != Vector2.zero)
-            {
-                _animator.SetBool("isWalking", true);
-            }
+            if (gamepad.leftStick.left.wasPressedThisFrame || gamepad.leftStick.right.wasPressedThisFrame || gamepad.leftStick.up.wasPressedThisFrame || gamepad.leftStick.down.wasPressedThisFrame)
+                if (move != Vector2.zero)
+                {
+                    _animator.SetBool("isWalking", true);
+                }
+            if (gamepad.leftStick.left.wasReleasedThisFrame || gamepad.leftStick.right.wasReleasedThisFrame || gamepad.leftStick.up.wasReleasedThisFrame || gamepad.leftStick.down.wasReleasedThisFrame)
             else
-            {
-                _animator.SetBool("isWalking", false);
-            }
+                    {
+                        _animator.SetBool("isWalking", false);
+                    }
         }
         if (CheckTimer)
         {
