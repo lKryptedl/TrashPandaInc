@@ -204,7 +204,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                _animator.SetBool("isJumping", false);
+               _animator.SetBool("isJumping", false);
             }
         }
         print(_animator.GetBool("isJumping"));
@@ -287,7 +287,7 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(_rb.velocity.y) < 0.01f)
         {
             //_animator.SetBool("isWalking", false);
-            //_animator.SetBool("isJumping", true);
+            _animator.SetBool("isJumping", true);
             Vector3 Jump = new(0f, _JumpForce);
             _rb.AddForce(Jump);
         }
