@@ -84,19 +84,7 @@ public class PlayerController : MonoBehaviour
     {
 
         MovePlayer();
-        if (Mathf.Abs(_rb.velocity.y) < 0.0001f)
-        {
-            if (move.x == -1 || move.x == 1 || move.y == -1 || move.y == 1)
-            {
-                _animator.SetBool("isWalking", true);
-
-            }
-            if (move.x == 0 && move.y == 0)
-            {
-                _rb.velocity = Vector3.zero;
-                _animator.SetBool("isWalking", false);
-            }
-        }
+        
 
         /*if (Mathf.Abs(_rb.velocity.y) > 0.001f)
         {
@@ -193,10 +181,15 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isGrounded", true);
-
-            if (move.x == -1 || move.x == 1 || move.y == -1 || move.y == 1)
+            _animator.SetBool("isInAir", true);
+            if (move.x != 0 || move.y != 0)
             {
                 _animator.SetBool("isWalking", true);
+            }
+            else
+            {
+                _rb.velocity = Vector3.zero;
+                _animator.SetBool("isWalking", false);
             }
 
             timer = 0f;
@@ -206,6 +199,10 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", true);
             _animator.SetBool("isGrounded", false);
+            _animator.SetBool("isInAir", false);
+
+
+
            /* timer += Time.deltaTime;
             if (timer < timerpassed)
             {
@@ -296,7 +293,7 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(_rb.velocity.y) < 0.01f)
         {
             //_animator.SetBool("isWalking", false);
-            _animator.SetBool("isJumping", true);
+            //_animator.SetBool("isJumping", true);
             Vector3 Jump = new(0f, _JumpForce);
             _rb.AddForce(Jump);
         }
