@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4544481, g: 0.3193491, b: 0.6119512, a: 1}
+  m_IndirectSpecularColor: {r: 0.45449233, g: 0.3195264, b: 0.61209667, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -27851,15 +27851,13 @@ MonoBehaviour:
   JumpMultiplier: 1.2
   SpeedMultiplier: 2
   CheckTimer: 0
-  Timer: 0
-  TimerPassed: 10
-  Timer2: 0
-  TimerPassed2: 5
+  LowGravityDuration: 0
+  MaxLowGravityDuration: 10
+  CooldownLowGravity: 0
+  MaxCooldownLowGravity: 5
   ApplyCooldown: 0
   InputDelay: 0.5
   _animator: {fileID: 0}
-  timer: 0
-  timerpassed: 0.5
 --- !u!114 &919132147799348324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29670,15 +29668,13 @@ MonoBehaviour:
   JumpMultiplier: 1.2
   SpeedMultiplier: 2
   CheckTimer: 0
-  Timer: 0
-  TimerPassed: 10
-  Timer2: 0
-  TimerPassed2: 5
+  LowGravityDuration: 0
+  MaxLowGravityDuration: 0
+  CooldownLowGravity: 0
+  MaxCooldownLowGravity: 0
   ApplyCooldown: 0
   InputDelay: 0.5
   _animator: {fileID: 0}
-  timer: 0
-  timerpassed: 0.5
 --- !u!114 &4911575025661023771
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,8 +22,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("The speed of the players rotation when rotating the camera")]
     public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
-    // public bool Jump = false;
-    // public bool isGrounded = true;
     public static bool Mode = false;
     public GameObject Gun, aimCam, moveCam;
     [Header("Changes The Speed of low gravity in the air")]
@@ -33,24 +31,22 @@ public class PlayerController : MonoBehaviour
     [Header("How much sprint multiplies ordinary movement")]
     public float SpeedMultiplier;
     private bool CanChange = true;
+    [Header("Duration of low gravity")]
     public bool CheckTimer = false;
-    public float Timer;
-    public float TimerPassed;
-    public float Timer2;
-    public float TimerPassed2;
+    public float LowGravityDuration;
+    public float MaxLowGravityDuration;
+    [Header("Cooldown for low gravity")]
+    public float CooldownLowGravity;
+    public float MaxCooldownLowGravity;
     public bool ApplyCooldown;
     public float InputDelay = 0.5f;
     public Animator _animator;
     private bool isGrounded; 
-    public float timer = 0f;
-    public float timerpassed = 0.5f;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         Change();
-        Timer = 0f;
-        Timer2 = 0f;
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -82,7 +78,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
+        //apply movement on fixedupdate as it is better for physics than update
         MovePlayer();
         
 
@@ -97,6 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Mode == true)
         {
+            //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
             Vector3 ForwardMovement = Camera.main.transform.forward;
             Vector3 RightMovement = Camera.main.transform.right;
             ForwardMovement.y = 0;
@@ -135,6 +132,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        //Slows down time on low gravity. Not sure whether needed.
         if (SlowTime)
         {
             if (Mathf.Abs(_rb.velocity.y) < 0.001f)
@@ -150,6 +148,8 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
+
+        //Sprint Option on left stick pressed in. Reverts to ordinary speed when left stick pressed is released.
         Gamepad gamepad = Gamepad.current;
         if (gamepad.leftStickButton.wasPressedThisFrame)
         {
@@ -161,11 +161,8 @@ public class PlayerController : MonoBehaviour
             _speed /= SpeedMultiplier;
 
         }
-        if (Mathf.Abs(_rb.velocity.y) > 0.01f)
-        {
-            _animator.SetBool("isWalking", false);
-            //_animator.SetBool("isJumping", true);
-        }
+
+
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
         {
             //print("Animation Play");
@@ -177,6 +174,8 @@ public class PlayerController : MonoBehaviour
             _rb.velocity = Vector3.zero;
         }*/
         //print(_rb.velocity.y);
+
+        //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
         if (Mathf.Abs(_rb.velocity.y) < 0.001f)
         {
             _animator.SetBool("isJumping", false);
@@ -191,8 +190,6 @@ public class PlayerController : MonoBehaviour
                 _rb.velocity = Vector3.zero;
                 _animator.SetBool("isWalking", false);
             }
-
-            timer = 0f;
         }
         else
         {
@@ -213,7 +210,6 @@ public class PlayerController : MonoBehaviour
                _animator.SetBool("isJumping", false);
             }*/
         }
-        print(_animator.GetBool("isJumping"));
             /*if (gamepad.aButton.wasPressedThisFrame)
             {
                 
@@ -226,57 +222,58 @@ public class PlayerController : MonoBehaviour
         }*/
        // print(isGrounded);
 
+       /*Applies a timer to the length of low gravity. After time runs out a cooldown is applied not allowing
+       the use of low gravity again until after timer. If x is pressed, you can deactivate low gravity and have the cooldwon applied*/
         if (CheckTimer)
         {
-
-            Timer += Time.deltaTime;
+            LowGravityDuration += Time.deltaTime;
             CanChange = false;
 
-            if (Timer > TimerPassed)
+            if (LowGravityDuration > MaxLowGravityDuration)
             {
                 Physics.gravity = new Vector3(0f, -9.81f, 0);
                 _JumpForce /= JumpMultiplier;
                 Nogravity = true;
                 SlowTime = false;
                 CheckTimer = false;
-                Timer = 0;
+                LowGravityDuration = 0;
                 ApplyCooldown = true;
             }
-            if (Timer > InputDelay)
+            if (LowGravityDuration > InputDelay)
             {
                 if (gamepad.xButton.isPressed)
                 {
-                    Timer = 0f;
+                    LowGravityDuration = 0f;
                     Physics.gravity = new Vector3(0f, -9.81f, 0);
                     _JumpForce /= JumpMultiplier;
                     Nogravity = true;
                     SlowTime = false;
                     CheckTimer = false;
                     ApplyCooldown = true;
-
                 }
             }
         }
 
         if (ApplyCooldown)
         {
-            Timer = 0;
-            Timer2 += Time.deltaTime;
+            LowGravityDuration = 0;
+            CooldownLowGravity += Time.deltaTime;
 
-            if (Timer2 < TimerPassed2)
+            if (CooldownLowGravity < MaxCooldownLowGravity)
             {
                 CanChange = false;
             }
-            if (Timer2 > TimerPassed2)
+            if (CooldownLowGravity > MaxCooldownLowGravity)
             {
                 CanChange = true;
                 ApplyCooldown = false;
-                Timer2 = 0;
+                CooldownLowGravity = 0;
             }
         }
     }
     public void OnPause()
     {
+        //Pause the game by stopping time. Will later have UI.
         if (Pause)
         {
             Time.timeScale = 0f;
@@ -290,6 +287,7 @@ public class PlayerController : MonoBehaviour
     }
     public void OnJump()
     {
+        //If no velocity on players y axis apply a force to the y axis on A button pressed.
         if (Mathf.Abs(_rb.velocity.y) < 0.01f)
         {
             //_animator.SetBool("isWalking", false);
@@ -300,10 +298,9 @@ public class PlayerController : MonoBehaviour
     }
     public void OnGravity()
     {
+        //Changes players gravity to simulate low gravity. Applied on X button press.
         if (CanChange)
         {
-
-
             SlowTime = true;
             if (Nogravity == true)
             {
