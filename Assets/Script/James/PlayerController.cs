@@ -193,6 +193,12 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isGrounded", true);
+
+            if (move.x == -1 || move.x == 1 || move.y == -1 || move.y == 1)
+            {
+                _animator.SetBool("isWalking", true);
+            }
+
             timer = 0f;
         }
         else
