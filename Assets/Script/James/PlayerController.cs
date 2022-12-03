@@ -192,12 +192,15 @@ public class PlayerController : MonoBehaviour
         if (Mathf.Abs(_rb.velocity.y) < 0.001f)
         {
             _animator.SetBool("isJumping", false);
+            _animator.SetBool("isGrounded", true);
             timer = 0f;
         }
         else
         {
             _animator.SetBool("isWalking", false);
-            timer += Time.deltaTime;
+            _animator.SetBool("isJumping", true);
+            _animator.SetBool("isGrounded", false);
+           /* timer += Time.deltaTime;
             if (timer < timerpassed)
             {
                 _animator.SetBool("isJumping", true);
@@ -205,7 +208,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                _animator.SetBool("isJumping", false);
-            }
+            }*/
         }
         print(_animator.GetBool("isJumping"));
             /*if (gamepad.aButton.wasPressedThisFrame)
