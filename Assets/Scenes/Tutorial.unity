@@ -27837,6 +27837,7 @@ MonoBehaviour:
   _speed: 2000
   _JumpForce: 1500
   AllowInput: 1
+  Pause: 1
   FreezeConstraints: 0
   SlowTime: 0
   Nogravity: 1
@@ -27858,6 +27859,7 @@ MonoBehaviour:
   ApplyCooldown: 0
   InputDelay: 0.5
   _animator: {fileID: 0}
+  pause: 0
 --- !u!114 &919132147799348324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29654,6 +29656,7 @@ MonoBehaviour:
   _speed: 2000
   _JumpForce: 1500
   AllowInput: 1
+  Pause: 1
   FreezeConstraints: 0
   SlowTime: 0
   Nogravity: 1
@@ -29675,6 +29678,7 @@ MonoBehaviour:
   ApplyCooldown: 0
   InputDelay: 0.5
   _animator: {fileID: 0}
+  pause: 0
 --- !u!114 &4911575025661023771
 MonoBehaviour:
   m_ObjectHideFlags: 0

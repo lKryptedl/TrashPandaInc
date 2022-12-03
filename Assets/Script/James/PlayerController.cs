@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed = 500f;
     [SerializeField] private float _JumpForce;
     public bool AllowInput = true;
-    private bool Pause = true;
+    public bool Pause = true;
     public bool FreezeConstraints = false;
     PlayerControls controls;
     Vector2 move;
@@ -41,7 +41,8 @@ public class PlayerController : MonoBehaviour
     public bool ApplyCooldown;
     public float InputDelay = 0.5f;
     public Animator _animator;
-    private bool isGrounded; 
+    private bool isGrounded;
+    public float pause;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -149,8 +150,27 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1f;
         }
 
+        print(Time.timeScale);
         //Sprint Option on left stick pressed in. Reverts to ordinary speed when left stick pressed is released.
         Gamepad gamepad = Gamepad.current;
+        if (Pause)
+        {
+            if (gamepad == null)
+            {
+                print("Pause as no controller detected");
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+            
+        }
+        if (!Pause)
+        {
+            Time.timeScale = 0;
+        }
+        
         if (gamepad.leftStickButton.wasPressedThisFrame)
         {
             _speed *= SpeedMultiplier;
@@ -161,6 +181,7 @@ public class PlayerController : MonoBehaviour
             _speed /= SpeedMultiplier;
 
         }
+        
 
 
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
@@ -276,12 +297,10 @@ public class PlayerController : MonoBehaviour
         //Pause the game by stopping time. Will later have UI.
         if (Pause)
         {
-            Time.timeScale = 0f;
             Pause = false;
         }
         else
         {
-            Time.timeScale = 1f;
             Pause = true;
         }
     }

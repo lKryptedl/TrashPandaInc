@@ -98,6 +98,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""4439e08b-4eef-46b2-8cbc-1a938bc708e1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -353,6 +362,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Rocket"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4999b3ec-e7cf-4bd4-8445-549029460cf4"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -369,6 +389,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Newactionmap_Look = m_Newactionmap.FindAction("Look", throwIfNotFound: true);
         m_Newactionmap_Change = m_Newactionmap.FindAction("Change", throwIfNotFound: true);
         m_Newactionmap_Rocket = m_Newactionmap.FindAction("Rocket", throwIfNotFound: true);
+        m_Newactionmap_Pause = m_Newactionmap.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -436,6 +457,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Newactionmap_Look;
     private readonly InputAction m_Newactionmap_Change;
     private readonly InputAction m_Newactionmap_Rocket;
+    private readonly InputAction m_Newactionmap_Pause;
     public struct NewactionmapActions
     {
         private @PlayerControls m_Wrapper;
@@ -448,6 +470,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Newactionmap_Look;
         public InputAction @Change => m_Wrapper.m_Newactionmap_Change;
         public InputAction @Rocket => m_Wrapper.m_Newactionmap_Rocket;
+        public InputAction @Pause => m_Wrapper.m_Newactionmap_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -481,6 +504,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Rocket.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnRocket;
                 @Rocket.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnRocket;
                 @Rocket.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnRocket;
+                @Pause.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
             if (instance != null)
@@ -509,6 +535,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Rocket.started += instance.OnRocket;
                 @Rocket.performed += instance.OnRocket;
                 @Rocket.canceled += instance.OnRocket;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -523,5 +552,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnChange(InputAction.CallbackContext context);
         void OnRocket(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
