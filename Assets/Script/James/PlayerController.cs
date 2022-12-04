@@ -247,7 +247,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", false);
+            _animator.SetBool("isInAir", true);
         }
             /*if (gamepad.aButton.wasPressedThisFrame)
             {

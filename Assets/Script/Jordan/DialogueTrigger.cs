@@ -25,7 +25,8 @@ public class DialogueTrigger : MonoBehaviour
             print("Showing");
             DialogueShowing = true;
             //UIPop.SetBool("DialogueOpen",true);
-
+            Destroy(gameObject);
+            
             //Destroy(gameObject, 5);
         }
     }
