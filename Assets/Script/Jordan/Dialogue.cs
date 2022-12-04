@@ -10,12 +10,18 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
 
+    public Animator UIPop;
+    public GameObject UiCanvas;
+
     private int index;
     // Start is called before the first frame update
     void Start()
     {
         textComponment.text = string.Empty;
         StartDialogue();
+        UIPop = UiCanvas.GetComponent<Animator>();
+        UIPop.SetBool("DialogueOpen",true);
+
     }
 
     // Update is called once per frame
@@ -30,17 +36,20 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
+                
                 StopAllCoroutines();
                 textComponment.text = lines[index];
+                
             }
         }
     }
 
     void StartDialogue()
     {
+        
         index = 0;
         StartCoroutine(TypeLine());
-
+        
     }
 
     IEnumerator TypeLine()
