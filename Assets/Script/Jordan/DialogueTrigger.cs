@@ -5,7 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] public GameObject Canvas;
-    public bool isShowing = false;
+    public static bool DialogueShowing = false;
 
     //public Animator UIPop;
     //public GameObject UiCanvas;
@@ -22,8 +22,9 @@ public class DialogueTrigger : MonoBehaviour
         {
             print("Hello!");
             Canvas.SetActive(true);
+            print("Showing");
+            DialogueShowing = true;
             //UIPop.SetBool("DialogueOpen",true);
-            isShowing = true;
 
             //Destroy(gameObject, 5);
         }

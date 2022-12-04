@@ -81,8 +81,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         //apply movement on fixedupdate as it is better for physics than update
-        MovePlayer();
-        
+        if (DialogueTrigger.DialogueShowing == false)
+        {
+            MovePlayer();
+        }
 
         /*if (Mathf.Abs(_rb.velocity.y) > 0.001f)
         {
@@ -93,44 +95,44 @@ public class PlayerController : MonoBehaviour
     }
     private void MovePlayer()
     {
-        if (Mode == true)
-        {
-            //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
-            Vector3 ForwardMovement = Camera.main.transform.forward;
-            Vector3 RightMovement = Camera.main.transform.right;
-            ForwardMovement.y = 0;
-            RightMovement.y = 0;
-            Vector3 ForwardMovementY = move.y * ForwardMovement;
-            Vector3 ForwardMovementX = move.x * RightMovement;
-            Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-            _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
-
-            if (MovementBasedOnCamera == Vector3.zero)
+            if (Mode == true)
             {
-                return;
-            }
-            Quaternion targetRotation = FollowPoint.rotation;
-            targetRotation.z = 0;
-            targetRotation.x = 0;
-            _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-            /*
-            Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
-            targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
-            _rb.MoveRotation(targetRotation);
-            */
-        }
-        else
-        {
-            Vector3 ForwardMovement = Camera.main.transform.forward;
-            Vector3 RightMovement = Camera.main.transform.right;
-            ForwardMovement.y = 0;
-            RightMovement.y = 0;
-            Vector3 ForwardMovementY = move.y * ForwardMovement;
-            Vector3 ForwardMovementX = move.x * RightMovement;
-            Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-            _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
-        }
+                //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
+                Vector3 ForwardMovement = Camera.main.transform.forward;
+                Vector3 RightMovement = Camera.main.transform.right;
+                ForwardMovement.y = 0;
+                RightMovement.y = 0;
+                Vector3 ForwardMovementY = move.y * ForwardMovement;
+                Vector3 ForwardMovementX = move.x * RightMovement;
+                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+                _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
 
+                if (MovementBasedOnCamera == Vector3.zero)
+                {
+                    return;
+                }
+                Quaternion targetRotation = FollowPoint.rotation;
+                targetRotation.z = 0;
+                targetRotation.x = 0;
+                _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+                /*
+                Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
+                targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
+                _rb.MoveRotation(targetRotation);
+                */
+            }
+            else
+            {
+                Vector3 ForwardMovement = Camera.main.transform.forward;
+                Vector3 RightMovement = Camera.main.transform.right;
+                ForwardMovement.y = 0;
+                RightMovement.y = 0;
+                Vector3 ForwardMovementY = move.y * ForwardMovement;
+                Vector3 ForwardMovementX = move.x * RightMovement;
+                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+                _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
+            }
+        
     }
     private void Update()
     {
@@ -151,7 +153,7 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1f;
         }
 
-        print(Time.timeScale);
+        //print(Time.timeScale);
         //Sprint Option on left stick pressed in. Reverts to ordinary speed when left stick pressed is released.
         Gamepad gamepad = Gamepad.current;
         if (Pause)
@@ -182,8 +184,6 @@ public class PlayerController : MonoBehaviour
             _speed /= SpeedMultiplier;
 
         }
-        
-
 
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
         {
@@ -198,41 +198,56 @@ public class PlayerController : MonoBehaviour
         //print(_rb.velocity.y);
 
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
-        if (Mathf.Abs(_rb.velocity.y) < 0.001f)
+        if (DialogueTrigger.DialogueShowing == false)
         {
-            canjump = true;
-            _animator.SetBool("isJumping", false);
-            _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", true);
-            if (move.x != 0 || move.y != 0)
+            if (Mathf.Abs(_rb.velocity.y) < 0.001f)
             {
-                _animator.SetBool("isWalking", true);
+                canjump = true;
+                _animator.SetBool("isJumping", false);
+                _animator.SetBool("isGrounded", true);
+                _animator.SetBool("isInAir", true);
+                if (move.x != 0 || move.y != 0)
+                {
+                    _animator.SetBool("isWalking", true);
+                }
+                else
+                {
+                    _rb.velocity = Vector3.zero;
+                    _animator.SetBool("isWalking", false);
+                }
             }
             else
             {
-                _rb.velocity = Vector3.zero;
+                canjump = false;
                 _animator.SetBool("isWalking", false);
+                _animator.SetBool("isJumping", true);
+                _animator.SetBool("isGrounded", false);
+                _animator.SetBool("isInAir", false);
+
+
+
+                /* timer += Time.deltaTime;
+                 if (timer < timerpassed)
+                 {
+                     _animator.SetBool("isJumping", true);
+                 }
+                 else
+                 {
+                    _animator.SetBool("isJumping", false);
+                 }*/
             }
         }
-        else
+
+        if(DialogueTrigger.DialogueShowing == true)
         {
-            canjump = false;
-            _animator.SetBool("isWalking", false);
-            _animator.SetBool("isJumping", true);
-            _animator.SetBool("isGrounded", false);
-            _animator.SetBool("isInAir", false);
-
-
-
-           /* timer += Time.deltaTime;
-            if (timer < timerpassed)
+            if(Mathf.Abs(_rb.velocity.y) < 0.001f)
             {
-                _animator.SetBool("isJumping", true);
+                _rb.velocity = Vector3.zero;
             }
-            else
-            {
-               _animator.SetBool("isJumping", false);
-            }*/
+            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isJumping", false);
+            _animator.SetBool("isGrounded", true);
+            _animator.SetBool("isInAir", false);
         }
             /*if (gamepad.aButton.wasPressedThisFrame)
             {
@@ -310,9 +325,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump()
     {
         //If no velocity on players y axis apply a force to the y axis on A button pressed.
-        GameObject CantJumpWhenDialogueShows = GameObject.FindGameObjectWithTag("Dialogue");
-        DialogueTrigger CantJumpWhenDialogueShowsScript = CantJumpWhenDialogueShows.GetComponent<DialogueTrigger>();
-        if (CantJumpWhenDialogueShowsScript.isShowing == false)
+        if(DialogueTrigger.DialogueShowing == false)
         {
             if (canjump)
             {
