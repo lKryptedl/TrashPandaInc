@@ -9,6 +9,7 @@ TagManager:
   - Rubbish
   - Ground
   - Wall
+  - Dialogue
   layers:
   - Default
   - TransparentFX

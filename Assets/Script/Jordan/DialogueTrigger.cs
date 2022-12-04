@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] public GameObject Canvas;
+    public bool isShowing = false;
     
     
     private void OnTriggerEnter(Collider other)
@@ -13,7 +14,8 @@ public class DialogueTrigger : MonoBehaviour
         {
             print("Hello!");
             Canvas.SetActive(true);
-            
+            isShowing = true;
+
             //Destroy(gameObject, 5);
         }
     }

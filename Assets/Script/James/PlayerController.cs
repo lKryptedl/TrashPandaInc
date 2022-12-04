@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public Animator _animator;
     private bool isGrounded;
     public float pause;
+    public bool canjump;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -199,6 +200,7 @@ public class PlayerController : MonoBehaviour
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
         if (Mathf.Abs(_rb.velocity.y) < 0.001f)
         {
+            canjump = true;
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isGrounded", true);
             _animator.SetBool("isInAir", true);
@@ -214,6 +216,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            canjump = false;
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", true);
             _animator.SetBool("isGrounded", false);
@@ -307,12 +310,17 @@ public class PlayerController : MonoBehaviour
     public void OnJump()
     {
         //If no velocity on players y axis apply a force to the y axis on A button pressed.
-        if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+        GameObject CantJumpWhenDialogueShows = GameObject.FindGameObjectWithTag("Dialogue");
+        DialogueTrigger CantJumpWhenDialogueShowsScript = CantJumpWhenDialogueShows.GetComponent<DialogueTrigger>();
+        if (CantJumpWhenDialogueShowsScript.isShowing == false)
         {
-            //_animator.SetBool("isWalking", false);
-            //_animator.SetBool("isJumping", true);
-            Vector3 Jump = new(0f, _JumpForce);
-            _rb.AddForce(Jump);
+            if (canjump)
+            {
+                //_animator.SetBool("isWalking", false);
+                //_animator.SetBool("isJumping", true);
+                Vector3 Jump = new(0f, _JumpForce);
+                _rb.AddForce(Jump);
+            }
         }
     }
     public void OnGravity()
