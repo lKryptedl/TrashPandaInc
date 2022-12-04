@@ -8,6 +8,7 @@ TagManager:
   - BigRubbish
   - Rubbish
   - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
