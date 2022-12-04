@@ -63,6 +63,10 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            GameObject StopJump = GameObject.FindGameObjectWithTag("Dialogue");
+            DialogueTrigger StopJumpScript = StopJump.GetComponent<DialogueTrigger>();
+            StopJumpScript.isShowing = false;
+
         }
     }
 }

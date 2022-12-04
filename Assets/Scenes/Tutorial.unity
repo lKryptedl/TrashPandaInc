@@ -4423,7 +4423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405523003}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 234.74, y: -3.34, z: 170.08}
+  m_LocalPosition: {x: 234.74, y: -3.34, z: 138.5}
   m_LocalScale: {x: 2.6328495, y: 2.479411, z: 2.669831}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5857,6 +5857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 447950476}
+  isShowing: 0
 --- !u!65 &506344537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6265,6 +6266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 1008971843}
+  isShowing: 0
 --- !u!65 &586045099
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18884,6 +18886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 788697832}
+  isShowing: 0
 --- !u!1001 &1252299982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26975,7 +26978,7 @@ GameObject:
   - component: {fileID: 2084513753}
   m_Layer: 0
   m_Name: Trigger Box 1 (3)
-  m_TagString: Untagged
+  m_TagString: Dialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26988,7 +26991,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084513751}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 241.4, y: -4.67, z: 175.18}
+  m_LocalPosition: {x: 252, y: -4.67, z: 175.18}
   m_LocalScale: {x: 5.682695, y: 4.532678, z: 27.279085}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27008,6 +27011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Canvas: {fileID: 479803958}
+  isShowing: 0
 --- !u!65 &2084513754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27028,7 +27032,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084513751}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -27868,6 +27872,7 @@ MonoBehaviour:
   InputDelay: 0.5
   _animator: {fileID: 0}
   pause: 0
+  canjump: 0
 --- !u!114 &919132147799348324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29687,6 +29692,7 @@ MonoBehaviour:
   InputDelay: 0.5
   _animator: {fileID: 0}
   pause: 0
+  canjump: 0
 --- !u!114 &4911575025661023771
 MonoBehaviour:
   m_ObjectHideFlags: 0
