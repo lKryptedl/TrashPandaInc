@@ -6,6 +6,14 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] public GameObject Canvas;
     public bool isShowing = false;
+
+    //public Animator UIPop;
+    //public GameObject UiCanvas;
+    
+    void Start()
+    {
+        //UIPop = UiCanvas.GetComponent<Animator>();
+    }
     
     
     private void OnTriggerEnter(Collider other)
@@ -14,6 +22,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             print("Hello!");
             Canvas.SetActive(true);
+            //UIPop.SetBool("DialogueOpen",true);
             isShowing = true;
 
             //Destroy(gameObject, 5);
