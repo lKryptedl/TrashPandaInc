@@ -114,7 +114,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 0.33962262, g: 0.33481663, b: 0.33481663, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
+    - _FresnelColor: {r: 0.13207549, g: 0.13207549, b: 0.13207549, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _SpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
