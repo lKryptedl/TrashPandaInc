@@ -366,7 +366,7 @@ public class PlayerController : MonoBehaviour
     {
         Change();
     }
-    void Change()
+    public void Change()
     {
         Mode = !Mode;
         if (Mode == true)
