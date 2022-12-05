@@ -14,7 +14,8 @@ public class Trigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("loading menu");
-            SceneManager.LoadScene(SceneToLoad);
+            LoadingScript.leveltoload = SceneToLoad;
+            SceneManager.LoadScene("Loading");
             Player.GetComponent<PlayerController>().Change();
         }
     }
