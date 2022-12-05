@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SkyboxRotation : MonoBehaviour
 {
-    public float rotationspeed = 1.2f;
+    public float SpeedOfRotation;
 
     // Update is called once per frame
     void Update()
     {
-        RenderSettings.skybox.SetFloat("_Rotation", Time.time * rotationspeed);
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * SpeedOfRotation);
     }
 }

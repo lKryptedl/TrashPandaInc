@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LimitFramerate : MonoBehaviour
 {
-    public int TargetFramerate = 60;
+    public const int TargetFramerate = 60;
     private void Awake()
     {
         DontDestroyOnLoad(this);

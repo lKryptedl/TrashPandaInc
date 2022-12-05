@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     public bool ApplyCooldown;
     public float InputDelay = 0.5f;
     public Animator _animator;
-    private bool isGrounded;
+    private bool OnGround;
     public float pause;
     public static bool canjump;
     void Start()
@@ -54,14 +54,14 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(("Ground")))
         {
-            isGrounded = true;
+            OnGround = true;
         }
     }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag(("Ground")))
         {
-            isGrounded = false;
+            OnGround = false;
         }
     }
     private void Awake()
@@ -198,14 +198,14 @@ public class PlayerController : MonoBehaviour
         //print(_rb.velocity.y);
 
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
-        if (DialogueTrigger.DialogueShowing == false)
-        {
-            if (Mathf.Abs(_rb.velocity.y) < 0.001f)
+            if (Mathf.Abs(_rb.velocity.y) < 0.01f)
             {
                 canjump = true;
                 _animator.SetBool("isJumping", false);
                 _animator.SetBool("isGrounded", true);
                 _animator.SetBool("isInAir", true);
+            if (!DialogueTrigger.DialogueShowing)
+            {
                 if (move.x != 0 || move.y != 0)
                 {
                     _animator.SetBool("isWalking", true);
@@ -216,38 +216,19 @@ public class PlayerController : MonoBehaviour
                     _animator.SetBool("isWalking", false);
                 }
             }
-            else
+            
+            }
+            if(Mathf.Abs(_rb.velocity.y) > 0.5f)
             {
                 canjump = false;
                 _animator.SetBool("isWalking", false);
                 _animator.SetBool("isJumping", true);
                 _animator.SetBool("isGrounded", false);
                 _animator.SetBool("isInAir", false);
-
-
-
-                /* timer += Time.deltaTime;
-                 if (timer < timerpassed)
-                 {
-                     _animator.SetBool("isJumping", true);
-                 }
-                 else
-                 {
-                    _animator.SetBool("isJumping", false);
-                 }*/
             }
-        }
-
-        if(DialogueTrigger.DialogueShowing == true)
+        if (canjump)
         {
-            if(Mathf.Abs(_rb.velocity.y) < 0.001f)
-            {
-                _rb.velocity = Vector3.zero;
-            }
-            _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", false);
-            _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", true);
         }
             /*if (gamepad.aButton.wasPressedThisFrame)
             {
@@ -366,7 +347,7 @@ public class PlayerController : MonoBehaviour
     {
         Change();
     }
-    void Change()
+    public void Change()
     {
         Mode = !Mode;
         if (Mode == true)
