@@ -198,14 +198,14 @@ public class PlayerController : MonoBehaviour
         //print(_rb.velocity.y);
 
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
-        if (DialogueTrigger.DialogueShowing == false)
-        {
             if (Mathf.Abs(_rb.velocity.y) < 0.001f)
             {
                 canjump = true;
                 _animator.SetBool("isJumping", false);
                 _animator.SetBool("isGrounded", true);
                 _animator.SetBool("isInAir", true);
+            if (!DialogueTrigger.DialogueShowing)
+            {
                 if (move.x != 0 || move.y != 0)
                 {
                     _animator.SetBool("isWalking", true);
@@ -215,6 +215,8 @@ public class PlayerController : MonoBehaviour
                     _rb.velocity = Vector3.zero;
                     _animator.SetBool("isWalking", false);
                 }
+            }
+            
             }
             else
             {
@@ -236,19 +238,7 @@ public class PlayerController : MonoBehaviour
                     _animator.SetBool("isJumping", false);
                  }*/
             }
-        }
-
-        if(DialogueTrigger.DialogueShowing == true)
-        {
-            if(Mathf.Abs(_rb.velocity.y) < 0.001f)
-            {
-                _rb.velocity = Vector3.zero;
-            }
-            _animator.SetBool("isWalking", false);
-            _animator.SetBool("isJumping", false);
-            _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", true);
-        }
+        
             /*if (gamepad.aButton.wasPressedThisFrame)
             {
                 
@@ -366,7 +356,7 @@ public class PlayerController : MonoBehaviour
     {
         Change();
     }
-    void Change()
+    public void Change()
     {
         Mode = !Mode;
         if (Mode == true)
