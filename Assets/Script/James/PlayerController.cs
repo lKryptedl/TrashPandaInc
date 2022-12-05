@@ -237,17 +237,18 @@ public class PlayerController : MonoBehaviour
                  }*/
             }
         }
-
+        print(_animator.GetBool("isGrounded"));
         if(DialogueTrigger.DialogueShowing == true)
         {
             if(Mathf.Abs(_rb.velocity.y) < 0.001f)
             {
                 _rb.velocity = Vector3.zero;
+
+                _animator.SetBool("isWalking", false);
+                _animator.SetBool("isJumping", false);
+                _animator.SetBool("isGrounded", true);
+                _animator.SetBool("isInAir", true);
             }
-            _animator.SetBool("isWalking", false);
-            _animator.SetBool("isJumping", false);
-            _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", true);
         }
             /*if (gamepad.aButton.wasPressedThisFrame)
             {
