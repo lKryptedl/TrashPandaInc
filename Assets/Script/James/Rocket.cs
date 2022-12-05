@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    public GameObject rubbish;
+    public GameObject rubbish, Player;
 
     void Start()
     {
@@ -30,7 +30,18 @@ public class Rocket : MonoBehaviour
         }
         else if (!other.CompareTag("Player")) //Collision destroying rocket
         {
+            if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.canjump == false) 
+            {
+                Debug.Log("yeet");
+                Vector3 direction = Player.transform.position - transform.position;
+                direction.Normalize();
+                Player.GetComponent<Rigidbody>().AddForce(direction * 5000f);
+            }
             Destroy(gameObject);
         }
+    }
+    public void setObject(GameObject player)
+    {
+        Player = player;
     }
 }

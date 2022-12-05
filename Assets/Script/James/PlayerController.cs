@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public Animator _animator;
     private bool isGrounded;
     public float pause;
-    public bool canjump;
+    public static bool canjump;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();

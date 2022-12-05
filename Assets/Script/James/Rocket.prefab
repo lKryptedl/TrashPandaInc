@@ -128,4 +128,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b079f7bb1a79d1544991bfdae245de89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rubbish: {fileID: 8058542260377076183, guid: af0b780832f904043bf1f068a1fb1851, type: 3}
+  rubbish: {fileID: 8058542260377076183, guid: 195ca270f6928864797398277e31eead, type: 3}
+  Player: {fileID: 4511371377750543187, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
