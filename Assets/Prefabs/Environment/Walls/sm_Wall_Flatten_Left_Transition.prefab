@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8672567017550384156}
   - component: {fileID: 5761509466853016505}
   - component: {fileID: 7498503397579159411}
+  - component: {fileID: 5363836080338144060}
   m_Layer: 0
   m_Name: sm_Wall_Flatten_Left_Transition
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5363836080338144060
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291396759426193062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7210754280744908428, guid: 5b633bb190e56e246b0289ba4fffa49f, type: 3}
