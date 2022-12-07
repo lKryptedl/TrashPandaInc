@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private bool OnGround;
     public float pause;
     public static bool canjump;
+    public float grounddrag;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -152,7 +153,14 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 1f;
         }
-
+        if (OnGround)
+        {
+            _rb.drag = grounddrag;
+        }
+        else
+        {
+            _rb.drag = 0;
+        }
         //print(Time.timeScale);
         //Sprint Option on left stick pressed in. Reverts to ordinary speed when left stick pressed is released.
         Gamepad gamepad = Gamepad.current;
