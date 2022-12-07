@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
     public static bool Mode = false;
-    public GameObject Gun, aimCam, moveCam;
+    public GameObject Gun, aimCam, moveCam, Reactor;
     [Header("Changes The Speed of low gravity in the air")]
     public float SlowDownTime;
     [Header("How much more you can jump in low gravity")]
@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
     public float pause;
     public static bool canjump;
     public float grounddrag;
+    public float distance = 50;
+    public float countdown;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -285,8 +287,17 @@ public class PlayerController : MonoBehaviour
         if (ApplyCooldown)
         {
             LowGravityDuration = 0;
-            CooldownLowGravity += Time.deltaTime;
-
+            distance = Vector3.Distance(Reactor.transform.position, transform.position);
+            if (distance < 50)
+            {
+                countdown = Time.deltaTime / (50 - distance);
+                countdown = Mathf.Clamp(countdown, 0.0005f, Time.deltaTime);
+            }
+            else
+            {
+                countdown = Time.deltaTime;
+            }
+            CooldownLowGravity += countdown;
             if (CooldownLowGravity < MaxCooldownLowGravity)
             {
                 CanChange = false;
