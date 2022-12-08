@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
     public float grounddrag;
     public float distance = 50;
     public float countdown;
+    public Transform maincamera;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -100,14 +101,10 @@ public class PlayerController : MonoBehaviour
     {
             if (Mode == true)
             {
-                //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
-                Vector3 ForwardMovement = Camera.main.transform.forward;
-                Vector3 RightMovement = Camera.main.transform.right;
-                ForwardMovement.y = 0;
-                RightMovement.y = 0;
-                Vector3 ForwardMovementY = move.y * ForwardMovement;
-                Vector3 ForwardMovementX = move.x * RightMovement;
-                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+            //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
+                Vector3 Movement = new(move.x, 0, move.y);
+                Vector3 MovementBasedOnCamera = maincamera.TransformDirection(Movement);
+                MovementBasedOnCamera.y = 0;
                 _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
 
                 if (MovementBasedOnCamera == Vector3.zero)
@@ -126,14 +123,10 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Vector3 ForwardMovement = Camera.main.transform.forward;
-                Vector3 RightMovement = Camera.main.transform.right;
-                ForwardMovement.y = 0;
-                RightMovement.y = 0;
-                Vector3 ForwardMovementY = move.y * ForwardMovement;
-                Vector3 ForwardMovementX = move.x * RightMovement;
-                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-                _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
+            Vector3 Movement = new(move.x, 0, move.y);
+            Vector3 MovementBasedOnCamera = maincamera.TransformDirection(Movement);
+            MovementBasedOnCamera.y = 0;
+            _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
             }
         
     }
