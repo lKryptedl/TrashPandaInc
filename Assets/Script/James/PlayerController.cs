@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     public static bool canjump;
     public float grounddrag;
     public float distance = 50;
+    public float maxReactorDistance;
     public float countdown;
     public Transform maincamera;
     void Start()
@@ -281,9 +282,9 @@ public class PlayerController : MonoBehaviour
         {
             LowGravityDuration = 0;
             distance = Vector3.Distance(Reactor.transform.position, transform.position);
-            if (distance < 50)
+            if (distance < maxReactorDistance)
             {
-                countdown = Time.deltaTime / (50 - distance);
+                countdown = Time.deltaTime / (maxReactorDistance - distance);
                 countdown = Mathf.Clamp(countdown, 0.0005f, Time.deltaTime);
             }
             else
