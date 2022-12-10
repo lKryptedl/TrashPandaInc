@@ -277,11 +277,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-
+        distance = Vector3.Distance(Reactor.transform.position, transform.position);
         if (ApplyCooldown)
         {
             LowGravityDuration = 0;
-            distance = Vector3.Distance(Reactor.transform.position, transform.position);
+            //distance = Vector3.Distance(Reactor.transform.position, transform.position);
             if (distance < maxReactorDistance)
             {
                 countdown = Time.deltaTime / (maxReactorDistance - distance);
