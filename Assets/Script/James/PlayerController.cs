@@ -103,44 +103,46 @@ public class PlayerController : MonoBehaviour
     }
     private void MovePlayer()
     {
-            if (Mode == true)
-            {
-                //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
-                Vector3 ForwardMovement = Camera.main.transform.forward;
-                Vector3 RightMovement = Camera.main.transform.right;
-                ForwardMovement.y = 0;
-                RightMovement.y = 0;
-                Vector3 ForwardMovementY = move.y * ForwardMovement;
-                Vector3 ForwardMovementX = move.x * RightMovement;
-                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-                _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
+        if (Mode == true)
+        {
+            //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
+            Vector3 ForwardMovement = Camera.main.transform.forward;
+            Vector3 RightMovement = Camera.main.transform.right;
+            ForwardMovement.y = 0;
+            RightMovement.y = 0;
+            Vector3 ForwardMovementY = move.y * ForwardMovement;
+            Vector3 ForwardMovementX = move.x * RightMovement;
+            Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+            //_rb.AddForce(_speed * 10 * MovementBasedOnCamera.normalized, ForceMode.Impulse);
+            _rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
 
-                if (MovementBasedOnCamera == Vector3.zero)
-                {
-                    return;
-                }
-                Quaternion targetRotation = FollowPoint.rotation;
-                targetRotation.z = 0;
-                targetRotation.x = 0;
-                _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-                /*
-                Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
-                targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
-                _rb.MoveRotation(targetRotation);
-                */
-            }
-            else
+            if (MovementBasedOnCamera == Vector3.zero)
             {
-                Vector3 ForwardMovement = Camera.main.transform.forward;
-                Vector3 RightMovement = Camera.main.transform.right;
-                ForwardMovement.y = 0;
-                RightMovement.y = 0;
-                Vector3 ForwardMovementY = move.y * ForwardMovement;
-                Vector3 ForwardMovementX = move.x * RightMovement;
-                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-                _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
+                return;
             }
-        
+            Quaternion targetRotation = FollowPoint.rotation;
+            targetRotation.z = 0;
+            targetRotation.x = 0;
+            _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            /*
+            Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
+            targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
+            _rb.MoveRotation(targetRotation);
+            */
+        }
+        else
+        {
+            Vector3 ForwardMovement = Camera.main.transform.forward;
+            Vector3 RightMovement = Camera.main.transform.right;
+            ForwardMovement.y = 0;
+            RightMovement.y = 0;
+            Vector3 ForwardMovementY = move.y * ForwardMovement;
+            Vector3 ForwardMovementX = move.x * RightMovement;
+            Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+            // _rb.AddForce(MovementBasedOnCamera.normalized * _speed * 10, ForceMode.Force);
+            _rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
+        }
+
     }
     private void Update()
     {
