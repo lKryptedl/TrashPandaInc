@@ -7,13 +7,16 @@ public class Trigger : MonoBehaviour
 {
     
     public string SceneToLoad;
+    public GameObject Player;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-             Debug.Log("loading menu");
-            SceneManager.LoadScene(SceneToLoad);
+            Debug.Log("loading menu");
+            LoadingScript.leveltoload = SceneToLoad;
+            SceneManager.LoadScene("Loading");
+            Player.GetComponent<PlayerController>().Change();
         }
     }
 

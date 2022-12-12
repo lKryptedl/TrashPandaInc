@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     public int RubbishStored = 5;
     public bool suck = false;
 
-    public int shotSpeed = 10;
+    public int shotSpeed = 20;
     public int rocketCount = 10;
     public Rigidbody rubbish, rocket;
 
@@ -16,6 +16,7 @@ public class Shooting : MonoBehaviour
     bool Hit;
     public static List<GameObject>  Balls = new List<GameObject>();
     GameObject Remove;
+    public GameObject Player;
 
     void Update()
     {
@@ -25,8 +26,13 @@ public class Shooting : MonoBehaviour
             {
                 foreach (GameObject body in Balls)
                 {
-                    body.GetComponent<Rigidbody>().AddForce((transform.position - body.transform.position) * 150f * Time.fixedDeltaTime);
-                    if (Vector3.Distance(transform.position, body.transform.position) < 0.75)
+                    body.GetComponent<Rigidbody>().AddForce((transform.position - body.transform.position) * 125f * Time.fixedDeltaTime);
+                    if (Vector3.Distance(transform.position, body.transform.position) < 3)
+                    {
+                        body.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        body.transform.position = Vector3.Slerp(body.transform.position, transform.position, 10f * Time.fixedDeltaTime);
+                    }
+                    if (Vector3.Distance(transform.position, body.transform.position) < 1)
                     {
                         Remove = body;
                     }
@@ -70,11 +76,12 @@ public class Shooting : MonoBehaviour
         {
             Rigidbody shot = (Rigidbody)Instantiate(rocket, transform.position, transform.rotation * Quaternion.Euler(90f, 0f, 0f));
             shot.velocity = transform.forward * shotSpeed;
+            shot.GetComponent<Rocket>().setObject(Player);
             rocketCount--;
         }
         else
         {
-            Debug.Log("No Rockets Ledft");
+            Debug.Log("No Rockets Left");
         }
     }
 

@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Intro Anim.unity
-    guid: 5f370a816b04ebd47953b930809236f9
-  - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 51b03dfd8125eae4fa66b59521ec0a9d
   - enabled: 1
@@ -18,18 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 4f1cc4f78ba49004f805d1f186fde950
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: 
-    guid: b1fc2de485d5c1d449d22c34021138e3
-  - enabled: 1
-    path: Assets/Scenes/TutorialSelect.unity
-    guid: fce60929d14f9b648a17595cbdcdc8ed
-  - enabled: 1
-    path: Assets/Scenes/SuckAndShoot.unity
-    guid: 1cd5a641c3d5082409e887647edd9178
-  - enabled: 1
     path: Assets/Scenes/ReactorBridgeBlockout.unity
     guid: c80912e61f30f7942911a9968993a99a
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: b61041cb58aa5a64ab5d110b520e9a01
   m_configObjects: {}

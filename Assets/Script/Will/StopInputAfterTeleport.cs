@@ -5,9 +5,9 @@ using UnityEngine;
 public class StopInputAfterTeleport : MonoBehaviour
 {
     private float TimeElapsed;
-    private float MaxTime = 2f;
+    private readonly float MaxTime = 2f;
     PlayerController FreezeInput;
-    public bool isTeleported;
+    public static bool isTeleported;
     private void Start()
     {
         GameObject StopMovement = GameObject.Find("Racoon");
@@ -25,8 +25,6 @@ public class StopInputAfterTeleport : MonoBehaviour
             TimeElapsed += Time.deltaTime;
             if (TimeElapsed > MaxTime)
             {
-                GameObject Teleporter = GameObject.FindGameObjectWithTag("Teleporter");
-                Teleport TeleportScript = Teleporter.GetComponent<Teleport>();
                 isTeleported = false;
                 FreezeInput.FreezeConstraints = false;
                 TimeElapsed = 0f;

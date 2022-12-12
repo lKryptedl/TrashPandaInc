@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Dialogue : MonoBehaviour
 {
@@ -9,18 +10,25 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
 
+    public Animator UIPop;
+    public GameObject UiCanvas;
+
     private int index;
     // Start is called before the first frame update
     void Start()
     {
         textComponment.text = string.Empty;
         StartDialogue();
+        UIPop = UiCanvas.GetComponent<Animator>();
+        UIPop.SetBool("DialogueOpen",true);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        Gamepad gamepad = Gamepad.current;
+        if(gamepad.aButton.wasPressedThisFrame) //change abutton to whatever button you want to skip.
         {
             if (textComponment.text == lines[index])
             {
@@ -28,17 +36,20 @@ public class Dialogue : MonoBehaviour
             }
             else
             {
+                
                 StopAllCoroutines();
                 textComponment.text = lines[index];
+                
             }
         }
     }
 
     void StartDialogue()
     {
+        
         index = 0;
         StartCoroutine(TypeLine());
-
+        
     }
 
     IEnumerator TypeLine()
@@ -61,6 +72,9 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            DialogueTrigger.DialogueShowing = false;
+
         }
     }
 }
+    

@@ -30,7 +30,7 @@ public class AiMovement : MonoBehaviour
 
     public void RandomLocation()
     { 
-        TargetLocation = Random.insideUnitSphere * 40f;
+        TargetLocation = Random.insideUnitSphere * 40f + transform.position;
         NavMeshHit hit;
         if (NavMesh.SamplePosition(TargetLocation, out hit, 1.0f, NavMesh.AllAreas))
         {
