@@ -30584,7 +30584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: shotSpeed
-      value: 150
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
@@ -30865,6 +30865,7 @@ MonoBehaviour:
   _animator: {fileID: 0}
   pause: 0
   grounddrag: 0
+  airdrag: 0
   distance: 50
   maxReactorDistance: 0
   countdown: 0
