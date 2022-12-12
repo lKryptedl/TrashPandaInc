@@ -317,6 +317,10 @@ public class PlayerController : MonoBehaviour
                     countdown = Time.deltaTime;
                 }
             }
+            else
+            {
+                countdown = Time.deltaTime;
+            }
             CooldownLowGravity += countdown;
             if (CooldownLowGravity < MaxCooldownLowGravity)
             {
