@@ -44,7 +44,10 @@ public class PlayerController : MonoBehaviour
     private bool OnGround;
     public float pause;
     public static bool canjump;
+    [Header("Drag for ground and air")]
     public float grounddrag;
+    public float airdrag;
+    [Header("Reactor")]
     public float distance = 50;
     public float maxReactorDistance;
     public float countdown;
@@ -162,7 +165,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            _rb.drag = 0;
+            _rb.drag = airdrag;
         }
         //print(Time.timeScale);
         //Sprint Option on left stick pressed in. Reverts to ordinary speed when left stick pressed is released.
@@ -195,7 +198,14 @@ public class PlayerController : MonoBehaviour
             _speed /= SpeedMultiplier;
 
         }
-
+        if (DialogueTrigger.DialogueShowing)
+        {
+            _rb.velocity = Vector3.zero;
+            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isJumping", false);
+            _animator.SetBool("isGrounded", true);
+            _animator.SetBool("isInAir", true);
+        }
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
         {
             //print("Animation Play");
