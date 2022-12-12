@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -294,15 +295,17 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        distance = Vector3.Distance(Reactor.transform.position, transform.position);
         if (ApplyCooldown)
         {
             LowGravityDuration = 0;
-            //distance = Vector3.Distance(Reactor.transform.position, transform.position);
-            if (distance < maxReactorDistance)
+            if (SceneManager.GetActiveScene().name == "ReactorBridgeBlockout")
             {
-                countdown = Time.deltaTime / (maxReactorDistance - distance);
-                countdown = Mathf.Clamp(countdown, 0.0005f, Time.deltaTime);
+                distance = Vector3.Distance(Reactor.transform.position, transform.position);
+                if (distance < maxReactorDistance)
+                {
+                    countdown = Time.deltaTime / (maxReactorDistance - distance);
+                    countdown = Mathf.Clamp(countdown, 0.0005f, Time.deltaTime);
+                }
             }
             else
             {
