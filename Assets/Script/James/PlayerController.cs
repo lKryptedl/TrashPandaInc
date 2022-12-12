@@ -297,6 +297,10 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        if (SceneManager.GetActiveScene().name == "ReactorBridgeBlockout")
+        {
+            distance = Vector3.Distance(Reactor.transform.position, transform.position);
+        }
         if (ApplyCooldown)
         {
             LowGravityDuration = 0;
@@ -308,10 +312,10 @@ public class PlayerController : MonoBehaviour
                     countdown = Time.deltaTime / (maxReactorDistance - distance);
                     countdown = Mathf.Clamp(countdown, 0.0005f, Time.deltaTime);
                 }
-            }
-            else
-            {
-                countdown = Time.deltaTime;
+                else
+                {
+                    countdown = Time.deltaTime;
+                }
             }
             CooldownLowGravity += countdown;
             if (CooldownLowGravity < MaxCooldownLowGravity)
