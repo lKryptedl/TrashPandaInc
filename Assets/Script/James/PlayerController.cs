@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
     [Header("How much more you can jump in low gravity")]
     public float JumpMultiplier;
     [Header("How much sprint multiplies ordinary movement")]
-    public float SpeedMultiplier;
+    public float RunSpeed;
+    public float walkSpeed;
     private bool CanChange = true;
     [Header("Duration of low gravity")]
     public bool CheckTimer = false;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     public float CooldownLowGravity;
     public float MaxCooldownLowGravity;
     public bool ApplyCooldown;
+    public bool Sprint;
     public float InputDelay = 0.5f;
     public Animator _animator;
     private bool OnGround;
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+        walkSpeed = _speed;
         Change();
     }
     private void OnCollisionEnter(Collision collision)
@@ -192,16 +195,18 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-        
-        if (gamepad.leftStickButton.wasPressedThisFrame)
+        if (Sprint)
         {
-            _speed *= SpeedMultiplier;
-
+            _speed = RunSpeed;
+            if(move.x ==0 && move.y==0)
+            {
+                print("Walk speed");
+                Sprint = false;
+            }
         }
-        if (gamepad.leftStickButton.wasReleasedThisFrame)
+        if (!Sprint)
         {
-            _speed /= SpeedMultiplier;
-
+            _speed = walkSpeed;
         }
         if (DialogueTrigger.DialogueShowing)
         {
@@ -211,6 +216,7 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isGrounded", true);
             _animator.SetBool("isInAir", true);
         }
+
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
         {
             //print("Animation Play");
@@ -346,6 +352,17 @@ public class PlayerController : MonoBehaviour
         else
         {
             Pause = true;
+        }
+    }
+    public void OnSprint()
+    {
+        if (Sprint)
+        {
+            Sprint = false;
+        }
+        else
+        {
+            Sprint = true;
         }
     }
     public void OnJump()
