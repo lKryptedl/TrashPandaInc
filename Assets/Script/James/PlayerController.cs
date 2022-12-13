@@ -114,8 +114,8 @@ public class PlayerController : MonoBehaviour
             Vector3 ForwardMovementX = move.x * RightMovement;
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             //_rb.AddForce(_speed * 10 * MovementBasedOnCamera.normalized, ForceMode.Impulse);
-            _rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
-
+            //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
+            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized;
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -140,8 +140,10 @@ public class PlayerController : MonoBehaviour
             Vector3 ForwardMovementX = move.x * RightMovement;
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             // _rb.AddForce(MovementBasedOnCamera.normalized * _speed * 10, ForceMode.Force);
-            _rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
+            //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
+            _rb.velocity =  _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized;
         }
+
 
     }
     private void Update()
