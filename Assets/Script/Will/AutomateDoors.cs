@@ -9,15 +9,12 @@ public class AutomateDoors : MonoBehaviour
     public Transform DoorLeft, DoorRight;
     private Vector3 velocity = Vector3.zero;
     public bool Move;
-    private Vector3 RightTarget, LeftTarget;
+    public Vector3 RightTarget, LeftTarget;
     private Vector3 OriginalPosLeft, OriginalPosRight;
-
     private void Start()
     {
         OriginalPosLeft = DoorLeft.transform.position;
         OriginalPosRight = DoorRight.transform.position;
-        RightTarget = DoorRight.transform.position + new Vector3(5, 0, 0);
-        LeftTarget = DoorLeft.transform.position + new Vector3(-5, 0, 0);
     }
 
     private void OnTriggerEnter(Collider other)
