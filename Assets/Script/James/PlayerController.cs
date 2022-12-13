@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             //_rb.AddForce(_speed * 10 * MovementBasedOnCamera.normalized, ForceMode.Impulse);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
-            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized;
+            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             // _rb.AddForce(MovementBasedOnCamera.normalized * _speed * 10, ForceMode.Force);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
-            _rb.velocity =  _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized;
+            _rb.velocity =  _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
         }
 
 
@@ -357,8 +357,8 @@ public class PlayerController : MonoBehaviour
             {
                 //_animator.SetBool("isWalking", false);
                 //_animator.SetBool("isJumping", true);
-                Vector3 Jump = new(0f, _JumpForce);
-                _rb.AddForce(Jump);
+                //Vector3 Jump = new(0f, _JumpForce);
+                _rb.AddForce(Vector3.up * _JumpForce);
             }
         }
     }
