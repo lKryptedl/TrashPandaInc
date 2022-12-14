@@ -57,6 +57,10 @@ public class PlayerController : MonoBehaviour
     [Header("Spherecast for if player is looking at button")]
     public float radius;
     public static bool ButtonHit = false;
+    public float SpherecastDistance;
+    [Header("Lower players speed when they are in the air")]
+    private float Movement;
+    public float SpeedinAir;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -100,6 +104,20 @@ public class PlayerController : MonoBehaviour
             MovePlayer();
         }
 
+        //Spherecast to see if player is facing direction of elevator button. After Testing will only run in scenes with elevators
+        Gamepad controller = Gamepad.current;
+        RaycastHit hit;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
+        if (Physics.SphereCast(transform.position, radius, fwd, out hit, SpherecastDistance))
+        {
+            if (hit.collider.gameObject.CompareTag("Button"))
+            {
+                if (controller.bButton.isPressed)
+                {
+                    ButtonHit = true;
+                }
+            }
+        }
         /*if (Mathf.Abs(_rb.velocity.y) > 0.001f)
         {
             _animator.SetBool("isWalking", false);
@@ -121,7 +139,16 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             //_rb.AddForce(_speed * 10 * MovementBasedOnCamera.normalized, ForceMode.Impulse);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
-            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            // _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+            {
+                Movement = _speed;                
+            }
+            else
+            {
+                Movement = SpeedinAir;
+            }
+            _rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.Impulse);
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -147,7 +174,16 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             // _rb.AddForce(MovementBasedOnCamera.normalized * _speed * 10, ForceMode.Force);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
-            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            //_rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+            {
+                Movement = _speed;
+            }
+            else
+            {
+                Movement = SpeedinAir;
+            }
+            _rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.Impulse);
         }
 
 
@@ -415,5 +451,12 @@ public class PlayerController : MonoBehaviour
             aimCam.SetActive(true);
             moveCam.SetActive(false);
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
+        Gizmos.DrawWireSphere(transform.position + fwd * 2, radius);
     }
 }
