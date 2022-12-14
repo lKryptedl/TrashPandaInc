@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisionCheck : MonoBehaviour
+public class ElevatorCollisionCheck : MonoBehaviour
 {
     public Transform player;
     public Transform Platform;
