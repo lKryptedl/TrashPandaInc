@@ -107,6 +107,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""228d32c0-5700-4305-b121-da7ace26e5dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -373,6 +382,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""021355eb-17ff-49db-ad8b-c0510e0dbec3"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -390,6 +410,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Newactionmap_Change = m_Newactionmap.FindAction("Change", throwIfNotFound: true);
         m_Newactionmap_Rocket = m_Newactionmap.FindAction("Rocket", throwIfNotFound: true);
         m_Newactionmap_Pause = m_Newactionmap.FindAction("Pause", throwIfNotFound: true);
+        m_Newactionmap_Sprint = m_Newactionmap.FindAction("Sprint", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -458,6 +479,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Newactionmap_Change;
     private readonly InputAction m_Newactionmap_Rocket;
     private readonly InputAction m_Newactionmap_Pause;
+    private readonly InputAction m_Newactionmap_Sprint;
     public struct NewactionmapActions
     {
         private @PlayerControls m_Wrapper;
@@ -471,6 +493,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Change => m_Wrapper.m_Newactionmap_Change;
         public InputAction @Rocket => m_Wrapper.m_Newactionmap_Rocket;
         public InputAction @Pause => m_Wrapper.m_Newactionmap_Pause;
+        public InputAction @Sprint => m_Wrapper.m_Newactionmap_Sprint;
         public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -507,6 +530,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnPause;
+                @Sprint.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnSprint;
             }
             m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
             if (instance != null)
@@ -538,6 +564,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
             }
         }
     }
@@ -553,5 +582,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnChange(InputAction.CallbackContext context);
         void OnRocket(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
     }
 }

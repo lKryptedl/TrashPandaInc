@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class PlayerController : MonoBehaviour
     [Header("How much more you can jump in low gravity")]
     public float JumpMultiplier;
     [Header("How much sprint multiplies ordinary movement")]
-    public float SpeedMultiplier;
+    public float RunSpeed;
+    public float walkSpeed;
     private bool CanChange = true;
     [Header("Duration of low gravity")]
     public bool CheckTimer = false;
@@ -39,12 +41,16 @@ public class PlayerController : MonoBehaviour
     public float CooldownLowGravity;
     public float MaxCooldownLowGravity;
     public bool ApplyCooldown;
+    public bool Sprint;
     public float InputDelay = 0.5f;
     public Animator _animator;
     private bool OnGround;
     public float pause;
     public static bool canjump;
+    [Header("Drag for ground and air")]
     public float grounddrag;
+    public float airdrag;
+    [Header("Reactor")]
     public float distance = 50;
     public float maxReactorDistance;
     public float countdown;
@@ -52,6 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+        walkSpeed = _speed;
         Change();
     }
     private void OnCollisionEnter(Collision collision)
@@ -99,44 +106,48 @@ public class PlayerController : MonoBehaviour
     }
     private void MovePlayer()
     {
-            if (Mode == true)
+        if (Mode == true)
+        {
+            //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
+            Vector3 ForwardMovement = Camera.main.transform.forward;
+            Vector3 RightMovement = Camera.main.transform.right;
+            ForwardMovement.y = 0;
+            RightMovement.y = 0;
+            Vector3 ForwardMovementY = move.y * ForwardMovement;
+            Vector3 ForwardMovementX = move.x * RightMovement;
+            Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+            //_rb.AddForce(_speed * 10 * MovementBasedOnCamera.normalized, ForceMode.Impulse);
+            //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
+            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            if (MovementBasedOnCamera == Vector3.zero)
             {
-                //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
-                Vector3 ForwardMovement = Camera.main.transform.forward;
-                Vector3 RightMovement = Camera.main.transform.right;
-                ForwardMovement.y = 0;
-                RightMovement.y = 0;
-                Vector3 ForwardMovementY = move.y * ForwardMovement;
-                Vector3 ForwardMovementX = move.x * RightMovement;
-                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-                _rb.AddForce(_speed * Time.fixedDeltaTime * MovementBasedOnCamera, ForceMode.Force);
+                return;
+            }
+            Quaternion targetRotation = FollowPoint.rotation;
+            targetRotation.z = 0;
+            targetRotation.x = 0;
+            _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+            /*
+            Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
+            targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
+            _rb.MoveRotation(targetRotation);
+            */
+        }
+        else
+        {
+            Vector3 ForwardMovement = Camera.main.transform.forward;
+            Vector3 RightMovement = Camera.main.transform.right;
+            ForwardMovement.y = 0;
+            RightMovement.y = 0;
+            Vector3 ForwardMovementY = move.y * ForwardMovement;
+            Vector3 ForwardMovementX = move.x * RightMovement;
+            Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
+            // _rb.AddForce(MovementBasedOnCamera.normalized * _speed * 10, ForceMode.Force);
+            //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
+            _rb.velocity =  _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+        }
 
-                if (MovementBasedOnCamera == Vector3.zero)
-                {
-                    return;
-                }
-                Quaternion targetRotation = FollowPoint.rotation;
-                targetRotation.z = 0;
-                targetRotation.x = 0;
-                _rb.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
-                /*
-                Quaternion targetRotation = Quaternion.LookRotation(MovementBasedOnCamera);
-                targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
-                _rb.MoveRotation(targetRotation);
-                */
-            }
-            else
-            {
-                Vector3 ForwardMovement = Camera.main.transform.forward;
-                Vector3 RightMovement = Camera.main.transform.right;
-                ForwardMovement.y = 0;
-                RightMovement.y = 0;
-                Vector3 ForwardMovementY = move.y * ForwardMovement;
-                Vector3 ForwardMovementX = move.x * RightMovement;
-                Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
-                _rb.AddForce(MovementBasedOnCamera * _speed * Time.fixedDeltaTime, ForceMode.Force);
-            }
-        
+
     }
     private void Update()
     {
@@ -162,7 +173,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            _rb.drag = 0;
+            _rb.drag = airdrag;
         }
         //print(Time.timeScale);
         //Sprint Option on left stick pressed in. Reverts to ordinary speed when left stick pressed is released.
@@ -184,16 +195,26 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 0;
         }
-        
-        if (gamepad.leftStickButton.wasPressedThisFrame)
+        if (Sprint)
         {
-            _speed *= SpeedMultiplier;
-
+            _speed = RunSpeed;
+            if(move.x ==0 && move.y==0)
+            {
+                print("Walk speed");
+                Sprint = false;
+            }
         }
-        if (gamepad.leftStickButton.wasReleasedThisFrame)
+        if (!Sprint)
         {
-            _speed /= SpeedMultiplier;
-
+            _speed = walkSpeed;
+        }
+        if (DialogueTrigger.DialogueShowing)
+        {
+            _rb.velocity = Vector3.zero;
+            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isJumping", false);
+            _animator.SetBool("isGrounded", true);
+            _animator.SetBool("isInAir", true);
         }
 
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
@@ -284,15 +305,25 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-        distance = Vector3.Distance(Reactor.transform.position, transform.position);
+        if (SceneManager.GetActiveScene().name == "ReactorBridgeBlockout")
+        {
+            distance = Vector3.Distance(Reactor.transform.position, transform.position);
+        }
         if (ApplyCooldown)
         {
             LowGravityDuration = 0;
-            //distance = Vector3.Distance(Reactor.transform.position, transform.position);
-            if (distance < maxReactorDistance)
+            if (SceneManager.GetActiveScene().name == "ReactorBridgeBlockout")
             {
-                countdown = Time.deltaTime / (maxReactorDistance - distance);
-                countdown = Mathf.Clamp(countdown, 0.0005f, Time.deltaTime);
+                distance = Vector3.Distance(Reactor.transform.position, transform.position);
+                if (distance < maxReactorDistance)
+                {
+                    countdown = Time.deltaTime / (maxReactorDistance - distance);
+                    countdown = Mathf.Clamp(countdown, 0.0005f, Time.deltaTime);
+                }
+                else
+                {
+                    countdown = Time.deltaTime;
+                }
             }
             else
             {
@@ -323,6 +354,17 @@ public class PlayerController : MonoBehaviour
             Pause = true;
         }
     }
+    public void OnSprint()
+    {
+        if (Sprint)
+        {
+            Sprint = false;
+        }
+        else
+        {
+            Sprint = true;
+        }
+    }
     public void OnJump()
     {
         //If no velocity on players y axis apply a force to the y axis on A button pressed.
@@ -332,8 +374,8 @@ public class PlayerController : MonoBehaviour
             {
                 //_animator.SetBool("isWalking", false);
                 //_animator.SetBool("isJumping", true);
-                Vector3 Jump = new(0f, _JumpForce);
-                _rb.AddForce(Jump);
+                //Vector3 Jump = new(0f, _JumpForce);
+                _rb.AddForce(Vector3.up * _JumpForce);
             }
         }
     }

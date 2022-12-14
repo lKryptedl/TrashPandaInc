@@ -4,23 +4,46 @@ using UnityEngine;
 
 public class AutomateDoors : MonoBehaviour
 {
-    public Transform player;
-    public MeshRenderer Mesh;
-    public Collider Collision;
-    public float minDistance;
-    // Update is called once per frame
-    void Update()
+   
+    public float smoothTime;
+    public Transform DoorLeft, DoorRight;
+    private Vector3 velocity = Vector3.zero;
+    public bool Move;
+    public Vector3 RightTarget, LeftTarget;
+    private Vector3 OriginalPosLeft, OriginalPosRight;
+    private void Start()
     {
-        float distance = Vector3.Distance(transform.position, player.transform.position);
-        if(distance < minDistance)
+        OriginalPosLeft = DoorLeft.transform.position;
+        OriginalPosRight = DoorRight.transform.position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
-            Mesh.enabled = false;
-            Collision.enabled = false;
+            print("Collided with" + other.gameObject.name);
+            Move = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Move = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (Move)
+        {
+            DoorRight.transform.position = Vector3.Lerp(DoorRight.transform.position, RightTarget, smoothTime);
+            DoorLeft.transform.position = Vector3.Lerp(DoorLeft.transform.position, LeftTarget, smoothTime);
         }
         else
         {
-            Mesh.enabled = true;
-            Collision.enabled = true;
+            DoorRight.transform.position = Vector3.Lerp(DoorRight.transform.position, OriginalPosRight, smoothTime);
+            DoorLeft.transform.position = Vector3.Lerp(DoorLeft.transform.position, OriginalPosLeft, smoothTime);
         }
     }
 }
