@@ -12,6 +12,7 @@ public class GravityCooldown : MonoBehaviour
     public Animator triangleAnimator;
     public Animator hourglassAnimator;
     public Animator onSymbolAnimator;
+    public Animator activeAnimator;
 
     public Image cooldownImage;
     public Image radiationImage;
@@ -19,6 +20,7 @@ public class GravityCooldown : MonoBehaviour
     public Image onSymbol;
     public Image triangleImage;
     public Image hourglassImage;
+    public Image activeImage;
 
     public float maxReactorDistance;
     public float reactorDistance;
@@ -43,6 +45,7 @@ public class GravityCooldown : MonoBehaviour
         maxReactorDistance = playerControls.maxReactorDistance;
 
         cooldownImage.GetComponent<Image>().color = new Color(0, 1, 1, 0.8f);
+        onSymbol.GetComponent<Image>().color = new Color(0, 1, 1, 0.8f);
     }
 
     private void Update()
@@ -66,7 +69,9 @@ public class GravityCooldown : MonoBehaviour
             if (reactorDistance < maxReactorDistance * 0.7f)
             {
                 triangleAnimator.SetBool("yellowTriangle", true);
+
                 onSymbol.gameObject.SetActive(false);
+                activeImage.gameObject.SetActive(false);
                 hourglassImage.gameObject.SetActive(false);
                 triangleImage.gameObject.SetActive(true);
             }
@@ -87,17 +92,22 @@ public class GravityCooldown : MonoBehaviour
             if (reactorDistance >= maxReactorDistance * 0.7f)
             {
                 onSymbol.gameObject.SetActive(true);
+
+                if (playerControls.LowGravityDuration > 0)
+                {
+                    onSymbol.gameObject.SetActive(false);
+
+                    activeImage.gameObject.SetActive(true);
+                    activeAnimator.SetBool("isActive", true);
+                }
             }
             //invert duration count direction
-            durationRemaining = 10 - playerControls.LowGravityDuration;
+            durationRemaining = maxDuration - playerControls.LowGravityDuration;
             //set colour to blue when cooldown is finished
             cooldownImage.GetComponent<Image>().color = new Color(0, 1, 1, 0.8f);
             //determine fill amount of image based on the current duration relative to the max duration
             cooldownImage.fillAmount = Mathf.InverseLerp(0, maxDuration, durationRemaining);
 
-            //disable cooldown symbol
-            hourglassImage.gameObject.SetActive(false);
-            hourglassAnimator.SetBool("onCooldown", false);
         }
         else
         {
@@ -108,28 +118,33 @@ public class GravityCooldown : MonoBehaviour
             //determine fill amount of image based on the current duration relative to the max duration
             cooldownImage.fillAmount = 0 - (-1 * Mathf.InverseLerp(0, maxCooldown, currentCooldown));
 
-            //disable on symbol
-            onSymbol.gameObject.SetActive(false);
-
             //enable cooldown symbol
             if (reactorDistance >= maxReactorDistance * 0.7f)
             {
                 hourglassImage.gameObject.SetActive(true);
                 hourglassAnimator.SetBool("onCooldown", true);
+
+                activeImage.gameObject.SetActive(false);
+                activeAnimator.SetBool("isActive", false);
             }
 
-            if (currentCooldown >= 9.99)
+            if (currentCooldown >= 0.99 * maxCooldown)
             {
                 onSymbol.gameObject.SetActive(true);
                 onSymbolAnimator.SetBool("recharged", true);
+
+                hourglassImage.gameObject.SetActive(false);
+                hourglassAnimator.SetBool("onCooldown", false);
+
                 colourShift = true;
             }
         }
 
         if (colourShift)
         {
-            colourScaler += 1.25f * Time.deltaTime;
+            colourScaler += Time.deltaTime;
             cooldownImage.GetComponent<Image>().color = new Color(Mathf.Lerp(1, 0, colourScaler), Mathf.Lerp(0.5f, 1, colourScaler), Mathf.Lerp(0.5f, 1, colourScaler), 0.8f);
+            onSymbol.GetComponent<Image>().color = new Color(Mathf.Lerp(1, 0, colourScaler), Mathf.Lerp(0.5f, 1, colourScaler), Mathf.Lerp(0.5f, 1, colourScaler), 0.8f);
             if (colourScaler >= 1)
             {
                 onSymbolAnimator.SetBool("recharged", false);
