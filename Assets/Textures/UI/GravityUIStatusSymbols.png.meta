@@ -118,7 +118,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e69091c14c82b12429b90c76467eaf0a
+      spriteID: c32dd14bf0ce97f449792122756812ac
       internalID: -1712932770
       vertices: []
       indices: 
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b462d5cf33329b24792bf409b91026ab
+      spriteID: 6c787b3eff825b7459cd46da5171a55f
       internalID: 131217703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnableSymbol
+      name: GravityUIStatusSymbols_2
       rect:
         serializedVersion: 2
         x: 41
@@ -160,8 +160,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec77e55dc27a7b04582cb98731f7673f
-      internalID: 211899046
+      spriteID: f3fa279eb6bdcdf4e972e6e1ffbb15c8
+      internalID: 537434065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BButton
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 361
+        width: 151
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314c6e1e438478c4999ebf023a1f6252
+      internalID: 26604997
       vertices: []
       indices: 
       edges: []
@@ -177,8 +198,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EnableSymbol: 211899046
       RadiationGlow: -1712932770
+      BButton: 26604997
+      GravityUIStatusSymbols_2: 537434065
       WarningTriangle: 131217703
   spritePackingTag: 
   pSDRemoveMatte: 0
