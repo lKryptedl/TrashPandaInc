@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
     [Header("Lower players speed when they are in the air")]
     private float Movement;
     public float SpeedinAir;
+    private float Jump;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -68,11 +69,12 @@ public class PlayerController : MonoBehaviour
         walkSpeed = _speed;
         Change();
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag(("Ground")))
         {
             OnGround = true;
+            Jump = 0;
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -148,7 +150,8 @@ public class PlayerController : MonoBehaviour
             {
                 Movement = SpeedinAir;
             }
-            _rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.Impulse);
+            //_rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.Impulse);
+            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -190,6 +193,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+
         //Slows down time on low gravity. Not sure whether needed.
         if (SlowTime)
         {
@@ -403,7 +407,9 @@ public class PlayerController : MonoBehaviour
                 //_animator.SetBool("isWalking", false);
                 //_animator.SetBool("isJumping", true);
                 //Vector3 Jump = new(0f, _JumpForce);
-                _rb.AddForce(Vector3.up * _JumpForce);
+                //float jumpvelocity = Mathf.Sqrt(-2 * -20 * _JumpForce);
+                //VelocityY = jumpvelocity;
+                _rb.velocity = Vector3.up * _JumpForce * Time.fixedDeltaTime;
             }
         }
     }
