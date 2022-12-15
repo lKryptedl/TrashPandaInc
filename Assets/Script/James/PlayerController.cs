@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
             //_rb.AddForce(_speed * 10 * MovementBasedOnCamera.normalized, ForceMode.Impulse);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
             // _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
-            if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+            if (OnGround)
             {
                 Movement = _speed;                
             }
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
                 Movement = SpeedinAir;
             }
             //_rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.Impulse);
-            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            _rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
             // _rb.AddForce(MovementBasedOnCamera.normalized * _speed * 10, ForceMode.Force);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
             //_rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
-            if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+            if (OnGround)
             {
                 Movement = _speed;
             }
@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour
             {
                 Movement = SpeedinAir;
             }
-            _rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.Impulse);
+            _rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
         }
 
 
@@ -197,12 +197,12 @@ public class PlayerController : MonoBehaviour
         //Slows down time on low gravity. Not sure whether needed.
         if (SlowTime)
         {
-            if (Mathf.Abs(_rb.velocity.y) < 0.001f)
+            if (OnGround)
             {
                 Time.timeScale = 1f;
             }
-            if (Mathf.Abs(_rb.velocity.y) > 0.001f)
-            {
+            else
+            { 
                 Time.timeScale = SlowDownTime;
             }
         }
@@ -253,11 +253,11 @@ public class PlayerController : MonoBehaviour
         }
         if (DialogueTrigger.DialogueShowing)
         {
-            _rb.velocity = Vector3.zero;
+            _rb.velocity = new Vector3(0f, _rb.velocity.y, 0f);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", false);
-            _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", true);
+            _animator.SetBool("isGrounded", false);
+            _animator.SetBool("isInAir", false);
         }
 
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
@@ -273,7 +273,7 @@ public class PlayerController : MonoBehaviour
         //print(_rb.velocity.y);
 
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
-        if (Mathf.Abs(_rb.velocity.y) < 0.01f)
+        if (OnGround)
         {
             canjump = true;
             _animator.SetBool("isJumping", false);
@@ -293,7 +293,7 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        if (Mathf.Abs(_rb.velocity.y) > 0.5f)
+        if (!OnGround)
         {
             canjump = false;
             _animator.SetBool("isWalking", false);
