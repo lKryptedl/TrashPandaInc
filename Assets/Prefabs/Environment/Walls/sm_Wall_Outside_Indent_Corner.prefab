@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5661228562790902160}
   - component: {fileID: 8736810616787658293}
   - component: {fileID: 6835221505046844159}
+  - component: {fileID: -5354032954342449097}
   m_Layer: 0
   m_Name: sm_Wall_Outside_Indent_Corner
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-5354032954342449097
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5033733345218016042}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4817926323693004107, guid: 3fc192853ce76004f8121531c3c2d9ee, type: 3}

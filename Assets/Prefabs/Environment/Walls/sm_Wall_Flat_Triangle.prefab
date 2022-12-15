@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4319152904326950834}
   - component: {fileID: 5475619920078352838}
   - component: {fileID: 9096841856610187465}
+  - component: {fileID: 5906018616406048712}
   m_Layer: 0
   m_Name: sm_Wall_Flat_Triangle
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5906018616406048712
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7473208819066368892}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2969222827970759095, guid: e3fb39e9460266c4eb2c566b85db075f, type: 3}
