@@ -66,7 +66,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -555,7 +555,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hourglass10: -852146069
       Hourglass4: -1233327433
       Hourglass5: -534051986
       Hourglass7: -135386390
@@ -574,6 +573,7 @@ TextureImporter:
       Hourglass9: -257498919
       RadiationSymbol: -129589012
       Hourglass12: 1333863132
+      Hourglass10: -852146069
       GravityCooldownUI_6: -217236033
       GravityTimer: -417096677
   spritePackingTag: 
