@@ -155,8 +155,8 @@ public class PlayerController : MonoBehaviour
             {
                 Movement = SpeedinAir;
             }
-            _rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.VelocityChange);
-            //_rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            //_rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.VelocityChange);
+            _rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
