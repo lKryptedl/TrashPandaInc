@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
-    public int RubbishStored = 5;
+    public static int RubbishStored = 5;
     public bool suck = false;
 
     public int shotSpeed = 20;
@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
     {
         if (suck)
         {
-            if (RubbishStored < 11)
+            if (RubbishStored < 12)
             {
                 foreach (GameObject body in Balls)
                 {
