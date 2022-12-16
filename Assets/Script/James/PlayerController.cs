@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
         walkSpeed = _speed;
         Change();
         layermask = 1 << 8; //8th layer
+        _animator.SetBool("isWalking", false);
+        _animator.SetBool("isJumping", false);
+        _animator.SetBool("isInAir", false);
+        _animator.SetBool("isGrounded", false);
     }
     private void Awake()
     {
@@ -300,10 +304,6 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isJumping", true);
             _animator.SetBool("isGrounded", false);
             _animator.SetBool("isInAir", false);
-        }
-        if (OnGround)
-        {
-            _animator.SetBool("isJumping", false);
         }
 
         /*Applies a timer to the length of low gravity. After time runs out a cooldown is applied not allowing
