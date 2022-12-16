@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
     public Animator _animator;
     private bool OnGround;
     public float pause;
-    public static bool canjump;
     [Header("Drag for ground and air")]
     public float grounddrag;
     public float airdrag;
@@ -61,28 +60,15 @@ public class PlayerController : MonoBehaviour
     [Header("Lower players speed when they are in the air")]
     private float Movement;
     public float SpeedinAir;
-    private float Jump;
+    public static bool isJumping = false;
+    private int layermask;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         walkSpeed = _speed;
         Change();
-    }
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(("Ground")))
-        {
-            OnGround = true;
-            Jump = 0;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(("Ground")))
-        {
-            OnGround = false;
-        }
+        layermask = 1 << 8; //8th layer
     }
     private void Awake()
     {
@@ -100,6 +86,13 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (isJumping)
+        {
+            //_rb.velocity = Vector3.up * _JumpForce;
+            //_rb.velocity = new Vector2(0, 0);
+            _rb.AddForce(Vector3.up * _JumpForce);
+            isJumping = false;
+        }
         //apply movement on fixedupdate as it is better for physics than update
         if (DialogueTrigger.DialogueShowing == false)
         {
@@ -124,6 +117,14 @@ public class PlayerController : MonoBehaviour
         {
             _animator.SetBool("isWalking", false);
         }*/
+        RaycastHit rayHit;
+        if (Physics.Raycast(transform.position, Vector3.down, out rayHit, 0.4f, layermask))
+        {
+            Debug.DrawRay(transform.position, Vector3.down, Color.green, 0.4f);
+            OnGround = true;
+        }
+        else { OnGround = false; }
+        print(OnGround);
 
 
     }
@@ -150,8 +151,8 @@ public class PlayerController : MonoBehaviour
             {
                 Movement = SpeedinAir;
             }
-            //_rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.Impulse);
-            _rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            _rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.VelocityChange);
+            //_rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -275,7 +276,6 @@ public class PlayerController : MonoBehaviour
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
         if (OnGround)
         {
-            canjump = true;
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isGrounded", true);
             _animator.SetBool("isInAir", true);
@@ -287,7 +287,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    _rb.velocity = Vector3.zero;
+                    _rb.velocity = new(0, _rb.velocity.y, 0);
+                    //_rb.velocity = Vector3.zero;
                     _animator.SetBool("isWalking", false);
                 }
             }
@@ -295,13 +296,12 @@ public class PlayerController : MonoBehaviour
         }
         if (!OnGround)
         {
-            canjump = false;
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", true);
             _animator.SetBool("isGrounded", false);
             _animator.SetBool("isInAir", false);
         }
-        if (canjump)
+        if (OnGround)
         {
             _animator.SetBool("isJumping", false);
         }
@@ -402,14 +402,14 @@ public class PlayerController : MonoBehaviour
         //If no velocity on players y axis apply a force to the y axis on A button pressed.
         if (DialogueTrigger.DialogueShowing == false)
         {
-            if (canjump)
+            if (OnGround)
             {
+                isJumping = true;
                 //_animator.SetBool("isWalking", false);
                 //_animator.SetBool("isJumping", true);
                 //Vector3 Jump = new(0f, _JumpForce);
                 //float jumpvelocity = Mathf.Sqrt(-2 * -20 * _JumpForce);
                 //VelocityY = jumpvelocity;
-                _rb.velocity = Vector3.up * _JumpForce * Time.fixedDeltaTime;
             }
         }
     }

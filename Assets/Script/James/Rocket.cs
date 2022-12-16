@@ -30,7 +30,7 @@ public class Rocket : MonoBehaviour
         }
         else if (!other.CompareTag("Player")) //Collision destroying rocket
         {
-            if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.canjump == false) 
+            if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.isJumping == false) 
             {
                 Debug.Log("yeet");
                 Vector3 direction = Player.transform.position - transform.position;
