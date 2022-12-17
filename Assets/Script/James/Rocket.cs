@@ -32,7 +32,6 @@ public class Rocket : MonoBehaviour
         {
             if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.isJumping == false) 
             {
-                Debug.Log("yeet");
                 Vector3 direction = Player.transform.position - transform.position;
                 direction.Normalize();
                 Player.GetComponent<Rigidbody>().AddForce(direction * 5000f);

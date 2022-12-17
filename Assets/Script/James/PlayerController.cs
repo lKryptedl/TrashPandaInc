@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
     public static bool Mode = false;
-    public GameObject Gun, aimCam, moveCam, Reactor;
+    public GameObject Gun, aimCam, moveCam, Reactor, Crosshair;
     [Header("Changes The Speed of low gravity in the air")]
     public float SlowDownTime;
     [Header("How much more you can jump in low gravity")]
@@ -446,14 +446,16 @@ public class PlayerController : MonoBehaviour
     public void Change()
     {
         Mode = !Mode;
-        if (Mode == true)
+        if (Mode == true) // Move Mode
         {
+            Crosshair.SetActive(false);
             Gun.transform.rotation = transform.rotation;
             moveCam.SetActive(true);
             aimCam.SetActive(false);
         }
-        else
+        else // Aim Mode
         {
+            Crosshair.SetActive(true);
             aimCam.SetActive(true);
             moveCam.SetActive(false);
         }
