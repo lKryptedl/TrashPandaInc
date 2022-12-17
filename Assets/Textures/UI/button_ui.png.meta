@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 3e8d3b8a541eb974095bd283253f4fa0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: playbutton_ui
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1549
+        width: 594
+        height: 461
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e98ca5b1ec3eb5e4ab7e66410b6631b8
+      internalID: 2121156570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: resumebutton_ui
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 1549
+        width: 594
+        height: 461
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f35a69d4cae14a4589b6ef683c6eb78
+      internalID: 372850227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: quitbutton_ui
+      rect:
+        serializedVersion: 2
+        x: 1428
+        y: 1556
+        width: 594
+        height: 461
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3522c9eafbf71b4eb356abd0608eeed
+      internalID: 968588563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: optionsbutton_ui
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1060
+        width: 594
+        height: 461
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8f043d8f9f8774f8ce220acbe878ce
+      internalID: -506039533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_ui
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1060
+        width: 594
+        height: 461
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a5d7d853d2ca14db7d9fbbf8a8c683
+      internalID: 244568970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blank_button_ui
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 1067
+        width: 594
+        height: 461
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4041af0494174df48b08d1a9a676559a
+      internalID: 808251655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slider_bar_ui
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 21
+        width: 1242
+        height: 112
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef1400980ac6284f924864a1597f635
+      internalID: -1559537531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sens_ui
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 820
+        width: 817
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb2f1c66e34ffc46a834c4367793b6c
+      internalID: 967623910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: contr_ui
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 829
+        width: 700
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b236ea2c1eac4445beaa68b150446ec
+      internalID: -560129252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: volume_ui
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 613
+        width: 562
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e9c483ff6910346bc975f0b3074285
+      internalID: -1532175046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_volume_ui
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 606
+        width: 902
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40090a5e13f5c9e45abfcb2bbc472953
+      internalID: -914292001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: restart_ui
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 384
+        width: 683
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2e1681913fd40048a8049aba1d2b170
+      internalID: 1285130240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slider_ui
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 152
+        width: 500
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91111ade492c0a34ab0720774b03d878
+      internalID: -2137448753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8ac5b8464368c3d4faf8868649fea37f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      button_ui_44: -1698396837
+      contr_ui: -560129252
+      button_ui_39: 1509558721
+      button_ui_40: 555593576
+      button_ui_41: 865761533
+      button_ui_13: -1127648985
+      button_ui_11: 1843531993
+      button_ui_27: 579942963
+      slider_ui: -2137448753
+      button_ui_22: 475084114
+      quitbutton_ui: 968588563
+      button_ui_21: 1557522572
+      sens_ui: 967623910
+      button_ui_29: 694686394
+      button_ui_12: -967865136
+      button_ui_19: 808278735
+      button_ui_35: 2106123094
+      playbutton_ui: 2121156570
+      button_ui_33: 1397674539
+      button_ui_24: 320077868
+      button_ui_31: 133210120
+      button_ui_23: 1951495212
+      button_ui_14: -1072163282
+      button_ui_30: 348878680
+      volume_ui: -1532175046
+      optionsbutton_ui: -506039533
+      button_ui_20: -238028785
+      button_ui_42: -490757142
+      button_ui_16: -1436731272
+      button_ui_43: 1082158454
+      music_volume_ui: -914292001
+      button_ui_32: 1772758688
+      resumebutton_ui: 372850227
+      button_ui_45: -946349455
+      button_ui_25: -890353828
+      button_ui_38: -1169764840
+      button_ui_18: -1096696825
+      button_ui_26: 1068339269
+      button_ui: 244568970
+      button_ui_28: -1195513833
+      button_ui_34: 997699722
+      button_ui_36: -788642539
+      slider_bar_ui: -1559537531
+      restart_ui: 1285130240
+      button_ui_15: -1158303209
+      blank_button_ui: 808251655
+      button_ui_17: 1018872236
+      button_ui_37: 132518216
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
