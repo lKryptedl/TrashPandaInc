@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
             OnGround = true;
         }
         else { OnGround = false; }
-        print(OnGround);
+        //print(OnGround);
 
 
     }
