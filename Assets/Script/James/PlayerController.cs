@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     public bool Sprint;
     public float InputDelay = 0.5f;
     public Animator _animator;
-    private bool OnGround;
+    public static bool OnGround;
     public float pause;
     [Header("Drag for ground and air")]
     public float grounddrag;
