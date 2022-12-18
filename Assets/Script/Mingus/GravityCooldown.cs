@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using TMPro;
 
 public class GravityCooldown : MonoBehaviour
 {
     public PlayerController playerControls;
+
+    public Volume globalVolume;
+    private Vignette vignette;
+    private FilmGrain filmGrain;
+    private ChromaticAberration chromaticAberration;
+    private MotionBlur motionBlur;
 
     public Animator radiationAnimator;
     public Animator triangleAnimator;
@@ -22,20 +30,25 @@ public class GravityCooldown : MonoBehaviour
     public Image hourglassImage;
     public Image activeImage;
 
-    public float maxReactorDistance;
-    public float reactorDistance;
+    private float maxReactorDistance;
+    private float reactorDistance;
 
-    public float maxDuration;
-    public float durationRemaining;
+    private float maxDuration;
+    private float durationRemaining;
 
-    public float maxCooldown;
-    public float currentCooldown;
+    private float maxCooldown;
+    private float currentCooldown;
 
     private float colourScaler;
     private bool colourShift;
 
     private void Start()
     {
+        globalVolume.profile.TryGet<Vignette>(out vignette);
+        globalVolume.profile.TryGet<FilmGrain>(out filmGrain);
+        globalVolume.profile.TryGet<ChromaticAberration>(out chromaticAberration);
+        globalVolume.profile.TryGet<MotionBlur>(out motionBlur);
+
         maxDuration = playerControls.MaxLowGravityDuration;
         durationRemaining = maxDuration;
 
@@ -65,6 +78,10 @@ public class GravityCooldown : MonoBehaviour
             //select animations in blend tree based on distance
             radiationAnimator.SetFloat("distance", Mathf.InverseLerp(maxReactorDistance * 0.1f, maxReactorDistance, maxReactorDistance - reactorDistance));
 
+            vignette.intensity.value = 0.6f * Mathf.InverseLerp(0, 0.5f * maxReactorDistance, maxReactorDistance - reactorDistance);
+            filmGrain.intensity.value = Mathf.InverseLerp(0, 0.5f * maxReactorDistance, maxReactorDistance - reactorDistance);
+            chromaticAberration.intensity.value = 0.75f * Mathf.InverseLerp(0, 0.5f * maxReactorDistance, maxReactorDistance - reactorDistance);
+            motionBlur.intensity.value = 0.5f * Mathf.InverseLerp(0, 0.5f * maxReactorDistance, maxReactorDistance - reactorDistance);
 
             if (reactorDistance < maxReactorDistance * 0.7f)
             {

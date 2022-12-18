@@ -104,141 +104,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RadiationGlow
+      name: Hourglass5
       rect:
         serializedVersion: 2
-        x: 192
-        y: 3160
-        width: 684
-        height: 672
+        x: 1986
+        y: 2958
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d855eac55cdf2f341a2f039dbc52909b
-      internalID: -2119220110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WarningTriangle
-      rect:
-        serializedVersion: 2
-        x: 1046
-        y: 3210
-        width: 774
-        height: 684
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ff07444bd22f834bb30c73f42a0752a
-      internalID: 1611958879
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hourglass1
-      rect:
-        serializedVersion: 2
-        x: 1980
-        y: 3476
-        width: 396
-        height: 522
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b3433fa3e8afdd4d8a02a56ebdde22d
-      internalID: 1355578329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hourglass2
-      rect:
-        serializedVersion: 2
-        x: 2532
-        y: 3474
-        width: 396
-        height: 522
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74c8c7c32b02d92499e3311f5dd6b4c8
-      internalID: 252385993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hourglass3
-      rect:
-        serializedVersion: 2
-        x: 3076
-        y: 3474
-        width: 396
-        height: 522
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24a87601bde5e4f4f9e202e23c07e1b9
-      internalID: -906093911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hourglass4
-      rect:
-        serializedVersion: 2
-        x: 3624
-        y: 3466
-        width: 396
-        height: 522
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6488043889930314cbee9099d869b26c
-      internalID: -1233327433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GravityCooldownUI_6
-      rect:
-        serializedVersion: 2
-        x: 470
-        y: 2714
-        width: 80
-        height: 274
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,43 +125,127 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WarningGlow
+      name: RadiationGlow
       rect:
         serializedVersion: 2
-        x: 1002
-        y: 2348
-        width: 864
-        height: 774
+        x: 185
+        y: 3265
+        width: 652
+        height: 632
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3bbc6ecb1a7c4a41bf3d2a8c9afa26c
-      internalID: 457540814
+      spriteID: da1079f3d196b2b428b260fbc154a24f
+      internalID: -2119220110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hourglass5
+      name: WarningTriangle
       rect:
         serializedVersion: 2
-        x: 1990
-        y: 2928
-        width: 396
-        height: 522
+        x: 1042
+        y: 3241
+        width: 771
+        height: 680
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ceff064267e9d34cb5f4c3c50cc45d4
-      internalID: -534051986
+      spriteID: 3c0cd3a86e6d75c4d8b546f151eb1ae4
+      internalID: 1611958879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hourglass1
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 3507
+        width: 393
+        height: 518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ca46029ca9ce0945a65ec7d680096ec
+      internalID: 1355578329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hourglass2
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 3504
+        width: 393
+        height: 518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc1b7ff695159a44b4cbb837d7b1a3a
+      internalID: 252385993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hourglass3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3504
+        width: 393
+        height: 518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668813de93054f742ac282a6f3f68dd3
+      internalID: -906093911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RadiationSymbol
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 2419
+        width: 543
+        height: 527
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4039bf1ecf9a8946a9fdfde1f90330a
+      internalID: -129589012
       vertices: []
       indices: 
       edges: []
@@ -296,19 +254,40 @@ TextureImporter:
       name: Hourglass6
       rect:
         serializedVersion: 2
-        x: 2542
-        y: 2924
-        width: 396
-        height: 522
+        x: 2538
+        y: 2955
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6376424082542442af4983d5d061813
+      spriteID: b9996067975e67d4c836833d85909d84
       internalID: -336801320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hourglass4
+      rect:
+        serializedVersion: 2
+        x: 3619
+        y: 3496
+        width: 393
+        height: 518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae05f71324d63cc48877cfd3d7ad0223
+      internalID: -1233327433
       vertices: []
       indices: 
       edges: []
@@ -317,18 +296,18 @@ TextureImporter:
       name: Hourglass7
       rect:
         serializedVersion: 2
-        x: 3086
-        y: 2924
-        width: 396
-        height: 522
+        x: 3082
+        y: 2955
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e5d9e92ae7eae742ba9ca31a19666e1
+      spriteID: 72e94de71b226fc4ab9126f8f55a439b
       internalID: -135386390
       vertices: []
       indices: 
@@ -338,40 +317,40 @@ TextureImporter:
       name: Hourglass8
       rect:
         serializedVersion: 2
-        x: 3634
-        y: 2916
-        width: 396
-        height: 522
+        x: 3629
+        y: 2947
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8f3d97d774975443b932f7b90702079
+      spriteID: e9e15276409962f449713c76d79f2bb2
       internalID: -1778702939
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GravityCooldownUI_12
+      name: GravityTimer
       rect:
         serializedVersion: 2
-        x: 190
-        y: 2328
-        width: 634
-        height: 586
+        x: 36
+        y: 1324
+        width: 938
+        height: 938
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99e09677319902c4da2534dcad8d74b5
-      internalID: 517669133
+      spriteID: 85e6c90f0dabe434990fefe35cb38bde
+      internalID: -417096677
       vertices: []
       indices: 
       edges: []
@@ -380,18 +359,18 @@ TextureImporter:
       name: Hourglass9
       rect:
         serializedVersion: 2
-        x: 1982
-        y: 2386
-        width: 396
-        height: 522
+        x: 1978
+        y: 2416
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5877a47046b0c44ba195027232a7e36
+      spriteID: 3b895fd5939b9784bbf10593236dfa55
       internalID: -257498919
       vertices: []
       indices: 
@@ -401,18 +380,18 @@ TextureImporter:
       name: Hourglass10
       rect:
         serializedVersion: 2
-        x: 2534
-        y: 2382
-        width: 396
-        height: 522
+        x: 2530
+        y: 2413
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eac7d63922b4f544e8acc62c9880c518
+      spriteID: 2a91568f4e409ab4a88581767857819f
       internalID: -852146069
       vertices: []
       indices: 
@@ -422,18 +401,18 @@ TextureImporter:
       name: Hourglass11
       rect:
         serializedVersion: 2
-        x: 3078
-        y: 2382
-        width: 396
-        height: 522
+        x: 3074
+        y: 2413
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98783ca7220861240a5f3ea44630e037
+      spriteID: e013bc04d5b35eb4ea67247c6444f803
       internalID: 1602675499
       vertices: []
       indices: 
@@ -443,40 +422,19 @@ TextureImporter:
       name: Hourglass12
       rect:
         serializedVersion: 2
-        x: 3626
-        y: 2374
-        width: 396
-        height: 522
+        x: 3621
+        y: 2405
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6618d400e35e2e84cbfaa15d0a67d1d4
+      spriteID: 44c37b8a930c4a34e885ef0b37913e64
       internalID: 1333863132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Outline
-      rect:
-        serializedVersion: 2
-        x: 956
-        y: 70
-        width: 972
-        height: 1854
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c7f6449559762f4291b581f6a0b41d5
-      internalID: 605453316
       vertices: []
       indices: 
       edges: []
@@ -485,61 +443,103 @@ TextureImporter:
       name: Hourglass13
       rect:
         serializedVersion: 2
-        x: 1980
-        y: 1824
-        width: 396
-        height: 522
+        x: 1976
+        y: 1855
+        width: 393
+        height: 518
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7974bc77be248b540b0d04ad4b0737a8
+      spriteID: 1984d23de3d80f349a25e9a2b60da171
       internalID: 30163204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RadiationSymbol
+      name: GravityActive1
       rect:
         serializedVersion: 2
-        x: 228
-        y: 1178
-        width: 522
-        height: 548
+        x: 127
+        y: 127
+        width: 672
+        height: 924
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02d8cd2cf1117d241a50c3b268c8ac88
-      internalID: -129589012
+      spriteID: 62fa0ffd4023fdd4dba2867c53892ee5
+      internalID: 1719424614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GravityTimer
+      name: GravityActive2
       rect:
         serializedVersion: 2
-        x: 40
-        y: 18
-        width: 942
-        height: 942
+        x: 846
+        y: 129
+        width: 672
+        height: 924
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79e8a37d43115e34a9922e1de649008f
-      internalID: -417096677
+      spriteID: 859a01b26d46e294a93ae2909705b708
+      internalID: -1586953563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GravityActive3
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 156
+        width: 672
+        height: 924
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987d1ce047af12a48bba694a74856fce
+      internalID: -1752776842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Outline
+      rect:
+        serializedVersion: 2
+        x: 3089
+        y: 68
+        width: 970
+        height: 1852
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9592fc69ab674429acd1c728bcc0b8
+      internalID: 605453316
       vertices: []
       indices: 
       edges: []
@@ -556,15 +556,22 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Hourglass4: -1233327433
-      Hourglass5: -534051986
+      Hourglass5: -217236033
       Hourglass7: -135386390
+      GravityCooldownUI_8: -1206701588
       Hourglass1: 1355578329
+      GravityCooldownUI_20: 193839697
+      GravityCooldownUI_24: -1202703309
+      GravityActive2: -1586953563
       Hourglass2: 252385993
       GravityCooldownUI_12: 517669133
       Hourglass6: -336801320
       RadiationGlow: -2119220110
-      WarningGlow: 457540814
+      GravityCooldownUI_25: 438245049
+      GravityActive1: 1719424614
+      GravityActive3: -1752776842
       Hourglass13: 30163204
+      GravityCooldownUI_23: -857051194
       Outline: 605453316
       Hourglass8: -1778702939
       Hourglass11: 1602675499
@@ -572,9 +579,13 @@ TextureImporter:
       Hourglass3: -906093911
       Hourglass9: -257498919
       RadiationSymbol: -129589012
+      GravityCooldownUI_26: -757783614
       Hourglass12: 1333863132
+      GravityCooldownUI_5: 1330715523
+      GravityCooldownUI_4: 1984558426
+      GravityCooldownUI_13: 1767822044
       Hourglass10: -852146069
-      GravityCooldownUI_6: -217236033
+      GravityCooldownUI_27: -142395829
       GravityTimer: -417096677
   spritePackingTag: 
   pSDRemoveMatte: 0
