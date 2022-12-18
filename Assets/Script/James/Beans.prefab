@@ -1417,7 +1417,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3877683878179099113}
-  - component: {fileID: 3628482432637831365}
   - component: {fileID: 3628482432637831366}
   - component: {fileID: 4511371377750543190}
   - component: {fileID: 4511371377750543191}
@@ -1450,21 +1449,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0.057, z: 0}
---- !u!111 &3628482432637831365
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4511371377750543187}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7640120622881833465, guid: 51bf42070d522e640a64264c0753b77d, type: 3}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &3628482432637831366
 Animator:
   serializedVersion: 4
@@ -1557,18 +1541,29 @@ MonoBehaviour:
   Gun: {fileID: 5690669964012781027}
   aimCam: {fileID: 0}
   moveCam: {fileID: 0}
+  Reactor: {fileID: 0}
+  Crosshair: {fileID: 0}
   SlowDownTime: 0.6
   JumpMultiplier: 1.2
-  SpeedMultiplier: 2
+  RunSpeed: 0
   CheckTimer: 0
   LowGravityDuration: 0
   MaxLowGravityDuration: 10
   CooldownLowGravity: 0
   MaxCooldownLowGravity: 5
   ApplyCooldown: 0
+  Sprint: 0
   InputDelay: 0.5
   _animator: {fileID: 0}
   pause: 0
+  grounddrag: 0
+  airdrag: 0
+  distance: 50
+  maxReactorDistance: 0
+  countdown: 0
+  radius: 0
+  SpherecastDistance: 0
+  SpeedinAir: 0
 --- !u!208 &4511371377750543185
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2422,7 +2417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 4511371377750543187}
-  hitMarker: {fileID: 0}
   shotPoint: {fileID: 8535340519158192733}
   followPoint: {fileID: 8535340517908431482}
   xAxis:
@@ -3664,7 +3658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9ed0ce76c2f3e43a884b921aa775be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RubbishStored: 5
   suck: 0
   shotSpeed: 20
   rocketCount: 10
