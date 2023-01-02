@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6162404165368192327}
   - component: {fileID: 7073635923340530402}
   - component: {fileID: 5030077873511687720}
+  - component: {fileID: -5978214456838926600}
   m_Layer: 0
   m_Name: sm_Wall_Flatten_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6162404165368192327
 Transform:
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-5978214456838926600
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6831557512808417277}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3023810117070407694, guid: 95b4adffb30e66641908978b0c9f6c05, type: 3}

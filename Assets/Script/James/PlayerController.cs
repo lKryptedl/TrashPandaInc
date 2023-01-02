@@ -24,14 +24,14 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
     public static bool Mode = false;
-    public GameObject Gun, aimCam, moveCam, Reactor;
+    public GameObject Gun, aimCam, moveCam, Reactor, Crosshair;
     [Header("Changes The Speed of low gravity in the air")]
     public float SlowDownTime;
     [Header("How much more you can jump in low gravity")]
     public float JumpMultiplier;
     [Header("How much sprint multiplies ordinary movement")]
     public float RunSpeed;
-    public float walkSpeed;
+    private float walkSpeed;
     private bool CanChange = true;
     [Header("Duration of low gravity")]
     public bool CheckTimer = false;
@@ -44,9 +44,8 @@ public class PlayerController : MonoBehaviour
     public bool Sprint;
     public float InputDelay = 0.5f;
     public Animator _animator;
-    private bool OnGround;
+    public static bool OnGround;
     public float pause;
-    public static bool canjump;
     [Header("Drag for ground and air")]
     public float grounddrag;
     public float airdrag;
@@ -54,26 +53,26 @@ public class PlayerController : MonoBehaviour
     public float distance = 50;
     public float maxReactorDistance;
     public float countdown;
+    [Header("Spherecast for if player is looking at button")]
+    public float radius;
+    public static bool ButtonHit = false;
+    public float SpherecastDistance;
+    [Header("Lower players speed when they are in the air")]
+    private float Movement;
+    public float SpeedinAir;
+    public static bool isJumping = false;
+    private int layermask;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         walkSpeed = _speed;
         Change();
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(("Ground")))
-        {
-            OnGround = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(("Ground")))
-        {
-            OnGround = false;
-        }
+        layermask = 1 << 8; //8th layer
+        _animator.SetBool("isWalking", false);
+        _animator.SetBool("isJumping", false);
+        _animator.SetBool("isInAir", false);
+        _animator.SetBool("isGrounded", false);
     }
     private void Awake()
     {
@@ -91,16 +90,45 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (isJumping)
+        {
+            //_rb.velocity = Vector3.up * _JumpForce;
+            //_rb.velocity = new Vector2(0, 0);
+            _rb.AddForce(Vector3.up * _JumpForce);
+            isJumping = false;
+        }
         //apply movement on fixedupdate as it is better for physics than update
         if (DialogueTrigger.DialogueShowing == false)
         {
             MovePlayer();
         }
 
+        //Spherecast to see if player is facing direction of elevator button. After Testing will only run in scenes with elevators
+        Gamepad controller = Gamepad.current;
+        RaycastHit hit;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
+        if (Physics.SphereCast(transform.position, radius, fwd, out hit, SpherecastDistance))
+        {
+            if (hit.collider.gameObject.CompareTag("Button"))
+            {
+                if (controller.bButton.isPressed)
+                {
+                    ButtonHit = true;
+                }
+            }
+        }
         /*if (Mathf.Abs(_rb.velocity.y) > 0.001f)
         {
             _animator.SetBool("isWalking", false);
         }*/
+        RaycastHit rayHit;
+        if (Physics.Raycast(transform.position, Vector3.down, out rayHit, 0.4f, layermask))
+        {
+            Debug.DrawRay(transform.position, Vector3.down, Color.green, 0.4f);
+            OnGround = true;
+        }
+        else { OnGround = false; }
+        //print(OnGround);
 
 
     }
@@ -118,7 +146,17 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             //_rb.AddForce(_speed * 10 * MovementBasedOnCamera.normalized, ForceMode.Impulse);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
-            _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            // _rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            if (OnGround)
+            {
+                Movement = _speed;                
+            }
+            else
+            {
+                Movement = SpeedinAir;
+            }
+            //_rb.AddForce(Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized, ForceMode.VelocityChange);
+            _rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
             if (MovementBasedOnCamera == Vector3.zero)
             {
                 return;
@@ -144,22 +182,32 @@ public class PlayerController : MonoBehaviour
             Vector3 MovementBasedOnCamera = ForwardMovementY + ForwardMovementX;
             // _rb.AddForce(MovementBasedOnCamera.normalized * _speed * 10, ForceMode.Force);
             //_rb.MovePosition(transform.position + MovementBasedOnCamera.normalized * Time.deltaTime * _speed);
-            _rb.velocity =  _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            //_rb.velocity = _speed * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
+            if (OnGround)
+            {
+                Movement = _speed;
+            }
+            else
+            {
+                Movement = SpeedinAir;
+            }
+            _rb.velocity = Movement * Time.fixedDeltaTime * MovementBasedOnCamera.normalized + new Vector3(0, _rb.velocity.y, 0);
         }
 
 
     }
     private void Update()
     {
+
         //Slows down time on low gravity. Not sure whether needed.
         if (SlowTime)
         {
-            if (Mathf.Abs(_rb.velocity.y) < 0.001f)
+            if (OnGround)
             {
                 Time.timeScale = 1f;
             }
-            if (Mathf.Abs(_rb.velocity.y) > 0.001f)
-            {
+            else
+            { 
                 Time.timeScale = SlowDownTime;
             }
         }
@@ -189,7 +237,7 @@ public class PlayerController : MonoBehaviour
             {
                 Time.timeScale = 1;
             }
-            
+
         }
         if (!Pause)
         {
@@ -198,7 +246,7 @@ public class PlayerController : MonoBehaviour
         if (Sprint)
         {
             _speed = RunSpeed;
-            if(move.x ==0 && move.y==0)
+            if (move.x == 0 && move.y == 0)
             {
                 print("Walk speed");
                 Sprint = false;
@@ -210,11 +258,11 @@ public class PlayerController : MonoBehaviour
         }
         if (DialogueTrigger.DialogueShowing)
         {
-            _rb.velocity = Vector3.zero;
+            _rb.velocity = new Vector3(0f, _rb.velocity.y, 0f);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", false);
-            _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", true);
+            _animator.SetBool("isGrounded", false);
+            _animator.SetBool("isInAir", false);
         }
 
         /*if (gamepad.leftStick.left.isPressed || gamepad.leftStick.right.isPressed || gamepad.leftStick.up.isPressed || gamepad.leftStick.down.isPressed)
@@ -230,12 +278,11 @@ public class PlayerController : MonoBehaviour
         //print(_rb.velocity.y);
 
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
-            if (Mathf.Abs(_rb.velocity.y) < 0.01f)
-            {
-                canjump = true;
-                _animator.SetBool("isJumping", false);
-                _animator.SetBool("isGrounded", true);
-                _animator.SetBool("isInAir", true);
+        if (OnGround)
+        {
+            _animator.SetBool("isJumping", false);
+            _animator.SetBool("isGrounded", true);
+            _animator.SetBool("isInAir", true);
             if (!DialogueTrigger.DialogueShowing)
             {
                 if (move.x != 0 || move.y != 0)
@@ -244,38 +291,23 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    _rb.velocity = Vector3.zero;
+                    _rb.velocity = new(0, _rb.velocity.y, 0);
+                    //_rb.velocity = Vector3.zero;
                     _animator.SetBool("isWalking", false);
                 }
             }
-            
-            }
-            if(Mathf.Abs(_rb.velocity.y) > 0.5f)
-            {
-                canjump = false;
-                _animator.SetBool("isWalking", false);
-                _animator.SetBool("isJumping", true);
-                _animator.SetBool("isGrounded", false);
-                _animator.SetBool("isInAir", false);
-            }
-        if (canjump)
-        {
-            _animator.SetBool("isJumping", false);
+
         }
-            /*if (gamepad.aButton.wasPressedThisFrame)
-            {
-                
-
-            }*/
-        
-        /*if (Mathf.Abs(_rb.velocity.y) > 10f)
+        if (!OnGround)
         {
-            _animator.SetBool("isJumping", false);
-        }*/
-       // print(isGrounded);
+            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isJumping", true);
+            _animator.SetBool("isGrounded", false);
+            _animator.SetBool("isInAir", false);
+        }
 
-       /*Applies a timer to the length of low gravity. After time runs out a cooldown is applied not allowing
-       the use of low gravity again until after timer. If x is pressed, you can deactivate low gravity and have the cooldwon applied*/
+        /*Applies a timer to the length of low gravity. After time runs out a cooldown is applied not allowing
+        the use of low gravity again until after timer. If x is pressed, you can deactivate low gravity and have the cooldwon applied*/
         if (CheckTimer)
         {
             LowGravityDuration += Time.deltaTime;
@@ -368,14 +400,16 @@ public class PlayerController : MonoBehaviour
     public void OnJump()
     {
         //If no velocity on players y axis apply a force to the y axis on A button pressed.
-        if(DialogueTrigger.DialogueShowing == false)
+        if (DialogueTrigger.DialogueShowing == false)
         {
-            if (canjump)
+            if (OnGround)
             {
+                isJumping = true;
                 //_animator.SetBool("isWalking", false);
                 //_animator.SetBool("isJumping", true);
                 //Vector3 Jump = new(0f, _JumpForce);
-                _rb.AddForce(Vector3.up * _JumpForce);
+                //float jumpvelocity = Mathf.Sqrt(-2 * -20 * _JumpForce);
+                //VelocityY = jumpvelocity;
             }
         }
     }
@@ -412,16 +446,25 @@ public class PlayerController : MonoBehaviour
     public void Change()
     {
         Mode = !Mode;
-        if (Mode == true)
+        if (Mode == true) // Move Mode
         {
+            Crosshair.SetActive(false);
             Gun.transform.rotation = transform.rotation;
             moveCam.SetActive(true);
             aimCam.SetActive(false);
         }
-        else
+        else // Aim Mode
         {
+            Crosshair.SetActive(true);
             aimCam.SetActive(true);
             moveCam.SetActive(false);
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
+        Gizmos.DrawWireSphere(transform.position + fwd * 2, radius);
     }
 }

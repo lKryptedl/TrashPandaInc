@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class AutomateDoors : MonoBehaviour
 {
-   
+
     public float smoothTime;
     public Transform DoorLeft, DoorRight;
-    private Vector3 velocity = Vector3.zero;
     public bool Move;
     public Vector3 RightTarget, LeftTarget;
     private Vector3 OriginalPosLeft, OriginalPosRight;
