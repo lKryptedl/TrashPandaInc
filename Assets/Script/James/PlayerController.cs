@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
     public float SpeedinAir;
     public static bool isJumping = false;
     private int layermask;
+    public Transform Center;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -117,17 +118,32 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+
+        if(Physics.SphereCast(Center.position, 0.5f, Vector3.down, out RaycastHit Hit, 1.7f, layermask))
+        {
+            OnGround = true;
+        }
+        else { OnGround = false; }
         /*if (Mathf.Abs(_rb.velocity.y) > 0.001f)
         {
             _animator.SetBool("isWalking", false);
         }*/
-        RaycastHit rayHit;
-        if (Physics.Raycast(transform.position, Vector3.down, out rayHit, 0.4f, layermask))
+        /*Physics.Raycast(transform.position, Vector3.down, out hit, 0.4f, layermask);
+        Physics.Raycast(LeftSideOfPlayer.position, Vector3.down, out hit2, 1f, layermask);
+        Debug.DrawRay(transform.position, Vector3.down, Color.green, 0.4f);
+        Debug.DrawRay(LeftSideOfPlayer.position, Vector3.down, Color.green, 1f);*/
+       /* if (Physics.Raycast(transform.position, Vector3.down, out hit, 0.4f, layermask))
         {
             Debug.DrawRay(transform.position, Vector3.down, Color.green, 0.4f);
             OnGround = true;
         }
-        else { OnGround = false; }
+        if(Physics.Raycast(LeftSideOfPlayer.position, Vector3.down, out hit2, 1f, layermask))
+        {
+            Debug.DrawRay(LeftSideOfPlayer.position, Vector3.down, Color.green, 1f);
+            OnGround = true;
+        }
+        else { OnGround = false; }*/
         //print(OnGround);
 
 
@@ -466,5 +482,6 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.green;
         Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
         Gizmos.DrawWireSphere(transform.position + fwd * 2, radius);
+        //Gizmos.DrawWireSphere(Center.position + Vector3.down * dist, radius);
     }
 }
