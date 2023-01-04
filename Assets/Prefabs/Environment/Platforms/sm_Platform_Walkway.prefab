@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5831423290789854034}
   - component: {fileID: 4853902291543902004}
   - component: {fileID: -404766595994024359}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Platform_Walkway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &258747638635230622
 Transform:
