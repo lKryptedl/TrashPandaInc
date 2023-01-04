@@ -43893,6 +43893,10 @@ PrefabInstance:
       propertyPath: suckSound
       value: 
       objectReference: {fileID: 429705787}
+    - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 1291694079}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
 --- !u!1001 &4007463037977478445
