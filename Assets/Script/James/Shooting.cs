@@ -27,7 +27,6 @@ public class Shooting : MonoBehaviour
             {
                 if (suckSound.isPlaying == false)
                 {
-                    Debug.Log("AAA");
                     suckSound.Play();
                 }
                 foreach (GameObject body in Balls)

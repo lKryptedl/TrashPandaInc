@@ -234,7 +234,9 @@ MonoBehaviour:
   TargetLocation: {x: 0, y: 0, z: 0}
   rubbish: {fileID: 8058542260377076183, guid: 195ca270f6928864797398277e31eead, type: 3}
   spawnPoint: {fileID: 4865878926563528052}
+  Player: {fileID: 0}
   health: 2
+  distance: 100
 --- !u!195 &4865878925054619599
 NavMeshAgent:
   m_ObjectHideFlags: 0

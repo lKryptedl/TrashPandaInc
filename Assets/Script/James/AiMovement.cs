@@ -8,8 +8,10 @@ public class AiMovement : MonoBehaviour
     public NavMeshAgent Agent;
     public bool Moving;
     public Vector3 TargetLocation;
-    public GameObject rubbish, spawnPoint;
+    public GameObject rubbish, spawnPoint, Player;
+    private float y;
     public int health = 2;
+    public int distance = 100;
 
     void Update()
     {
@@ -30,12 +32,17 @@ public class AiMovement : MonoBehaviour
 
     public void RandomLocation()
     { 
-        TargetLocation = Random.insideUnitSphere * 40f + transform.position;
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(TargetLocation, out hit, 1.0f, NavMesh.AllAreas))
+        if (Vector3.Distance(Player.transform.position, transform.position) < distance)
         {
-            TargetLocation = hit.position;
-            Moving = true;
+            y = transform.position.y;
+            TargetLocation = Random.insideUnitSphere * 40f + transform.position;
+            TargetLocation.y = y;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(TargetLocation, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                TargetLocation = hit.position;
+                Moving = true;
+            }
         }
     }
 
