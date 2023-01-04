@@ -489,93 +489,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1336200276807744885, guid: 49c6508522f44814f838c1173952da48, type: 3}
   m_PrefabInstance: {fileID: 4007463037977478445}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7847796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5952068875833801883, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
-  m_PrefabInstance: {fileID: 3628482432377249587}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7847799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7847796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 1e061f73296df1843b742b048cf4810b, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a0d112b6-9789-4cc7-8244-40174654e2dd
-    m_ActionName: New action map/Jump[/XInputControllerWindows/buttonSouth,/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d62bcd95-3e7f-47a2-8fe5-2d0d3d41f94e
-    m_ActionName: New action map/Gravity[/XInputControllerWindows/buttonWest,/Keyboard/u]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8ca6a303-177d-4475-b1f3-aeff53a8e9a4
-    m_ActionName: New action map/Move[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d01b52cd-9f49-417d-94b3-40c2efddb7e4
-    m_ActionName: New action map/Suck[/XInputControllerWindows/leftTrigger]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1291694079}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: b573ef00-75c6-41e7-b111-589fcafd93cc
-    m_ActionName: New action map/Shoot[/XInputControllerWindows/rightTrigger]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b6f8c9ff-cac2-4c0e-a95b-7f86001d8e3e
-    m_ActionName: New action map/Look[/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/rightStick/left]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8c9648d5-0b5a-4d1d-b82b-226eeee6712c
-    m_ActionName: New action map/Change[/XInputControllerWindows/leftShoulder]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 19f8279d-3866-44a7-a98e-850069a0db92
-    m_ActionName: New action map/Rocket[/XInputControllerWindows/buttonNorth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4439e08b-4eef-46b2-8cbc-1a938bc708e1
-    m_ActionName: New action map/Pause[/XInputControllerWindows/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: acb79e9e-18e0-4cdb-ba4c-f2b2fee7a5bf
-    m_ActionName: New action map/Sprint[/XInputControllerWindows/leftStickPress]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: New action map
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &8940314
 GameObject:
   m_ObjectHideFlags: 0
@@ -8071,7 +7984,6 @@ GameObject:
   m_Component:
   - component: {fileID: 429705786}
   - component: {fileID: 429705787}
-  - component: {fileID: 429705788}
   m_Layer: 0
   m_Name: HoovernatorIdle
   m_TagString: Untagged
@@ -8190,19 +8102,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &429705788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429705785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be772985617a524c9304c42659ed8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 429705787}
 --- !u!1 &430903786
 GameObject:
   m_ObjectHideFlags: 0
@@ -19075,7 +18974,6 @@ GameObject:
   m_Component:
   - component: {fileID: 898778520}
   - component: {fileID: 898778521}
-  - component: {fileID: 898778522}
   m_Layer: 0
   m_Name: HovernatorBoot
   m_TagString: Untagged
@@ -19194,19 +19092,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &898778522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898778519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be772985617a524c9304c42659ed8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 898778521}
 --- !u!1 &900214957 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a7f1a085fc0c5f143b173a7037339583, type: 3}
@@ -37619,19 +37504,6 @@ MonoBehaviour:
   triangleImage: {fileID: 611092227}
   hourglassImage: {fileID: 430903789}
   activeImage: {fileID: 2074942240}
---- !u!114 &1787355018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787355002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1be772985617a524c9304c42659ed8f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 429705787}
 --- !u!1 &1787817262 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f029a43d42d1eec4d8f74947a4c5d3ca, type: 3}
@@ -43984,7 +43856,7 @@ PrefabInstance:
     - target: {fileID: 4511371377750543191, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 898778522}
+      objectReference: {fileID: 0}
     - target: {fileID: 4511371377750543191, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -44017,6 +43889,14 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 75
       objectReference: {fileID: 0}
+    - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+      propertyPath: suckSound
+      value: 
+      objectReference: {fileID: 429705787}
+    - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 1291694079}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
 --- !u!1001 &4007463037977478445
