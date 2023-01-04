@@ -17,13 +17,19 @@ public class Shooting : MonoBehaviour
     public static List<GameObject>  Balls = new List<GameObject>();
     GameObject Remove;
     public GameObject Player;
+    public AudioSource suckSound, shootSound;
 
     void Update()
     {
-        if (suck)
+        if (suck == true)
         {
             if (RubbishStored < 12)
             {
+                if (suckSound.isPlaying == false)
+                {
+                    Debug.Log("AAA");
+                    suckSound.Play();
+                }
                 foreach (GameObject body in Balls)
                 {
                     body.GetComponent<Rigidbody>().AddForce((transform.position - body.transform.position) * 125f * Time.fixedDeltaTime);
@@ -49,12 +55,17 @@ public class Shooting : MonoBehaviour
                 Debug.Log("Storage Full");
             }
         }
+        if (suck == false)
+        {
+            suckSound.Stop();
+        }
     }
 
     void OnShoot()
     {
         if (RubbishStored > 0)
         {
+            shootSound.Play();
             Rigidbody shot = (Rigidbody)Instantiate(rubbish, transform.position, transform.rotation);
             shot.velocity = transform.forward * shotSpeed;
             RubbishStored--;
