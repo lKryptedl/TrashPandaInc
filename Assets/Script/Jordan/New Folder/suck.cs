@@ -5,6 +5,7 @@ using UnityEngine;
 public class suck : MonoBehaviour
 {
     public AudioSource audioSource;
+   
     public void onSuck()
     {
         audioSource.Play();
