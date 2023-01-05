@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _speed = 500f;
     [SerializeField] private float _JumpForce;
     public bool AllowInput = true;
-    public bool Pause = true;
+    public static bool Pause = true;
     public bool FreezeConstraints = false;
     PlayerControls controls;
     Vector2 move;
@@ -63,8 +64,12 @@ public class PlayerController : MonoBehaviour
     public static bool isJumping = false;
     private int layermask;
     public Transform Center;
+    public GameObject pauseMenu, SettingsMenu;
+    public Button pauseButton;
     void Start()
     {
+        pauseMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
         _rb = GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
         walkSpeed = _speed;
@@ -214,7 +219,6 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-
         //Slows down time on low gravity. Not sure whether needed.
         if (SlowTime)
         {
@@ -395,10 +399,15 @@ public class PlayerController : MonoBehaviour
         //Pause the game by stopping time. Will later have UI.
         if (Pause)
         {
+            SettingsMenu.SetActive(false);
+            pauseMenu.SetActive(true);
+            pauseButton.Select();
             Pause = false;
         }
         else
         {
+            SettingsMenu.SetActive(false);
+            pauseMenu.SetActive(false);
             Pause = true;
         }
     }
@@ -416,7 +425,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump()
     {
         //If no velocity on players y axis apply a force to the y axis on A button pressed.
-        if (DialogueTrigger.DialogueShowing == false)
+        if (DialogueTrigger.DialogueShowing == false && !pauseMenu.activeInHierarchy && !SettingsMenu.activeInHierarchy)
         {
             if (OnGround)
             {
