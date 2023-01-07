@@ -7,7 +7,7 @@ public class RobotPlacement : MonoBehaviour
 {
     public float timer = 5, timer2, countdown = 60;
     public Vector3 TargetLocation;
-    public int random = 1, placedRobots = 0, count = 0;
+    public int random = 1, count = 0;
     private float y;
     public static int PlayersLocation = 1; //1 = Bridge , 2 = Lounge
     public GameObject robot, RobotWarning;
