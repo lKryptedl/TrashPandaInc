@@ -43973,7 +43973,7 @@ PrefabInstance:
       objectReference: {fileID: 1897558666}
     - target: {fileID: 4511371377750543184, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: SpeedinAir
-      value: 1000
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4511371377750543184, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: _JumpForce
@@ -44144,6 +44144,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+      propertyPath: suckEnd
+      value: 
+      objectReference: {fileID: 388995532}
+    - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: shotSpeed
       value: 75
       objectReference: {fileID: 0}
@@ -44151,6 +44155,10 @@ PrefabInstance:
       propertyPath: suckSound
       value: 
       objectReference: {fileID: 429705787}
+    - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+      propertyPath: suckStart
+      value: 
+      objectReference: {fileID: 898778521}
     - target: {fileID: 8535340519158192721, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: shootSound
       value: 
@@ -44166,7 +44174,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.80036
+      value: 39.00036
       objectReference: {fileID: 0}
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44174,7 +44182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3550034
+      value: -9.355003
       objectReference: {fileID: 0}
     - target: {fileID: 1336200275002814000, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_BiasX
@@ -44409,7 +44417,6 @@ MonoBehaviour:
   _speed: 2000
   _JumpForce: 1500
   AllowInput: 1
-  Pause: 1
   FreezeConstraints: 0
   SlowTime: 0
   Nogravity: 1
@@ -44422,6 +44429,7 @@ MonoBehaviour:
   moveCam: {fileID: 0}
   Reactor: {fileID: 0}
   Crosshair: {fileID: 0}
+  shootPoint: {fileID: 0}
   SlowDownTime: 0.6
   JumpMultiplier: 1.2
   RunSpeed: 0
@@ -44444,6 +44452,10 @@ MonoBehaviour:
   SpherecastDistance: 0
   SpeedinAir: 0
   Center: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  SettingsMenu: {fileID: 0}
+  pauseButton: {fileID: 0}
+  walk: {fileID: 0}
 --- !u!114 &4911575025661023771
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,13 +22,7 @@ public class Rocket : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Robot")) //Destroys robot
-        {
-            Destroy(other.gameObject);
-            Score.PlayerScore += 500;
-            Destroy(gameObject);
-        }
-        else if (!other.CompareTag("Player")) //Collision destroying rocket
+        else if (!(other.CompareTag("Player") || other.CompareTag("Detection"))) //Collision destroying rocket
         {
             if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.OnGround == false) 
             {

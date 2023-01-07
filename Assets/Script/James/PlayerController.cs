@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public Transform MovePosition, FollowPoint;
     public static bool Mode = false;
-    public GameObject Gun, aimCam, moveCam, Reactor, Crosshair;
+    public GameObject Gun, aimCam, moveCam, Reactor, Crosshair, shootPoint;
     [Header("Changes The Speed of low gravity in the air")]
     public float SlowDownTime;
     [Header("How much more you can jump in low gravity")]
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     public Transform Center;
     public GameObject pauseMenu, SettingsMenu;
     public Button pauseButton;
+    public AudioSource walk;
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -155,6 +156,10 @@ public class PlayerController : MonoBehaviour
     }
     private void MovePlayer()
     {
+        if (!walk.isPlaying)
+        {
+            walk.Play();
+        }
         if (Mode == true)
         {
             //Camera relative movement. Player can move forward, backward and side to side with up down left and right on the joystick. Forward movement is always based on where the camera is looking.
@@ -278,6 +283,7 @@ public class PlayerController : MonoBehaviour
         }
         if (DialogueTrigger.DialogueShowing)
         {
+            walk.Stop();
             _rb.velocity = new Vector3(0f, _rb.velocity.y, 0f);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", false);
@@ -311,6 +317,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
+                    walk.Stop();
                     _rb.velocity = new(0, _rb.velocity.y, 0);
                     //_rb.velocity = Vector3.zero;
                     _animator.SetBool("isWalking", false);
@@ -320,6 +327,7 @@ public class PlayerController : MonoBehaviour
         }
         if (!OnGround)
         {
+            walk.Stop();
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", true);
             _animator.SetBool("isGrounded", false);
@@ -492,5 +500,17 @@ public class PlayerController : MonoBehaviour
         Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
         Gizmos.DrawWireSphere(transform.position + fwd * 2, radius);
         //Gizmos.DrawWireSphere(Center.position + Vector3.down * dist, radius);
+    }
+
+    //Vent Shooting Fix:
+    public void Teleported()
+    {
+        Delay();
+    }
+    IEnumerator Delay()
+    {
+        shootPoint.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        shootPoint.GetComponent<Collider>().enabled = true;
     }
 }

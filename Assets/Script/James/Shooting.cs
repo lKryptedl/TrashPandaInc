@@ -17,7 +17,8 @@ public class Shooting : MonoBehaviour
     public static List<GameObject>  Balls = new List<GameObject>();
     GameObject Remove;
     public GameObject Player;
-    public AudioSource suckSound, shootSound;
+    public AudioSource suckSound, shootSound, suckStart, suckEnd;
+    private bool suckRevved = false;
 
     void Update()
     {
@@ -25,7 +26,12 @@ public class Shooting : MonoBehaviour
         {
             if (RubbishStored < 12)
             {
-                if (suckSound.isPlaying == false)
+                if (!suckStart.isPlaying && suckRevved == false)
+                {
+                    suckStart.Play();
+                    suckRevved = true;
+                }
+                if (!suckSound.isPlaying && !suckStart.isPlaying && suckRevved == true)
                 {
                     suckSound.Play();
                 }
@@ -56,7 +62,14 @@ public class Shooting : MonoBehaviour
         }
         if (suck == false)
         {
-            suckSound.Stop();
+            if (suckRevved == true)
+            {
+                suckStart.Stop();
+                suckSound.Stop();
+                suckEnd.Play();
+                suckRevved = false;
+            }
+
         }
     }
 
