@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7073635923340530402}
   - component: {fileID: 5030077873511687720}
   - component: {fileID: -5978214456838926600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Wall_Flatten_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

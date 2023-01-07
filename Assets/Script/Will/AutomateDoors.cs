@@ -6,14 +6,14 @@ public class AutomateDoors : MonoBehaviour
 {
 
     public float smoothTime;
-    public Transform DoorLeft, DoorRight;
+    public Transform Door;
     public bool Move;
-    public Vector3 RightTarget, LeftTarget;
-    private Vector3 OriginalPosLeft, OriginalPosRight;
+    private Vector3 Target, OriginalPos;
+    public Vector3 MovementDir;
     private void Start()
     {
-        OriginalPosLeft = DoorLeft.transform.position;
-        OriginalPosRight = DoorRight.transform.position;
+        OriginalPos = Door.transform.position;
+        Target = OriginalPos + MovementDir;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,13 +36,11 @@ public class AutomateDoors : MonoBehaviour
     {
         if (Move)
         {
-            DoorRight.transform.position = Vector3.Lerp(DoorRight.transform.position, RightTarget, smoothTime);
-            DoorLeft.transform.position = Vector3.Lerp(DoorLeft.transform.position, LeftTarget, smoothTime);
+            Door.transform.position = Vector3.Lerp(Door.transform.position, Target, smoothTime);
         }
         else
         {
-            DoorRight.transform.position = Vector3.Lerp(DoorRight.transform.position, OriginalPosRight, smoothTime);
-            DoorLeft.transform.position = Vector3.Lerp(DoorLeft.transform.position, OriginalPosLeft, smoothTime);
+            Door.transform.position = Vector3.Lerp(Door.transform.position, OriginalPos, smoothTime);
         }
     }
 }
