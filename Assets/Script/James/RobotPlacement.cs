@@ -15,21 +15,24 @@ public class RobotPlacement : MonoBehaviour
 
     public void Update()
     {
-        if (timer > 0)
+        if (PlayerController.Pause) //only run when game isnt paused
         {
-            timer -= Time.fixedDeltaTime;
-        }
-        else
-        {
-            Location();
-        }
-        if (timer2 > 0 && placing == true)
-        {
-            timer2 -= Time.fixedDeltaTime;
-        }
-        else if (timer2 < 0 && placing == true)
-        {
-            Place();
+            if (timer > 0)
+            {
+                timer -= Time.fixedDeltaTime;
+            }
+            else
+            {
+                Location();
+            }
+            if (timer2 > 0 && placing == true)
+            {
+                timer2 -= Time.fixedDeltaTime;
+            }
+            else if (timer2 < 0 && placing == true)
+            {
+                Place();
+            }
         }
     }
 
