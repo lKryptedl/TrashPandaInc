@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 8120599664190503732}
   - component: {fileID: 4636872673759114370}
   - component: {fileID: 5310331178525310856}
+  - component: {fileID: 8110309140118348527}
   m_Layer: 8
   m_Name: BeerMat002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8526624867489209595
 Transform:
@@ -98,6 +99,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6463365032939633131, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8110309140118348527
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65687540397343506}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.128, y: 1.853, z: 0.076000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.076000005}
+  m_TimeToStationary: 0.5
 --- !u!1 &183398123629100108
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,12 +127,13 @@ GameObject:
   - component: {fileID: 9038066027617714540}
   - component: {fileID: 7265776368507149905}
   - component: {fileID: 406367911333130374}
+  - component: {fileID: 6053358023906216000}
   m_Layer: 8
   m_Name: Frame001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4336631596184348983
 Transform:
@@ -196,6 +214,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4987683115062271362, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6053358023906216000
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183398123629100108}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 9.606001, y: 9.606001, z: 8.453}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 8.453}
+  m_TimeToStationary: 0.5
 --- !u!1 &822791005747300229
 GameObject:
   m_ObjectHideFlags: 0
@@ -208,12 +242,13 @@ GameObject:
   - component: {fileID: 5465643617261357784}
   - component: {fileID: 2156282821696135467}
   - component: {fileID: 3904715955451466578}
+  - component: {fileID: 8866811381501238457}
   m_Layer: 8
   m_Name: BeerCup005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8689551270337281155
 Transform:
@@ -294,6 +329,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8988883623052570504, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8866811381501238457
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822791005747300229}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.381, y: 1.8720001, z: 2.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.57600003, y: 0.037, z: 2.105}
+  m_TimeToStationary: 0.5
 --- !u!1 &850703416938511476
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,12 +357,13 @@ GameObject:
   - component: {fileID: 3216251361535375240}
   - component: {fileID: 9161349097486288749}
   - component: {fileID: 7363362609217655709}
+  - component: {fileID: 5762151658125463812}
   m_Layer: 8
   m_Name: BeerCup002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1496117837021527551
 Transform:
@@ -392,6 +444,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1280948759990298708, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &5762151658125463812
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850703416938511476}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.381, y: 1.8720001, z: 2.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.57600003, y: 0.037, z: 2.105}
+  m_TimeToStationary: 0.5
 --- !u!1 &1352707798168918760
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,12 +472,13 @@ GameObject:
   - component: {fileID: 1623956274583338438}
   - component: {fileID: 8056288859920999368}
   - component: {fileID: 4006002852073197912}
+  - component: {fileID: 8308912676453830166}
   m_Layer: 8
   m_Name: Tap001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4871716253405698171
 Transform:
@@ -490,6 +559,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8684579490666119533, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8308912676453830166
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352707798168918760}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.907, y: 4.0360003, z: 2.8920002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -1.128, z: -2.2310002}
+  m_TimeToStationary: 0.5
 --- !u!1 &1396892224862573017
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,12 +587,13 @@ GameObject:
   - component: {fileID: 2848026920565307739}
   - component: {fileID: 3506437159344657220}
   - component: {fileID: 7189522194275025967}
+  - component: {fileID: 6700932546690514211}
   m_Layer: 8
   m_Name: Barral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7794216607796718414
 Transform:
@@ -588,6 +674,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5312937574368647714, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6700932546690514211
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396892224862573017}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.945001, y: 8.945001, z: 18.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 10.245001}
+  m_TimeToStationary: 0.5
 --- !u!1 &2151687250729612884
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,12 +702,13 @@ GameObject:
   - component: {fileID: 5595302087602584575}
   - component: {fileID: 6482288043853506360}
   - component: {fileID: 4373232457278334063}
+  - component: {fileID: 9039394647452331410}
   m_Layer: 8
   m_Name: LongTableTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2329688102586417344
 Transform:
@@ -686,6 +789,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5541798196057851119, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &9039394647452331410
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2151687250729612884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 38.998, y: 35.308002, z: 4.7190003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -8.998, y: -25.308, z: -4.2190003}
+  m_TimeToStationary: 0.5
 --- !u!1 &2361218876785440516
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,12 +817,13 @@ GameObject:
   - component: {fileID: 4647549320349949033}
   - component: {fileID: 7832886386487580689}
   - component: {fileID: 4713854989866651637}
+  - component: {fileID: 8118733849492064776}
   m_Layer: 8
   m_Name: Shelf001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1182291389260489726
 Transform:
@@ -784,6 +904,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7212207901548684034, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8118733849492064776
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361218876785440516}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 13.624001, y: 4.0230002, z: 1.9240001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.49600002, y: 3.6940002, z: 1.9240001}
+  m_TimeToStationary: 0.5
 --- !u!1 &2442365949077522581
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,12 +932,13 @@ GameObject:
   - component: {fileID: 8280156808370456831}
   - component: {fileID: 3086389763204081773}
   - component: {fileID: 4356861338764978138}
+  - component: {fileID: 4773224820450991762}
   m_Layer: 8
   m_Name: BarStall004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2282918306771557365
 Transform:
@@ -882,6 +1019,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2066477706005710023, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &4773224820450991762
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2442365949077522581}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &2560772795298191192
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,12 +1047,13 @@ GameObject:
   - component: {fileID: 5481930980148014312}
   - component: {fileID: 3535076598410079352}
   - component: {fileID: 332154143861780614}
+  - component: {fileID: 8991255506900581001}
   m_Layer: 8
   m_Name: MartineGlass002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3269415991801768594
 Transform:
@@ -944,7 +1098,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 418bc0b2ed10baa479e8670cbc420a0e, type: 2}
+  - {fileID: 2100000, guid: 79523f46fe3471e40a304d0ce5b86b24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -980,6 +1134,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8753117016720700433, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8991255506900581001
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2560772795298191192}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.9490001, y: 1.8540001, z: 2.0080001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.0080001}
+  m_TimeToStationary: 0.5
 --- !u!1 &2758044486765428307
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,12 +1162,13 @@ GameObject:
   - component: {fileID: 8892194901593952811}
   - component: {fileID: 8578831762199274077}
   - component: {fileID: 2070001825405345844}
+  - component: {fileID: 8959162801320171007}
   m_Layer: 8
   m_Name: Tap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5512888671900926866
 Transform:
@@ -1078,6 +1249,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7382784418737839183, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8959162801320171007
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758044486765428307}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.907, y: 4.0360003, z: 2.8920002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -1.128, z: -2.2310002}
+  m_TimeToStationary: 0.5
 --- !u!1 &2886356179032269617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,12 +1277,13 @@ GameObject:
   - component: {fileID: 1026595794726819752}
   - component: {fileID: 2188040812852958089}
   - component: {fileID: 4455013300482311096}
+  - component: {fileID: 8629810120191189610}
   m_Layer: 8
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5122807762264929287
 Transform:
@@ -1176,6 +1364,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6402532953415861574, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8629810120191189610
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886356179032269617}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.3100001, y: 7.734, z: 6.7380004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.8990002, z: -1.3920001}
+  m_TimeToStationary: 0.5
 --- !u!1 &3000207390771693464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,12 +1392,13 @@ GameObject:
   - component: {fileID: 6905554997866572155}
   - component: {fileID: 2381373938360518274}
   - component: {fileID: 5391387766930938502}
+  - component: {fileID: 7998839058874351382}
   m_Layer: 8
   m_Name: BeerMat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &9168321196062236301
 Transform:
@@ -1274,6 +1479,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1196432181869552043, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7998839058874351382
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000207390771693464}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.128, y: 1.853, z: 0.076000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.076000005}
+  m_TimeToStationary: 0.5
 --- !u!1 &3394230786808982748
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,12 +1507,13 @@ GameObject:
   - component: {fileID: 8163175580152797620}
   - component: {fileID: 3673581069863788690}
   - component: {fileID: 5012747780228081740}
+  - component: {fileID: 5771022637951686256}
   m_Layer: 8
   m_Name: BeerMat003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6972181984686768129
 Transform:
@@ -1372,6 +1594,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5594542197554059641, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &5771022637951686256
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3394230786808982748}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.128, y: 1.853, z: 0.076000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.076000005}
+  m_TimeToStationary: 0.5
 --- !u!1 &3489340635101035757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1384,12 +1622,13 @@ GameObject:
   - component: {fileID: 7740480354321853679}
   - component: {fileID: 3055483513297292408}
   - component: {fileID: 4630155990018423884}
+  - component: {fileID: 6611097127315929730}
   m_Layer: 8
   m_Name: Barral001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3058966478638218223
 Transform:
@@ -1470,6 +1709,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2606248217401455128, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6611097127315929730
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3489340635101035757}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.945001, y: 8.945001, z: 18.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 10.245001}
+  m_TimeToStationary: 0.5
 --- !u!1 &3518683569565092622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,12 +1737,13 @@ GameObject:
   - component: {fileID: 3518683569565092619}
   - component: {fileID: 3518683569565092620}
   - component: {fileID: 7058096043943600482}
+  - component: {fileID: 798317926}
   m_Layer: 8
   m_Name: Pipe (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3518683569565092621
 Transform:
@@ -1568,6 +1824,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6402532953415861574, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &798317926
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518683569565092622}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.3100001, y: 7.734, z: 6.7380004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.8990002, z: -1.3920001}
+  m_TimeToStationary: 0.5
 --- !u!1 &3518683570348192712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,12 +1852,13 @@ GameObject:
   - component: {fileID: 3518683570348192709}
   - component: {fileID: 3518683570348192710}
   - component: {fileID: 8353209076155784401}
+  - component: {fileID: 14706092}
   m_Layer: 8
   m_Name: Pipe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3518683570348192711
 Transform:
@@ -1666,6 +1939,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6402532953415861574, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &14706092
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518683570348192712}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.3100001, y: 7.734, z: 6.7380004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.8990002, z: -1.3920001}
+  m_TimeToStationary: 0.5
 --- !u!1 &4082191858889741951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,12 +1967,13 @@ GameObject:
   - component: {fileID: 4007255972070770190}
   - component: {fileID: 2406223497585138114}
   - component: {fileID: 6891789636046941562}
+  - component: {fileID: 4162922989564138278}
   m_Layer: 8
   m_Name: BeerCup004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &653387496460911947
 Transform:
@@ -1764,6 +2054,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1761939514035050404, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &4162922989564138278
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082191858889741951}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.381, y: 1.8720001, z: 2.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.57600003, y: 0.037, z: 2.105}
+  m_TimeToStationary: 0.5
 --- !u!1 &4123020671688886518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,12 +2082,13 @@ GameObject:
   - component: {fileID: 2270390739276734524}
   - component: {fileID: 6098889808116184053}
   - component: {fileID: 388323898947699364}
+  - component: {fileID: 7239391161955706268}
   m_Layer: 8
   m_Name: OpenTableTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2452403705083658538
 Transform:
@@ -1862,6 +2169,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 713576022650065785, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7239391161955706268
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4123020671688886518}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.6840005, y: 10, z: 11.612}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 5.309, y: 0, z: 10.991}
+  m_TimeToStationary: 0.5
 --- !u!1 &4225595573684066508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,12 +2197,13 @@ GameObject:
   - component: {fileID: 5528468631821828436}
   - component: {fileID: 1723794517307151826}
   - component: {fileID: 5408138835423968075}
+  - component: {fileID: 8966087404877928253}
   m_Layer: 8
   m_Name: Tap002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3509546310897356503
 Transform:
@@ -1960,6 +2284,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3614770118929751288, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8966087404877928253
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225595573684066508}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.907, y: 4.0360003, z: 2.8920002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -1.128, z: -2.2310002}
+  m_TimeToStationary: 0.5
 --- !u!1 &4329518081420644467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,7 +2314,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3989724644600253129
 Transform:
@@ -2044,12 +2384,13 @@ GameObject:
   - component: {fileID: 3869307589861192487}
   - component: {fileID: 2867706802698994632}
   - component: {fileID: 6458603748096225397}
+  - component: {fileID: 3184645351987521668}
   m_Layer: 8
   m_Name: BeerCup003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2082565197518323437
 Transform:
@@ -2130,6 +2471,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8066815438908327598, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &3184645351987521668
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591739091577590332}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.381, y: 1.8720001, z: 2.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.57600003, y: 0.037, z: 2.105}
+  m_TimeToStationary: 0.5
 --- !u!1 &5154058098640388821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,12 +2499,13 @@ GameObject:
   - component: {fileID: 5516764981875453101}
   - component: {fileID: 1451696059189228794}
   - component: {fileID: 2898100838232184626}
+  - component: {fileID: 8960928051130743492}
   m_Layer: 8
   m_Name: SideTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1337756658927704535
 Transform:
@@ -2228,6 +2586,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5044447339683786092, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8960928051130743492
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5154058098640388821}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.293, y: 10, z: 4.7330003}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -25.707, y: 0, z: -4.2330003}
+  m_TimeToStationary: 0.5
 --- !u!1 &5348473326071739938
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,12 +2614,13 @@ GameObject:
   - component: {fileID: 8113725641380111975}
   - component: {fileID: 2151423380841326956}
   - component: {fileID: 167203344419427290}
+  - component: {fileID: 8857868221543571535}
   m_Layer: 8
   m_Name: BarStall007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6017281537175896110
 Transform:
@@ -2326,6 +2701,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8665094424930713536, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8857868221543571535
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348473326071739938}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &5688975502654715594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,12 +2729,13 @@ GameObject:
   - component: {fileID: 1652528203340324902}
   - component: {fileID: 9055725071206827511}
   - component: {fileID: 6164710500310059670}
+  - component: {fileID: 9090424607656714407}
   m_Layer: 8
   m_Name: BarStall001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6743297755942045494
 Transform:
@@ -2424,6 +2816,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7415844996793547591, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &9090424607656714407
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5688975502654715594}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6386003595371539151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,12 +2844,13 @@ GameObject:
   - component: {fileID: 512568289343873748}
   - component: {fileID: 1621498764481391195}
   - component: {fileID: 8880985570310510838}
+  - component: {fileID: 7515175715500194978}
   m_Layer: 8
   m_Name: BarStall005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2241168495481827564
 Transform:
@@ -2522,6 +2931,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7225704772193726516, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7515175715500194978
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6386003595371539151}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6468934100236015423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,12 +2959,13 @@ GameObject:
   - component: {fileID: 8114944175001120148}
   - component: {fileID: 4049285306730913037}
   - component: {fileID: 483896489627052363}
+  - component: {fileID: 7571295730342658386}
   m_Layer: 8
   m_Name: MartineGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8746454951906663991
 Transform:
@@ -2584,7 +3010,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 418bc0b2ed10baa479e8670cbc420a0e, type: 2}
+  - {fileID: 2100000, guid: 79523f46fe3471e40a304d0ce5b86b24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2620,6 +3046,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1839936843496294828, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7571295730342658386
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468934100236015423}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.9490001, y: 1.8540001, z: 2.0080001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.0080001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6557544006497729725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2632,12 +3074,13 @@ GameObject:
   - component: {fileID: 40132759853770236}
   - component: {fileID: 2157509757754246020}
   - component: {fileID: 1492813304406534769}
+  - component: {fileID: 7770384564869065428}
   m_Layer: 8
   m_Name: BarStall006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2775231274571647579
 Transform:
@@ -2718,6 +3161,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5196227242553769837, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7770384564869065428
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6557544006497729725}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6607669691503438495
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,12 +3189,13 @@ GameObject:
   - component: {fileID: 8575386812554248240}
   - component: {fileID: 5971668664983107439}
   - component: {fileID: 511420738804322869}
+  - component: {fileID: 7739374950369623282}
   m_Layer: 8
   m_Name: MartineGlass003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3966785694723935467
 Transform:
@@ -2780,7 +3240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 418bc0b2ed10baa479e8670cbc420a0e, type: 2}
+  - {fileID: 2100000, guid: 79523f46fe3471e40a304d0ce5b86b24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2816,6 +3276,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5598121972786730758, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7739374950369623282
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6607669691503438495}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.9490001, y: 1.8540001, z: 2.0080001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.0080001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6716455922510165526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,12 +3304,13 @@ GameObject:
   - component: {fileID: 1467212470015271772}
   - component: {fileID: 94075537399300869}
   - component: {fileID: 7282106980616049701}
+  - component: {fileID: 7917685503337586811}
   m_Layer: 8
   m_Name: BarStall002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7320746880778668896
 Transform:
@@ -2914,6 +3391,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2461954109114117279, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7917685503337586811
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716455922510165526}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &6747771079737776766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,12 +3419,13 @@ GameObject:
   - component: {fileID: 7754161229504185530}
   - component: {fileID: 6384153056893268695}
   - component: {fileID: 4825916685381690406}
+  - component: {fileID: 7885809663883054099}
   m_Layer: 8
   m_Name: BeerMat001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2653198107359202583
 Transform:
@@ -3012,6 +3506,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4199962117232987116, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7885809663883054099
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747771079737776766}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.128, y: 1.853, z: 0.076000005}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.076000005}
+  m_TimeToStationary: 0.5
 --- !u!1 &6839508686311476231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,12 +3534,13 @@ GameObject:
   - component: {fileID: 4294717697827118246}
   - component: {fileID: 6540717535626614339}
   - component: {fileID: 5380728532836605294}
+  - component: {fileID: 7943840642133678698}
   m_Layer: 8
   m_Name: BarStall003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3361723335812740410
 Transform:
@@ -3110,6 +3621,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 602817113333387920, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &7943840642133678698
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6839508686311476231}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7087904536145875342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3122,12 +3649,13 @@ GameObject:
   - component: {fileID: 4373973147212560426}
   - component: {fileID: 5826499014061010338}
   - component: {fileID: 1055007186962428725}
+  - component: {fileID: 6921753264580869071}
   m_Layer: 8
   m_Name: Barral002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4398281831622701973
 Transform:
@@ -3208,6 +3736,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4650303640932228769, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6921753264580869071
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7087904536145875342}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8.945001, y: 8.945001, z: 18.245}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 10.245001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7111394833803274243
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,12 +3764,13 @@ GameObject:
   - component: {fileID: 1146226736025244291}
   - component: {fileID: 2029036289169893701}
   - component: {fileID: 8481592909093869823}
+  - component: {fileID: 5936975745004830318}
   m_Layer: 8
   m_Name: BeerCup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2015767137322717321
 Transform:
@@ -3306,6 +3851,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8835032347309031165, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &5936975745004830318
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111394833803274243}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.381, y: 1.8720001, z: 2.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.57600003, y: 0.037, z: 2.105}
+  m_TimeToStationary: 0.5
 --- !u!1 &7201245886870341177
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,12 +3879,13 @@ GameObject:
   - component: {fileID: 3383669286384054161}
   - component: {fileID: 7217320663824397023}
   - component: {fileID: 2687963989967155374}
+  - component: {fileID: 6628768608546857633}
   m_Layer: 8
   m_Name: Shelf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7722263777332770032
 Transform:
@@ -3404,6 +3966,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4552961407312753236, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6628768608546857633
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201245886870341177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 13.624001, y: 4.0230002, z: 1.9240001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.49600002, y: 3.6940002, z: 1.9240001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7207342151610648395
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,12 +3994,13 @@ GameObject:
   - component: {fileID: 5404506531139159076}
   - component: {fileID: 924120242474761596}
   - component: {fileID: 8954537575275317892}
+  - component: {fileID: 8922838255405044301}
   m_Layer: 8
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2275105411052833289
 Transform:
@@ -3502,6 +4081,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6360558719573625917, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8922838255405044301
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7207342151610648395}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 9.606001, y: 9.606001, z: 8.453}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 8.453}
+  m_TimeToStationary: 0.5
 --- !u!1 &7495238293188190419
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,12 +4109,13 @@ GameObject:
   - component: {fileID: 3132962304724325312}
   - component: {fileID: 3597597699140902898}
   - component: {fileID: 7327843015542745024}
+  - component: {fileID: 6399772937839720126}
   m_Layer: 8
   m_Name: BarStall008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8599147657972430427
 Transform:
@@ -3600,6 +4196,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 448824805537275442, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6399772937839720126
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7495238293188190419}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7531129077412444344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,12 +4224,13 @@ GameObject:
   - component: {fileID: 9081040490427530531}
   - component: {fileID: 8721739536380429703}
   - component: {fileID: 3398106966739423019}
+  - component: {fileID: 6365576316367122137}
   m_Layer: 8
   m_Name: MartineGlass004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &266668950556239779
 Transform:
@@ -3662,7 +4275,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 418bc0b2ed10baa479e8670cbc420a0e, type: 2}
+  - {fileID: 2100000, guid: 79523f46fe3471e40a304d0ce5b86b24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3698,6 +4311,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5630116291635476073, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6365576316367122137
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7531129077412444344}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.9490001, y: 1.8540001, z: 2.0080001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.0080001}
+  m_TimeToStationary: 0.5
 --- !u!1 &7948829845357248746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,12 +4339,13 @@ GameObject:
   - component: {fileID: 8856936118566932699}
   - component: {fileID: 7610356299528595201}
   - component: {fileID: 35127923939794504}
+  - component: {fileID: 6817054217622115975}
   m_Layer: 8
   m_Name: Frame002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &3748134426798393179
 Transform:
@@ -3796,6 +4426,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -216245521674380718, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &6817054217622115975
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7948829845357248746}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 9.606001, y: 9.606001, z: 8.453}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 8.453}
+  m_TimeToStationary: 0.5
 --- !u!1 &9041749427357257061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,12 +4454,13 @@ GameObject:
   - component: {fileID: 8562959417782747825}
   - component: {fileID: 485692655105941410}
   - component: {fileID: 2193340239580166958}
+  - component: {fileID: 8508152408333512611}
   m_Layer: 8
   m_Name: MartineGlass001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5100299751478360526
 Transform:
@@ -3858,7 +4505,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 418bc0b2ed10baa479e8670cbc420a0e, type: 2}
+  - {fileID: 2100000, guid: 79523f46fe3471e40a304d0ce5b86b24, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3894,6 +4541,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5034529079907998619, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8508152408333512611
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041749427357257061}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.9490001, y: 1.8540001, z: 2.0080001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 2.0080001}
+  m_TimeToStationary: 0.5
 --- !u!1 &9075573532290453856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3906,12 +4569,13 @@ GameObject:
   - component: {fileID: 484879039742725235}
   - component: {fileID: 2212023400576479464}
   - component: {fileID: 3071079501201760267}
+  - component: {fileID: 5559141903035205393}
   m_Layer: 8
   m_Name: BarStall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8948803132755359038
 Transform:
@@ -3992,6 +4656,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3051036541467704815, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &5559141903035205393
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9075573532290453856}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.9670002, y: 2.9670002, z: 3.9970002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -2.6330001}
+  m_TimeToStationary: 0.5
 --- !u!1 &9132394394208538040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4004,12 +4684,13 @@ GameObject:
   - component: {fileID: 3186518420895103222}
   - component: {fileID: 6255751173526882117}
   - component: {fileID: 6091663339297254526}
+  - component: {fileID: 8288230874365267394}
   m_Layer: 8
   m_Name: BeerCup001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4886781634135497647
 Transform:
@@ -4090,3 +4771,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2976539960155490320, guid: 9ce29a6d2ca9d3a47a6c39743c33d7e7, type: 3}
+--- !u!208 &8288230874365267394
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132394394208538040}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.381, y: 1.8720001, z: 2.105}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.57600003, y: 0.037, z: 2.105}
+  m_TimeToStationary: 0.5

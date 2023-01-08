@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6696900144164720551}
   - component: {fileID: 8868955986621348717}
   - component: {fileID: 881552484501848243}
+  - component: {fileID: 1338415517763535149}
   m_Layer: 8
   m_Name: sm_Locker
   m_TagString: Untagged
@@ -98,3 +99,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2232952877369940510, guid: c0eec46dc347a3845b5acd1d078c105b, type: 3}
+--- !u!208 &1338415517763535149
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6923193758012676792}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.8520001, y: 1.8820001, z: 6.8820004}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.036000002, y: -1.2240001, z: 6.9080005}
+  m_TimeToStationary: 0.5

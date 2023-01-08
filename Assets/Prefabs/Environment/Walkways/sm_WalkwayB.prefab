@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2247072710272212260}
   - component: {fileID: 2918595531837067905}
   - component: {fileID: 1109038233869624907}
-  - component: {fileID: 7294362895659773604}
+  - component: {fileID: 417129840694476314}
   m_Layer: 8
   m_Name: sm_WalkwayB
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1469550161076127646}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 347.4914, y: -111.99991, z: 395.3078}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469550161076127646}
-  m_Mesh: {fileID: -856059019632272089, guid: cf930b683e436d0459c698ab54b620d4, type: 3}
+  m_Mesh: {fileID: -3914798656235243572, guid: 7904e8d082be2504985bcd97070d4917, type: 3}
 --- !u!23 &1109038233869624907
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,8 +63,8 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 712b3b6659de28849a7060d9ea7b887e, type: 2}
-  - {fileID: 2100000, guid: a3434995a1845cd4183bfacd7331d3e7, type: 2}
   - {fileID: 2100000, guid: e12d6ee33dfbf1242b13081fc7bf1725, type: 2}
+  - {fileID: 2100000, guid: a3434995a1845cd4183bfacd7331d3e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7294362895659773604
+--- !u!64 &417129840694476314
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,4 +99,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -856059019632272089, guid: cf930b683e436d0459c698ab54b620d4, type: 3}
+  m_Mesh: {fileID: -3914798656235243572, guid: 7904e8d082be2504985bcd97070d4917, type: 3}
