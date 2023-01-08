@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2222375281205303128}
   - component: {fileID: 2988328698997299453}
   - component: {fileID: 1052815744850865207}
-  - component: {fileID: -6479455933825039861}
+  - component: {fileID: -6865316432380364140}
   m_Layer: 8
   m_Name: sm_WalkwayD
   m_TagString: Untagged
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557302260607323618}
-  m_Mesh: {fileID: 8632993429437876281, guid: d77cc1e7dc52c6541acda4aecc522fff, type: 3}
+  m_Mesh: {fileID: -246013680712998435, guid: 1ba5d27e1a98ea84ba855c6bb6bb4e1f, type: 3}
 --- !u!23 &1052815744850865207
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62,9 +62,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 712b3b6659de28849a7060d9ea7b887e, type: 2}
   - {fileID: 2100000, guid: a3434995a1845cd4183bfacd7331d3e7, type: 2}
   - {fileID: 2100000, guid: e12d6ee33dfbf1242b13081fc7bf1725, type: 2}
-  - {fileID: 2100000, guid: 712b3b6659de28849a7060d9ea7b887e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &-6479455933825039861
+--- !u!64 &-6865316432380364140
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,4 +99,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 8632993429437876281, guid: d77cc1e7dc52c6541acda4aecc522fff, type: 3}
+  m_Mesh: {fileID: -246013680712998435, guid: 1ba5d27e1a98ea84ba855c6bb6bb4e1f, type: 3}
