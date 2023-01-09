@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,8 +21,10 @@ public class Shooting : MonoBehaviour
     public GameObject Player;
     public AudioSource suckSound, shootSound, suckStart, suckEnd;
     private bool suckRevved = false;
+    public TMP_Text RocketDisplay;
     void Update()
     {
+        RocketDisplay.text = rocketCount.ToString();
         if (suck == true)
         {
             if (RubbishStored < 12)
