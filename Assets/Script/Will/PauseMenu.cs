@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     public void OnMenu()
     {
         SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1;
     }
     public void OnBack()
     {
@@ -58,10 +59,12 @@ public class PauseMenu : MonoBehaviour
     private void LoadVol()
     {
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
+        PlayerPrefs.Save();
     }
     private void SaveVol()
     {
         PlayerPrefs.SetFloat("volume", volumeSlider.value);
+        PlayerPrefs.Save();
     }
     private void LoadSensX()
     {
@@ -70,6 +73,7 @@ public class PauseMenu : MonoBehaviour
     private void SaveSensX()
     {
         PlayerPrefs.SetFloat("SensX", SensXSlider.value);
+        PlayerPrefs.Save();
     }
     private void LoadSensY()
     {
@@ -78,6 +82,7 @@ public class PauseMenu : MonoBehaviour
     private void SaveSensY()
     {
         PlayerPrefs.SetFloat("SensY", SensYSlider.value);
+        PlayerPrefs.Save();
     }
 
 }
