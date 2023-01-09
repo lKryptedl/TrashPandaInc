@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 689795253077423113}
   - component: {fileID: 3347953984617758915}
   - component: {fileID: 593078894756032621}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Doorway_Indent_Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

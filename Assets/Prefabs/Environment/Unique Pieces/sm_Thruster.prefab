@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 1007947865675528069}
   - component: {fileID: 4202747592502474784}
   - component: {fileID: 2141426313782365418}
+  - component: {fileID: 1311865633}
   m_Layer: 0
   m_Name: sm_Thruster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1007947865675528069
 Transform:
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483894598410939711}
-  m_LocalRotation: {x: -0.78175807, y: 0.3255598, z: 0.20446543, w: 0.49097764}
+  m_LocalRotation: {x: -0.78175926, y: 0.32555902, z: 0.20446435, w: 0.49097672}
   m_LocalPosition: {x: 375.99323, y: 20, z: 222.00449}
   m_LocalScale: {x: 0.503604, y: 0.50360394, z: 0.503604}
   m_ConstrainProportionsScale: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b4cb95b29cf0424488ddbd2aff9bd0ce, type: 2}
+  - {fileID: 2100000, guid: eb9268d7a8bfb0a4ebb0c835f1d73f31, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1311865633
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483894598410939711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2128599272216676504, guid: 6ac28a1068a7adb409f737346a712651, type: 3}

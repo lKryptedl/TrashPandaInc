@@ -1,0 +1,338 @@
+fileFormatVersion: 2
+guid: 236b2181063dd0b4cbaaee4df212bc34
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ButtonsMenui_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 1578
+        width: 789
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33c68cf71c8bcfe43968a4cf4f61572f
+      internalID: -1228055139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsMenui_4
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 1831
+        width: 490
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0304992f07742d64685f462b781acbdd
+      internalID: -1685611959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsMenui_10
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1621
+        width: 300
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd9b4a872d67374fb66df754f8135d5
+      internalID: 1475053812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsMenui_14
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 1351
+        width: 664
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6343c8c5e7ddc0248a6ad0a47ae393b0
+      internalID: 2003440879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsMenui_24
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 590
+        width: 767
+        height: 468
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c608047d4e4994c438676c229f8db6bb
+      internalID: -623417466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsMenui_28
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 834
+        width: 493
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d66f9e71cf7a1a468aae260e86bd96e
+      internalID: 429488789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsMenui_34
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 666
+        width: 299
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ee8d4b6f1b76a408798e516f087f42
+      internalID: 1259669918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsMenui_38
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 397
+        width: 668
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 651a48ee4759c6948a54ca2405ccdf12
+      internalID: 2030352210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 938bb47cf07096349a591f58c2c7faa5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ButtonsMenui_18: -856702122
+      ButtonsMenui_0: -1228055139
+      ButtonsMenui_16: -1795682986
+      ButtonsMenui_40: -748620383
+      ButtonsMenui_10: 1475053812
+      ButtonsMenui_23: 1527805345
+      ButtonsMenui_33: 579905633
+      ButtonsMenui_39: -885302647
+      ButtonsMenui_2: -1482840835
+      ButtonsMenui_45: -533424223
+      ButtonsMenui_20: 2063516816
+      ButtonsMenui_30: 1401718239
+      ButtonsMenui_29: 2139912278
+      ButtonsMenui_37: -1933213389
+      ButtonsMenui_36: -1648262395
+      ButtonsMenui_42: 313883265
+      ButtonsMenui_32: 777625825
+      ButtonsMenui_46: -1670982499
+      ButtonsMenui_15: 655901370
+      ButtonsMenui_43: -1667624744
+      ButtonsMenui_21: -503346428
+      ButtonsMenui_1: 501449200
+      ButtonsMenui_22: -353985851
+      ButtonsMenui_12: 1386047964
+      ButtonsMenui_14: 2003440879
+      ButtonsMenui_41: -825810028
+      ButtonsMenui_7: -159264322
+      ButtonsMenui_28: 429488789
+      ButtonsMenui_8: 1180782242
+      ButtonsMenui_38: 2030352210
+      ButtonsMenui_26: 1952821686
+      ButtonsMenui_44: -39742078
+      ButtonsMenui_17: -971706780
+      ButtonsMenui_35: 275340379
+      ButtonsMenui_25: 383593702
+      ButtonsMenui_11: 1667972439
+      ButtonsMenui_9: 1675606487
+      ButtonsMenui_34: 1259669918
+      ButtonsMenui_5: 1726860382
+      ButtonsMenui_24: -623417466
+      ButtonsMenui_19: 1721083499
+      ButtonsMenui_27: -1175827742
+      ButtonsMenui_3: -1834943629
+      ButtonsMenui_6: -27284795
+      ButtonsMenui_31: 1354159079
+      ButtonsMenui_4: -1685611959
+      ButtonsMenui_47: -939722548
+      ButtonsMenui_13: -2121572614
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

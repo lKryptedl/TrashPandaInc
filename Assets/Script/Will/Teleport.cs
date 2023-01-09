@@ -21,6 +21,7 @@ public class Teleport : MonoBehaviour
     {
         print("Teleport");
         //player.transform.SetPositionAndRotation(TeleportLocation.position + new Vector3(AdditionalX, 0f, 0f); //TeleportLocation.rotation);
+        player.GetComponent<PlayerController>().Teleported();
         player.transform.position = TeleportLocation.position + new Vector3(AdditionalX, 0f, 0f);
 
     }

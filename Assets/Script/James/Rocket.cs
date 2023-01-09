@@ -22,17 +22,10 @@ public class Rocket : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (other.CompareTag("Robot")) //Destroys robot
+        else if (!(other.CompareTag("Player") || other.CompareTag("Detection"))) //Collision destroying rocket
         {
-            Destroy(other.gameObject);
-            Score.PlayerScore += 500;
-            Destroy(gameObject);
-        }
-        else if (!other.CompareTag("Player")) //Collision destroying rocket
-        {
-            if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.canjump == false) 
+            if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.OnGround == false) 
             {
-                Debug.Log("yeet");
                 Vector3 direction = Player.transform.position - transform.position;
                 direction.Normalize();
                 Player.GetComponent<Rigidbody>().AddForce(direction * 5000f);

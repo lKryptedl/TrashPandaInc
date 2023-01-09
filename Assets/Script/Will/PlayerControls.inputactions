@@ -89,7 +89,16 @@
                 {
                     "name": "Sprint",
                     "type": "Button",
-                    "id": "228d32c0-5700-4305-b121-da7ace26e5dc",
+                    "id": "acb79e9e-18e0-4cdb-ba4c-f2b2fee7a5bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "f67b5381-5905-4808-ae1b-cf1f5bddee9e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -342,7 +351,7 @@
                 {
                     "name": "",
                     "id": "11a3aba9-d7b3-4b27-9032-4781ee8b9b1d",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -363,12 +372,23 @@
                 },
                 {
                     "name": "",
-                    "id": "021355eb-17ff-49db-ad8b-c0510e0dbec3",
-                    "path": "<Gamepad>/leftStickPress",
+                    "id": "d94dbf95-2030-4633-89d1-9139dac0d418",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f78fc8f0-9532-40a5-8cec-889f0b93fc95",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AimControl : MonoBehaviour
 {
-    public GameObject Player, hitMarker, shotPoint;
+    public GameObject Player, shotPoint;
     public Transform followPoint;
     ShootingControls controls;
     Vector3 aim;
@@ -22,11 +22,6 @@ public class AimControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RaycastHit hit;
-        if (Physics.Raycast(shotPoint.transform.position, transform.forward, out hit))
-        {
-            hitMarker.transform.position = hit.point;
-        }
         if (PlayerController.Mode == false)
         {
             xAxis.Update(Time.fixedDeltaTime);
@@ -44,6 +39,7 @@ public class AimControl : MonoBehaviour
             yAxis.Update(Time.fixedDeltaTime);
             xAxis.m_InputAxisValue = aim.x;
             yAxis.m_InputAxisValue = aim.y;
+            transform.eulerAngles = new Vector3(yAxis.Value, xAxis.Value, 0);
             followPoint.eulerAngles = new Vector3(yAxis.Value, xAxis.Value, 0);
 
         }

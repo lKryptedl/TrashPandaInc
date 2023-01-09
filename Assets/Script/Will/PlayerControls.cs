@@ -111,7 +111,16 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Sprint"",
                     ""type"": ""Button"",
-                    ""id"": ""228d32c0-5700-4305-b121-da7ace26e5dc"",
+                    ""id"": ""acb79e9e-18e0-4cdb-ba4c-f2b2fee7a5bf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""f67b5381-5905-4808-ae1b-cf1f5bddee9e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -364,7 +373,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""11a3aba9-d7b3-4b27-9032-4781ee8b9b1d"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -385,12 +394,23 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""021355eb-17ff-49db-ad8b-c0510e0dbec3"",
-                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""id"": ""d94dbf95-2030-4633-89d1-9139dac0d418"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f78fc8f0-9532-40a5-8cec-889f0b93fc95"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -411,6 +431,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Newactionmap_Rocket = m_Newactionmap.FindAction("Rocket", throwIfNotFound: true);
         m_Newactionmap_Pause = m_Newactionmap.FindAction("Pause", throwIfNotFound: true);
         m_Newactionmap_Sprint = m_Newactionmap.FindAction("Sprint", throwIfNotFound: true);
+        m_Newactionmap_Interact = m_Newactionmap.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -480,6 +501,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Newactionmap_Rocket;
     private readonly InputAction m_Newactionmap_Pause;
     private readonly InputAction m_Newactionmap_Sprint;
+    private readonly InputAction m_Newactionmap_Interact;
     public struct NewactionmapActions
     {
         private @PlayerControls m_Wrapper;
@@ -494,6 +516,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Rocket => m_Wrapper.m_Newactionmap_Rocket;
         public InputAction @Pause => m_Wrapper.m_Newactionmap_Pause;
         public InputAction @Sprint => m_Wrapper.m_Newactionmap_Sprint;
+        public InputAction @Interact => m_Wrapper.m_Newactionmap_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -533,6 +556,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Sprint.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnSprint;
+                @Interact.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
             if (instance != null)
@@ -567,6 +593,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -583,5 +612,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnRocket(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

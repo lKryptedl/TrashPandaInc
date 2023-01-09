@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
-    public int RubbishStored = 5;
+    public static int RubbishStored = 5;
     public bool suck = false;
 
     public int shotSpeed = 20;
@@ -17,13 +17,24 @@ public class Shooting : MonoBehaviour
     public static List<GameObject>  Balls = new List<GameObject>();
     GameObject Remove;
     public GameObject Player;
+    public AudioSource suckSound, shootSound, suckStart, suckEnd;
+    private bool suckRevved = false;
 
     void Update()
     {
-        if (suck)
+        if (suck == true)
         {
-            if (RubbishStored < 11)
+            if (RubbishStored < 12)
             {
+                if (!suckStart.isPlaying && suckRevved == false)
+                {
+                    suckStart.Play();
+                    suckRevved = true;
+                }
+                if (!suckSound.isPlaying && !suckStart.isPlaying && suckRevved == true)
+                {
+                    suckSound.Play();
+                }
                 foreach (GameObject body in Balls)
                 {
                     body.GetComponent<Rigidbody>().AddForce((transform.position - body.transform.position) * 125f * Time.fixedDeltaTime);
@@ -49,12 +60,24 @@ public class Shooting : MonoBehaviour
                 Debug.Log("Storage Full");
             }
         }
+        if (suck == false)
+        {
+            if (suckRevved == true)
+            {
+                suckStart.Stop();
+                suckSound.Stop();
+                suckEnd.Play();
+                suckRevved = false;
+            }
+
+        }
     }
 
     void OnShoot()
     {
         if (RubbishStored > 0)
         {
+            shootSound.Play();
             Rigidbody shot = (Rigidbody)Instantiate(rubbish, transform.position, transform.rotation);
             shot.velocity = transform.forward * shotSpeed;
             RubbishStored--;
