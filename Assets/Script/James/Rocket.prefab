@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8858369435874494452
+--- !u!1 &6393337810969817838
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1178470409298303932}
-  - component: {fileID: 7847489317127065147}
-  - component: {fileID: 49561662005410432}
-  - component: {fileID: 8787867010916382383}
-  - component: {fileID: 9195213282859879370}
-  - component: {fileID: 3482586013756905293}
-  m_Layer: 2
+  - component: {fileID: 2698210614037278766}
+  - component: {fileID: 8024036803341315954}
+  - component: {fileID: 3875557734180575662}
+  m_Layer: 0
   m_Name: Rocket
   m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1178470409298303932
+--- !u!4 &2698210614037278766
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8858369435874494452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.9249463, y: 1.2820659, z: -7.24}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_GameObject: {fileID: 6393337810969817838}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1178470409298303932}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7847489317127065147
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!33 &8024036803341315954
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8858369435874494452}
+  m_GameObject: {fileID: 6393337810969817838}
   m_Mesh: {fileID: -951608786083511892, guid: 7eb307a0d40ab3f42b0ab4d96f661150, type: 3}
---- !u!23 &49561662005410432
+--- !u!23 &3875557734180575662
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8858369435874494452}
+  m_GameObject: {fileID: 6393337810969817838}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -89,6 +86,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8858369435874494452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178470409298303932}
+  - component: {fileID: 8787867010916382383}
+  - component: {fileID: 9195213282859879370}
+  - component: {fileID: 3482586013756905293}
+  m_Layer: 0
+  m_Name: Rocket
+  m_TagString: Rocket
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1178470409298303932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8858369435874494452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2698210614037278766}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8787867010916382383
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -99,10 +131,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 20
+  m_Height: 100
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 55, z: 0}
 --- !u!54 &9195213282859879370
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118,7 +150,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &3482586013756905293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +165,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rubbish: {fileID: 8058542260377076183, guid: 195ca270f6928864797398277e31eead, type: 3}
   Player: {fileID: 4511371377750543187, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+  rocket: {fileID: 8787867010916382383}

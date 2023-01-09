@@ -125,6 +125,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleMap"",
+                    ""type"": ""Button"",
+                    ""id"": ""e2fec6fa-fad6-41f3-bb7e-983e08556bce"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -413,6 +422,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5d4e2d6-4165-4d06-9dce-55a6a3817649"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -432,6 +452,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Newactionmap_Pause = m_Newactionmap.FindAction("Pause", throwIfNotFound: true);
         m_Newactionmap_Sprint = m_Newactionmap.FindAction("Sprint", throwIfNotFound: true);
         m_Newactionmap_Interact = m_Newactionmap.FindAction("Interact", throwIfNotFound: true);
+        m_Newactionmap_ToggleMap = m_Newactionmap.FindAction("ToggleMap", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -502,6 +523,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Newactionmap_Pause;
     private readonly InputAction m_Newactionmap_Sprint;
     private readonly InputAction m_Newactionmap_Interact;
+    private readonly InputAction m_Newactionmap_ToggleMap;
     public struct NewactionmapActions
     {
         private @PlayerControls m_Wrapper;
@@ -517,6 +539,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Newactionmap_Pause;
         public InputAction @Sprint => m_Wrapper.m_Newactionmap_Sprint;
         public InputAction @Interact => m_Wrapper.m_Newactionmap_Interact;
+        public InputAction @ToggleMap => m_Wrapper.m_Newactionmap_ToggleMap;
         public InputActionMap Get() { return m_Wrapper.m_Newactionmap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -559,6 +582,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnInteract;
+                @ToggleMap.started -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnToggleMap;
+                @ToggleMap.performed -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnToggleMap;
+                @ToggleMap.canceled -= m_Wrapper.m_NewactionmapActionsCallbackInterface.OnToggleMap;
             }
             m_Wrapper.m_NewactionmapActionsCallbackInterface = instance;
             if (instance != null)
@@ -596,6 +622,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @ToggleMap.started += instance.OnToggleMap;
+                @ToggleMap.performed += instance.OnToggleMap;
+                @ToggleMap.canceled += instance.OnToggleMap;
             }
         }
     }
@@ -613,5 +642,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnToggleMap(InputAction.CallbackContext context);
     }
 }
