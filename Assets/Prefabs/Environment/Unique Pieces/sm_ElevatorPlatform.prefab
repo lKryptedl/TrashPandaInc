@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6747970568857262373}
   - component: {fileID: 8809441312640593391}
   - component: {fileID: 7480934396851620157}
+  - component: {fileID: 4196733567285291331}
   m_Layer: 8
   m_Name: sm_ElevatorPlatform
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7008041113595956282}
-  m_LocalRotation: {x: -0.5000007, y: -0.49999928, z: -0.49999928, w: 0.5000007}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 166, y: -16, z: 426}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.005555556, y: 0.002857143, z: 0.010000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,3 +99,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3292925553009838691, guid: 244200b9572284448a4707458ccc3b2f, type: 3}
+--- !u!114 &4196733567285291331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7008041113595956282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e071010fa61fb884c98ac830d2ea3cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlatform: 0
+  PlatformElevator: {fileID: 0}
+  moveup: 0
+  movingup: 1
+  player: {fileID: 0}
+  platform: {fileID: 0}
+  upposition: {x: 0, y: 32, z: 0}
+  bottomposition: {x: 0, y: 0, z: 0}
+  smoothTime: 0.08
