@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -18,12 +19,6 @@ public class Score : MonoBehaviour
     public void finalScore()
     {
         PlayerScore -= ((RobotsLeft * 500) + (rubbishLeft * 50));
-    }
-
-    public void resetScore()
-    {
-        PlayerScore = 0;
-        RobotsLeft = 0;
-        rubbishLeft = 0;
+        SceneManager.LoadScene("FinalScore");
     }
 }

@@ -13,6 +13,7 @@ public class TimerUI : MonoBehaviour
     public float minutes;
     public float seconds;
     public float timepassed;
+    private GameObject ScoreCounter;
     private void Awake()
     {
         amountoftime = maxAmountOfTime;
@@ -30,8 +31,8 @@ public class TimerUI : MonoBehaviour
         timeUI.text = string.Format("{0:00} : {1:00}", minutes, seconds);
         if (amountoftime <= timepassed)
         {
-            print("Display End Screen");
-            //SceneManager.LoadScene("EndScreen");
+            ScoreCounter = GameObject.Find("Score Counter");
+            ScoreCounter.GetComponent<Score>().finalScore();
         }
     }
 }
