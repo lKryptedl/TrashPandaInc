@@ -1078,6 +1078,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6850101840601414711, guid: 23004b81ac3867c47b7929065697ab33, type: 3}
   m_PrefabInstance: {fileID: 26497899}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &28569123 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5690669964012781026, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+  m_PrefabInstance: {fileID: 3628482432377249587}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8bd8f4923b726942ad33e23b6c7fdf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &29728424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12510,10 +12521,10 @@ MonoBehaviour:
   Pause: {fileID: 778096195}
   SettingsMenu: {fileID: 140647310}
   volumeSlider: {fileID: 950726966}
-  SensXSlider: {fileID: 0}
-  SensYSlider: {fileID: 0}
-  MaxSpeed: {fileID: 0}
-  settingsButton: {fileID: 0}
+  SensXSlider: {fileID: 972614131}
+  SensYSlider: {fileID: 557120728}
+  MaxSpeed: {fileID: 28569123}
+  settingsButton: {fileID: 1450445988}
   backButton: {fileID: 1001134381}
 --- !u!114 &539762666
 MonoBehaviour:
