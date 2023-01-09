@@ -17,6 +17,10 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         currentScene = SceneManager.GetActiveScene();
+        if(currentScene.name == "Main Menu")
+        {
+            Time.timeScale = 1;
+        }
         LoadVol();
         LoadSensX();
         LoadSensY();
