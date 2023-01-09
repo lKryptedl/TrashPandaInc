@@ -12,20 +12,31 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Slider volumeSlider, SensXSlider, SensYSlider;
     public AimControl MaxSpeed;
     public Button settingsButton, backButton;
+    private Button SettingsButton;
+    private Scene currentScene;
     private void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
         LoadVol();
         LoadSensX();
         LoadSensY();
     }
+    
     public void OnResume()
     {
         PlayerController.Pause = true;
         Pause.SetActive(false);
     }
+    public void OnMenuBack()
+    {
+        settingsButton.Select();
+    }
     public void OnSettings()
     {
-        Pause.SetActive(false);
+        if (currentScene.name != "Main Menu")
+        {
+            Pause.SetActive(false);
+        }
         SettingsMenu.SetActive(true);
         backButton.Select();
     }
@@ -55,6 +66,10 @@ public class PauseMenu : MonoBehaviour
     {
         MaxSpeed.yAxis.m_MaxSpeed = SensYSlider.value;
         SaveSensY();
+    }
+    public void MainMenuBack()
+    {
+
     }
     private void LoadVol()
     {
