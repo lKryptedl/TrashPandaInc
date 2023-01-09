@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -19,7 +20,6 @@ public class Shooting : MonoBehaviour
     public GameObject Player;
     public AudioSource suckSound, shootSound, suckStart, suckEnd;
     private bool suckRevved = false;
-
     void Update()
     {
         if (suck == true)
@@ -100,6 +100,7 @@ public class Shooting : MonoBehaviour
             Rigidbody shot = (Rigidbody)Instantiate(rocket, transform.position, transform.rotation * Quaternion.Euler(90f, 0f, 0f));
             shot.velocity = transform.forward * shotSpeed;
             shot.GetComponent<Rocket>().setObject(Player);
+            Physics.IgnoreCollision(shot.GetComponent<Collider>(), GetComponent<Collider>());
             rocketCount--;
         }
         else

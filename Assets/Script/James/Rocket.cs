@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
     public GameObject rubbish, Player;
+    public Collider rocket;
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class Rocket : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (!(other.CompareTag("Player") || other.CompareTag("Detection"))) //Collision destroying rocket
+        else if (!other.CompareTag("Player") || !other.CompareTag("Detection")) //Collision destroying rocket
         {
             if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.OnGround == false) 
             {
