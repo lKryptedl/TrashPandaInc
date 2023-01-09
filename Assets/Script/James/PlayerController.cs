@@ -63,10 +63,12 @@ public class PlayerController : MonoBehaviour
     public float SpeedinAir;
     public static bool isJumping = false;
     private int layermask;
-    public Transform Center;
+    public Transform Center, Head;
     public GameObject pauseMenu, SettingsMenu;
     public Button pauseButton;
     public AudioSource walk;
+    private bool IsMapShowing = true;
+    public GameObject Map;
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -113,14 +115,17 @@ public class PlayerController : MonoBehaviour
         //Spherecast to see if player is facing direction of elevator button. After Testing will only run in scenes with elevators
         Gamepad controller = Gamepad.current;
         RaycastHit hit;
-        Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
-        if (Physics.SphereCast(transform.position, radius, fwd, out hit, SpherecastDistance))
+        if (Physics.SphereCast(Head.position, radius, transform.forward, out hit, SpherecastDistance))
         {
             if (hit.collider.gameObject.CompareTag("Button"))
             {
-                if (controller.bButton.isPressed)
+                if (!Elevator.PlatformIsMovingDown && !Elevator.PlatformIsMovingUp)
                 {
-                    ButtonHit = true;
+                    if (controller.yButton.isPressed)
+                    {
+                        print("Hit");
+                        ButtonHit = true;
+                    }
                 }
             }
         }
@@ -497,8 +502,7 @@ public class PlayerController : MonoBehaviour
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
-        Gizmos.DrawWireSphere(transform.position + fwd * 2, radius);
+        Gizmos.DrawWireSphere(Head.position + transform.forward * 2, radius);
         //Gizmos.DrawWireSphere(Center.position + Vector3.down * dist, radius);
     }
 
@@ -512,5 +516,19 @@ public class PlayerController : MonoBehaviour
         shootPoint.GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         shootPoint.GetComponent<Collider>().enabled = true;
+    }
+
+    public void OnToggleMap()
+    {
+        if (IsMapShowing)
+        {
+            Map.SetActive(false);
+            IsMapShowing = false;
+        }
+        else
+        {
+            Map.SetActive(true);
+            IsMapShowing = true;
+        }
     }
 }
