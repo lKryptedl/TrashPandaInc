@@ -76,6 +76,7 @@ public class RobotPlacement : MonoBehaviour
         if (random == RobotLocation.PlaceLocation)
         {
             Instantiate(robot, transform.position, transform.rotation);
+            Score.RobotsLeft++;
             count++;
         }
         placing = false;

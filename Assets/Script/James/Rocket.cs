@@ -21,6 +21,7 @@ public class Rocket : MonoBehaviour
             for (int x = 0; x < 4; x++)
             {
                 Instantiate(rubbish, transform.position, transform.rotation);
+                Score.rubbishLeft++;
             }
             Destroy(gameObject);
         }

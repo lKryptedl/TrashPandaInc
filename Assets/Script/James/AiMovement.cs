@@ -55,6 +55,7 @@ public class AiMovement : MonoBehaviour
         {
             Shooting.Balls.Remove(other.gameObject);
             Destroy(other.gameObject);
+            Score.rubbishLeft--;
             health--;
         }
         if (other.CompareTag("Rocket"))

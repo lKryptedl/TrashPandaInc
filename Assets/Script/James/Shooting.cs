@@ -56,6 +56,7 @@ public class Shooting : MonoBehaviour
                     Balls.Remove(Remove);
                     Destroy(Remove);
                     RubbishStored++;
+                    Score.rubbishLeft--;
                 }
             }
             else
@@ -84,6 +85,7 @@ public class Shooting : MonoBehaviour
             Rigidbody shot = (Rigidbody)Instantiate(rubbish, transform.position, transform.rotation);
             shot.velocity = transform.forward * shotSpeed;
             RubbishStored--;
+            Score.rubbishLeft++;
         }
         else
         {
