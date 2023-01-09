@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 5159
+  controlID: 20731
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 5160
+  controlID: 20732
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 5161
+  controlID: 20733
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f427fffff83cffff8270ffff7075ffff6e76ffff909bffff1eb5ffff94b6ffff5abfffff2ef0ffffc4610100d6610100b8620100766a020046740200ea8602004e890200fa9f02000ca002007ea4020064af0200
+      m_ExpandedIDs: ea31faff4045faffe835fcfff427fffff83cffff8270ffff7075ffff6e76ffff909bffff1eb5ffff94b6ffff5abfffff2ef0ffffc4610100d6610100b8620100766a020046740200ea8602004e890200fa9f02000ca002007ea4020064af02005ce7020052e80200e4e80200feec020048ef0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 62.404984, y: 163.0123, z: -172.41687}
+    m_Target: {x: 1010.5335, y: 532.66516, z: -1187.1741}
     speed: 2
-    m_Value: {x: 62.404984, y: 163.0123, z: -172.41687}
+    m_Value: {x: 1010.5335, y: 532.66516, z: -1187.1741}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -551,13 +551,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.45020983, y: 0.12961845, z: -0.06862234, w: -0.88083446}
+    m_Target: {x: 0.004779994, y: -0.015447991, z: 0.0020982332, w: 0.9999096}
     speed: 2
-    m_Value: {x: -0.45019448, y: 0.12961403, z: -0.068620004, w: -0.8808044}
+    m_Value: {x: 0.004779791, y: -0.015447335, z: 0.0020981443, w: 0.99986714}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 0.8636168
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 0.8636168
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -610,7 +610,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -652,22 +652,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Textures/UI
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Textures/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\Users\jorda\Documents\GitHub\TrashPandaInc
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 100}
-    m_SelectedIDs: d65e0100
-    m_LastClickedID: 89814
-    m_ExpandedIDs: 00000000d25e0100d45e0100d65e0100d85e0100da5e0100245f010000ca9a3b
+    scrollPos: {x: 0, y: 548}
+    m_SelectedIDs: 3c790200
+    m_LastClickedID: 162108
+    m_ExpandedIDs: 00000000d25e0100d45e0100d65e0100d85e0100da5e0100685f010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -720,10 +720,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d681fcff
-    m_LastClickedInstanceID: -228906
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000309c0000e6450100cc280900d2a8050048ce1200343616004c4a0100544901009e8c0a00f0690100cc8d1500
+    m_SelectedInstanceIDs: ea31faff
+    m_LastClickedInstanceID: -380438
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000309c0000e6450100cc280900d2a8050048ce1200343616004c4a0100544901009e8c0a00f0690100cc8d150096df0400
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -967,7 +967,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -228906
+  m_LastInspectedObjectInstanceID: -380438
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
