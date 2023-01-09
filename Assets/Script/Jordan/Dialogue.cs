@@ -10,7 +10,7 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
 
-    public Animator UIPop;
+    //public Animator UIPop;
     public GameObject UiCanvas;
 
     private int index;
@@ -19,8 +19,8 @@ public class Dialogue : MonoBehaviour
     {
         textComponment.text = string.Empty;
         StartDialogue();
-        UIPop = UiCanvas.GetComponent<Animator>();
-        UIPop.SetBool("DialogueOpen",true);
+        //UIPop = UiCanvas.GetComponent<Animator>();
+        //UIPop.SetBool("DialogueOpen",true);
 
     }
 

@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 23237
+  controlID: 57566
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 23238
+  controlID: 57567
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 23239
+  controlID: 57568
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 756}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 526cf8ff0691f8ffe6bff8ffea31faff4045faffe835fcfff427fffff83cffff8270ffff7075ffff6e76ffff909bffff1eb5ffff94b6ffff5abfffff2ef0ffffc4610100d6610100b8620100766a020046740200ea8602004e890200fa9f02000ca002007ea4020064af02005ce7020052e80200e4e80200feec020048ef020010af05002e030600de260600482c060018990600aec20600
+      m_ExpandedIDs: 1a58eeff5492eeff98a3f2ff3caef2ff1cfcf2ff002bf4ff9840f4ff1241f4ffe650f4ff2e47f6ff3e86f6ff526cf8ff0691f8ffe6bff8ffea31faff4045faffe835fcfff427fffff83cffff8270ffff7075ffff6e76ffff909bffff1eb5ffff94b6ffff5abfffff2ef0ffffc4610100d6610100b8620100766a020046740200ea8602004e890200fa9f02000ca002007ea4020064af02005ce7020052e80200e4e80200feec020048ef020010af05002e030600de260600b063060018990600aec2060098c2090002510c00d48d0c0026990c0008a31300a8ab130012be1300263014004e321400843a1400863a1400e4152300b2162300da182300201d2300c21d2300e01e2300162123004c112600324c2600
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.7285156, y: -136.51535, z: 190.93982}
+    m_Target: {x: 386.3403, y: -188.03435, z: 296.39056}
     speed: 2
-    m_Value: {x: 5.7285156, y: -136.51535, z: 190.93982}
+    m_Value: {x: 386.3403, y: -188.03435, z: 296.39056}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -551,13 +551,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.10270813, y: -0.89541715, z: 0.3475325, w: -0.25881654}
+    m_Target: {x: -0.0084426515, y: 0.88873166, z: -0.45801678, w: -0.021088246}
     speed: 2
-    m_Value: {x: -0.102703735, y: -0.8953788, z: 0.34751764, w: -0.25880545}
+    m_Value: {x: -0.008442064, y: 0.8886698, z: -0.4579849, w: -0.021086778}
   m_Size:
-    m_Target: 10
+    m_Target: 75.89478
     speed: 2
-    m_Value: 10
+    m_Value: 75.89478
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -652,22 +652,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/AUDIO/SFX
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/AUDIO/SFX
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: F:\Users\jorda\Documents\GitHub\TrashPandaInc
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 0a750200
-    m_LastClickedID: 161034
-    m_ExpandedIDs: 00000000d25e0100d45e0100d65e0100d85e0100da5e01001e5f010000ca9a3b
+    scrollPos: {x: 0, y: 404}
+    m_SelectedIDs: 605f0100
+    m_LastClickedID: 89952
+    m_ExpandedIDs: 00000000d25e0100d45e0100d65e0100d85e0100da5e0100625f010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -720,8 +720,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: bc37f8ff
-    m_LastClickedInstanceID: -510020
+    m_SelectedInstanceIDs: 9ebe2600
+    m_LastClickedInstanceID: 2539166
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000309c0000e6450100cc280900d2a8050048ce1200343616004c4a0100544901009e8c0a00f0690100cc8d150096df0400
     m_RenameOverlay:
@@ -890,9 +890,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 42415cdf40349e241b2200494b112447, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 31c71b942f9fff549a7508566abf0b6b, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -2200958735189246530, guid: 42415cdf40349e241b2200494b112447, type: 2}
+  - m_Target: {fileID: -701130920881699497, guid: 31c71b942f9fff549a7508566abf0b6b, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -967,7 +967,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -510020
+  m_LastInspectedObjectInstanceID: 2539166
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

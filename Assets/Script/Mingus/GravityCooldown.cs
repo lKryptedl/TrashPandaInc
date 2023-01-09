@@ -22,6 +22,10 @@ public class GravityCooldown : MonoBehaviour
     public Animator onSymbolAnimator;
     public Animator activeAnimator;
 
+    public AudioSource audioSourceRecharge;
+    public AudioSource audioSourceDeplete;
+
+
     public Image cooldownImage;
     public Image radiationImage;
     public Image radiationGlow;
@@ -113,6 +117,8 @@ public class GravityCooldown : MonoBehaviour
                 if (playerControls.LowGravityDuration > 0)
                 {
                     onSymbol.gameObject.SetActive(false);
+                    
+                    audioSourceDeplete.Play();
 
                     activeImage.gameObject.SetActive(true);
                     activeAnimator.SetBool("isActive", true);
@@ -134,6 +140,8 @@ public class GravityCooldown : MonoBehaviour
             cooldownImage.GetComponent<Image>().color = new Color(1, 0.5f, 0.5f, 0.8f);
             //determine fill amount of image based on the current duration relative to the max duration
             cooldownImage.fillAmount = 0 - (-1 * Mathf.InverseLerp(0, maxCooldown, currentCooldown));
+            //OutofCooldown
+            //audioSourceDeplete.Play();
 
             //enable cooldown symbol
             if (reactorDistance >= maxReactorDistance * 0.7f)
@@ -167,6 +175,7 @@ public class GravityCooldown : MonoBehaviour
                 onSymbolAnimator.SetBool("recharged", false);
                 colourShift = false;
                 colourScaler = 0;
+                audioSourceRecharge.Play();
             }
         }
     }
