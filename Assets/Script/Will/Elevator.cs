@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Elevator : MonoBehaviour
 {
+    public AudioSource AudioSourceLiftMusic;
     public bool OnPlatform = false;
     public GameObject PlatformElevator;
     public bool moveup = false;
@@ -50,19 +51,26 @@ public class Elevator : MonoBehaviour
         {
             print("Move Up");
             PlatformElevator.transform.position = Vector3.SmoothDamp(PlatformElevator.transform.position, originalposition, ref velocity, smoothTime);
+            AudioSourceLiftMusic.Play();
             if (PlatformElevator.transform.position.y > originalposition.y - 0.2f)
             {
                 print("Stop Moving UP");
                 PlatformIsMovingUp = false;
+                AudioSourceLiftMusic.Pause();
+
             }
         }
         if (PlatformIsMovingDown)
         {
             print("move Down");
+            AudioSourceLiftMusic.Play();
+
             if (PlatformElevator.transform.position.y < bottomposition.y + 0.2f)
             {
                 print("Stop Moving DOwn");
                 PlatformIsMovingDown = false;
+                AudioSourceLiftMusic.Pause();
+
             }
             PlatformElevator.transform.position = Vector3.SmoothDamp(PlatformElevator.transform.position, bottomposition, ref velocity, smoothTime);
         }
