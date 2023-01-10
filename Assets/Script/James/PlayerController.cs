@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource walk;
     private bool IsMapShowing = true;
     public GameObject Map;
+    public Animator isSprinting;
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -416,10 +417,12 @@ public class PlayerController : MonoBehaviour
         if (Sprint)
         {
             Sprint = false;
+            isSprinting.SetBool("Running", false);
         }
         else
         {
             Sprint = true;
+            isSprinting.SetBool("Running",true);
         }
     }
     public void OnJump()
