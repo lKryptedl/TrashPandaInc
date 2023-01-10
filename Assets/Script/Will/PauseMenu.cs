@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject Pause, SettingsMenu;
+    public GameObject SettingsMenu;
+    public GameObject Pause;
     [SerializeField] Slider volumeSlider, SensXSlider, SensYSlider;
     public AimControl MaxSpeed;
     public Button settingsButton, backButton;
     private Button SettingsButton;
     private Scene currentScene;
+
     private void Start()
     {
+        //volumeSlider.value = volumeSlider.value;
         currentScene = SceneManager.GetActiveScene();
         if(currentScene.name == "Main Menu")
         {
@@ -25,7 +28,33 @@ public class PauseMenu : MonoBehaviour
         LoadSensX();
         LoadSensY();
     }
-    
+    private void Update()
+    {
+        if (currentScene.name == "ReactorBridgeBlockout" || currentScene.name == "Tutorial")
+        {
+            if (SettingsMenu.activeInHierarchy)
+            {
+                if (Gamepad.current.bButton.wasPressedThisFrame)
+                {
+                    SettingsMenu.SetActive(false);
+                    Pause.SetActive(true);
+                    settingsButton.Select();
+                }
+            }
+        }
+        else if (currentScene.name == "Main Menu")
+        {
+            if (SettingsMenu.activeInHierarchy)
+            {
+                if (Gamepad.current.bButton.wasPressedThisFrame)
+                {
+                    SettingsMenu.SetActive(false);
+                    settingsButton.Select();
+                }
+            }
+        }
+        print(PlayerPrefs.GetFloat("volume"));
+    }
     public void OnResume()
     {
         PlayerController.Pause = true;
@@ -70,10 +99,6 @@ public class PauseMenu : MonoBehaviour
     {
         MaxSpeed.yAxis.m_MaxSpeed = SensYSlider.value;
         SaveSensY();
-    }
-    public void MainMenuBack()
-    {
-
     }
     private void LoadVol()
     {
