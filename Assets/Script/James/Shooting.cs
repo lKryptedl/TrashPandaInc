@@ -11,11 +11,12 @@ public class Shooting : MonoBehaviour
     public bool suck = false;
     public static bool shooting;
     public static bool shooting2;
+    private int random;
 
     public int shotSpeed;
     public int rocketSpeed;
     public int rocketCount = 10;
-    public Rigidbody rubbish, rocket;
+    public Rigidbody rubbish, rubbish2, rocket;
 
     RaycastHit Data;
     bool Hit;
@@ -105,8 +106,17 @@ public class Shooting : MonoBehaviour
             if (RubbishStored > 0)
             {
                 shootSound.Play();
-                Rigidbody shot = (Rigidbody)Instantiate(rubbish, transform.position, transform.rotation);
-                shot.velocity = transform.forward * shotSpeed;
+                random = Random.Range(1, 3);
+                if (random == 1)
+                {
+                    Rigidbody shot = (Rigidbody)Instantiate(rubbish, transform.position, transform.rotation);
+                    shot.velocity = transform.forward * shotSpeed;
+                }
+                else
+                {
+                    Rigidbody shot = (Rigidbody)Instantiate(rubbish2, transform.position, transform.rotation);
+                    shot.velocity = transform.forward * shotSpeed;
+                }
                 RubbishStored--;
                 Score.rubbishLeft++;
             }

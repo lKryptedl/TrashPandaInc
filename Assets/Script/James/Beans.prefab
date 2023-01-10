@@ -1599,10 +1599,12 @@ MonoBehaviour:
   SpherecastDistance: 0
   SpeedinAir: 500
   Center: {fileID: 932575761}
+  Head: {fileID: 0}
   pauseMenu: {fileID: 0}
   SettingsMenu: {fileID: 0}
   pauseButton: {fileID: 0}
   walk: {fileID: 7830468402918444812}
+  Map: {fileID: 0}
 --- !u!208 &4511371377750543185
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -1747,6 +1749,8 @@ MonoBehaviour:
   hourglassAnimator: {fileID: 0}
   onSymbolAnimator: {fileID: 0}
   activeAnimator: {fileID: 0}
+  audioSourceRecharge: {fileID: 0}
+  audioSourceDeplete: {fileID: 0}
   cooldownImage: {fileID: 0}
   radiationImage: {fileID: 0}
   radiationGlow: {fileID: 0}
@@ -3880,14 +3884,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suck: 0
   shotSpeed: 100
+  rocketSpeed: 0
   rocketCount: 10
   rubbish: {fileID: 5839691205491911985, guid: 195ca270f6928864797398277e31eead, type: 3}
+  rubbish2: {fileID: 5839691205491911985, guid: 520589225c4b6bb409099a9a89367dc2, type: 3}
   rocket: {fileID: 9195213282859879370, guid: f9233e6bb64e1f046868d2bb666798d4, type: 3}
   Player: {fileID: 4511371377750543187}
   suckSound: {fileID: 0}
   shootSound: {fileID: 0}
   suckStart: {fileID: 0}
   suckEnd: {fileID: 0}
+  RocketDisplay: {fileID: 0}
 --- !u!65 &8535340519158192722
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -8,7 +8,8 @@ public class AiMovement : MonoBehaviour
     public NavMeshAgent Agent;
     public bool Moving;
     public Vector3 TargetLocation;
-    public GameObject rubbish, spawnPoint, boom;
+    public GameObject rubbish, rubbish2, spawnPoint, boom;
+    private int random;
     private float y;
     public int health = 2;
     public int distance = 100;
@@ -25,7 +26,15 @@ public class AiMovement : MonoBehaviour
             Agent.destination = TargetLocation;
             if (Mathf.Approximately(1.0f, TargetLocation.x / transform.position.x) && Mathf.Approximately(1.0f, TargetLocation.z /transform.position.z) && placable > 0)
             {
-                Instantiate(rubbish, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                random = Random.Range(1, 3);
+                if (random == 1)
+                {
+                    Instantiate(rubbish, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                }
+                else
+                {
+                    Instantiate(rubbish2, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                }
                 Moving = false;
                 placable--;
             }
