@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 7637781547696799602}
   - component: {fileID: 7637781547696799603}
   - component: {fileID: -3342373009841457868}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Doorway_notchedGap_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &7637781547696799601
 Transform:
