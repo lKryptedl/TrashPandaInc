@@ -9,7 +9,8 @@ public class Shooting : MonoBehaviour
 {
     public static int RubbishStored = 5;
     public bool suck = false;
-    private bool shooting;
+    public static bool shooting;
+    public static bool shooting2;
 
     public int shotSpeed;
     public int rocketSpeed;
@@ -24,11 +25,22 @@ public class Shooting : MonoBehaviour
     public AudioSource suckSound, shootSound, suckStart, suckEnd;
     private bool suckRevved = false;
     public TMP_Text RocketDisplay;
+    private float shotdelay = 0;
     void Update()
     {
+        Debug.Log(shotdelay);
+        if (shotdelay > 0)
+        {
+            shotdelay -= Time.deltaTime;
+        }
+        else
+        {
+            shooting2 = false;
+        }
         RocketDisplay.text = rocketCount.ToString();
         if (suck == true)
         {
+            shooting = true;
             if (RubbishStored < 12)
             {
                 if (!suckStart.isPlaying && suckRevved == false)
@@ -68,6 +80,7 @@ public class Shooting : MonoBehaviour
         }
         if (suck == false)
         {
+            shooting = false;
             if (suckRevved == true && !suckStart.isPlaying)
             {
                 suckStart.Stop();
@@ -88,6 +101,8 @@ public class Shooting : MonoBehaviour
     {
         if (suck == false)
         {
+            shooting2 = true;
+            shotdelay += 0.3f;
             if (RubbishStored > 0)
             {
                 shootSound.Play();
@@ -110,6 +125,8 @@ public class Shooting : MonoBehaviour
 
     void OnRocket()
     {
+        shooting2 = true;
+        shotdelay += 0.3f;
         if (rocketCount > 0)
         {
             Rigidbody shot = (Rigidbody)Instantiate(rocket, transform.position, transform.rotation * Quaternion.Euler(90f, 0f, 0f));

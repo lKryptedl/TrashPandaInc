@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
     public AudioSource walk;
     private bool IsMapShowing = true;
     public GameObject Map;
-    public Animator isSprinting;
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -83,6 +82,8 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("isJumping", false);
         _animator.SetBool("isInAir", false);
         _animator.SetBool("isGrounded", false);
+        _animator.SetBool("isShooting", false);
+        _animator.SetBool("isShooting2", false);
     }
     private void Awake()
     {
@@ -230,6 +231,22 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (Shooting.shooting == true)
+        {
+            _animator.SetBool("isShooting", true);
+        }
+        else
+        {
+            _animator.SetBool("isShooting", false);
+        }
+        if (Shooting.shooting2 == true)
+        {
+            _animator.SetBool("isShooting2", true);
+        }
+        else
+        {
+            _animator.SetBool("isShooting2", false);
+        }
         //Slows down time on low gravity. Not sure whether needed.
         if (SlowTime)
         {
@@ -417,12 +434,10 @@ public class PlayerController : MonoBehaviour
         if (Sprint)
         {
             Sprint = false;
-            isSprinting.SetBool("Running", false);
         }
         else
         {
             Sprint = true;
-            isSprinting.SetBool("Running",true);
         }
     }
     public void OnJump()
