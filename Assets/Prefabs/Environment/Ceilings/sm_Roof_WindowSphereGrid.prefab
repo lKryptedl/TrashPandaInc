@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4400513462816643369}
   - component: {fileID: 774082817747162764}
   - component: {fileID: 3268187749707768390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Roof_WindowSphereGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4400513462816643369
 Transform:

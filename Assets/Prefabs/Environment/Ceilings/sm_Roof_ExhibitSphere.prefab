@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 3184325630959094687}
   - component: {fileID: 852315041283571541}
   - component: {fileID: -6425585054979164776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Roof_ExhibitSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1990350100591936570
 Transform:
