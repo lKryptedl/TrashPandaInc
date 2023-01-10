@@ -411,6 +411,17 @@ public class PlayerController : MonoBehaviour
                 CooldownLowGravity = 0;
             }
         }
+        if (!pauseMenu.activeInHierarchy && !SettingsMenu.activeInHierarchy)
+        {
+            Pause = true;
+        }
+        if (pauseMenu.activeInHierarchy)
+        {
+            if (gamepad.bButton.wasPressedThisFrame)
+            {
+                pauseMenu.SetActive(false);
+            }
+        }
     }
     public void OnPause()
     {
