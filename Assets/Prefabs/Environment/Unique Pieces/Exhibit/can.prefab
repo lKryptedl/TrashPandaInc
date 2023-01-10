@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4199846292365499879}
   - component: {fileID: 1001772080189985346}
   - component: {fileID: 3027532960286910088}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4199846292365499879
 Transform:
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 8721f7f34c05bb04ea79a3e2f49215ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
