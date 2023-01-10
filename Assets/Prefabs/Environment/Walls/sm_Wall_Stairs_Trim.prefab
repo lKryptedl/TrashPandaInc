@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6180076036422029108}
   - component: {fileID: 4527272053024227701}
   - component: {fileID: -9133511258490259012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Wall_Stairs_Trim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2113850456433725796
 Transform:
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5724304642183062037}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0.00000009060992}
-  m_LocalScale: {x: 1.6, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5724304642183062037}
-  m_Mesh: {fileID: -6470194099071478830, guid: 22513e84f437b184b8360e906e4c3374, type: 3}
+  m_Mesh: {fileID: -6470194099071478830, guid: 4e81af88ee65be24b8d331737cb7cc02, type: 3}
 --- !u!23 &4527272053024227701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -97,4 +97,4 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -6470194099071478830, guid: 22513e84f437b184b8360e906e4c3374, type: 3}
+  m_Mesh: {fileID: -6470194099071478830, guid: 4e81af88ee65be24b8d331737cb7cc02, type: 3}

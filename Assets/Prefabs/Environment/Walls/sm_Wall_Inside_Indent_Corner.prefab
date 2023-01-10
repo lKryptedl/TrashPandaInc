@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 4241489923676939688}
   - component: {fileID: 2105498612098748770}
   - component: {fileID: 3472804182174856875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Wall_Inside_Indent_Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &969143675410360845
 Transform:

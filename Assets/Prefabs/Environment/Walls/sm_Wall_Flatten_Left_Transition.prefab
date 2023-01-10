@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 5761509466853016505}
   - component: {fileID: 7498503397579159411}
   - component: {fileID: 5363836080338144060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sm_Wall_Flatten_Left_Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8672567017550384156
 Transform:

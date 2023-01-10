@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6174429498354909988}
   - component: {fileID: 7061681045232176257}
   - component: {fileID: 5036385814485710923}
-  m_Layer: 0
+  - component: {fileID: -8671528708409255605}
+  m_Layer: 8
   m_Name: sm_Beam_Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6174429498354909988
 Transform:
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-8671528708409255605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6837636617991297438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.0000153, y: 3.0000124, z: 8.000013}
+  m_Center: {x: 2.4999962, y: -1.500006, z: 4.0000067}
