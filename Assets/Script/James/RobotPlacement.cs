@@ -7,10 +7,10 @@ public class RobotPlacement : MonoBehaviour
 {
     public float timer = 5, timer2, countdown = 60;
     public Vector3 TargetLocation;
-    public int random = 1, count = 0;
+    public int random = 1, count = 0, randrobo;
     private float y;
     public static int PlayersLocation = 1; //1 = Bridge , 2 = Lounge
-    public GameObject robot, RobotWarning;
+    public GameObject robot, flyrobot, RobotWarning;
     public bool placing = false;
 
     public void Update()
@@ -75,7 +75,15 @@ public class RobotPlacement : MonoBehaviour
     {
         if (random == RobotLocation.PlaceLocation)
         {
-            Instantiate(robot, transform.position, transform.rotation);
+            randrobo = Random.Range(1, 3);
+            if (randrobo == 1)
+            {
+                Instantiate(robot, transform.position, transform.rotation);
+            }
+            else
+            {
+                Instantiate(flyrobot, transform.position, transform.rotation);
+            }
             Score.RobotsLeft++;
             count++;
         }

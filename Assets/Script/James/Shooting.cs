@@ -28,7 +28,6 @@ public class Shooting : MonoBehaviour
     private float shotdelay = 0;
     void Update()
     {
-        Debug.Log(shotdelay);
         if (shotdelay > 0)
         {
             shotdelay -= Time.deltaTime;
