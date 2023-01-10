@@ -12,6 +12,7 @@ public class AiMovement : MonoBehaviour
     private float y;
     public int health = 2;
     public int distance = 100;
+    public int placable = 10;
 
     void Update()
     {
@@ -22,17 +23,18 @@ public class AiMovement : MonoBehaviour
         else if (Moving == true)
         {
             Agent.destination = TargetLocation;
-            if (Mathf.Approximately(1.0f, TargetLocation.x / transform.position.x) && Mathf.Approximately(1.0f, TargetLocation.z /transform.position.z))
+            if (Mathf.Approximately(1.0f, TargetLocation.x / transform.position.x) && Mathf.Approximately(1.0f, TargetLocation.z /transform.position.z) && placable > 0)
             {
                 Instantiate(rubbish, spawnPoint.transform.position, spawnPoint.transform.rotation);
                 Moving = false;
+                placable--;
             }
         }
         if (health < 1)
         {
             Instantiate(boom, transform.position, transform.rotation);
             Destroy(gameObject);
-            Score.PlayerScore += 500;
+            Score.PlayerScore += (500 + (placable * 150));
         }
     }
 

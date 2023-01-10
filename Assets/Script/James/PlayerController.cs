@@ -356,19 +356,6 @@ public class PlayerController : MonoBehaviour
                 LowGravityDuration = 0;
                 ApplyCooldown = true;
             }
-            if (LowGravityDuration > InputDelay)
-            {
-                if (gamepad.xButton.isPressed)
-                {
-                    LowGravityDuration = 0f;
-                    Physics.gravity = new Vector3(0f, -9.81f, 0);
-                    _JumpForce /= JumpMultiplier;
-                    Nogravity = true;
-                    SlowTime = false;
-                    CheckTimer = false;
-                    ApplyCooldown = true;
-                }
-            }
         }
         if (SceneManager.GetActiveScene().name == "ReactorBridgeBlockout")
         {

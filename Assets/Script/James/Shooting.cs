@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
 {
     public static int RubbishStored = 5;
     public bool suck = false;
+    private bool shooting;
 
     public int shotSpeed = 20;
     public int rocketCount = 10;
@@ -66,11 +67,16 @@ public class Shooting : MonoBehaviour
         }
         if (suck == false)
         {
-            if (suckRevved == true)
+            if (suckRevved == true && !suckStart.isPlaying)
             {
                 suckStart.Stop();
                 suckSound.Stop();
                 suckEnd.Play();
+                suckRevved = false;
+            }
+            else
+            {
+                suckStart.Stop();
                 suckRevved = false;
             }
 
@@ -79,17 +85,20 @@ public class Shooting : MonoBehaviour
 
     void OnShoot()
     {
-        if (RubbishStored > 0)
+        if (suck == false)
         {
-            shootSound.Play();
-            Rigidbody shot = (Rigidbody)Instantiate(rubbish, transform.position, transform.rotation);
-            shot.velocity = transform.forward * shotSpeed;
-            RubbishStored--;
-            Score.rubbishLeft++;
-        }
-        else
-        {
-            Debug.Log("No Rubbish");
+            if (RubbishStored > 0)
+            {
+                shootSound.Play();
+                Rigidbody shot = (Rigidbody)Instantiate(rubbish, transform.position, transform.rotation);
+                shot.velocity = transform.forward * shotSpeed;
+                RubbishStored--;
+                Score.rubbishLeft++;
+            }
+            else
+            {
+                Debug.Log("No Rubbish");
+            }
         }
     }
 

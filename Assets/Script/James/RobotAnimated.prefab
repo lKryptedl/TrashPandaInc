@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &192298059522278468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4038928675164318928}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4038928675164318928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192298059522278468}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 6}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117731698846096451}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1349688237281395201
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +72,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2117731698846096451}
-  - component: {fileID: 8545965982772204689}
   - component: {fileID: -6332629456260859774}
   - component: {fileID: 5977092508473251466}
   - component: {fileID: 4619006722528287077}
@@ -61,29 +91,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596633193480324857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 200.31216, y: -31.999886, z: 391.63928}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7049088413313895645}
   - {fileID: 1004922274852055736}
+  - {fileID: 4038928675164318928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &8545965982772204689
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1596633193480324857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &-6332629456260859774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -116,10 +133,11 @@ MonoBehaviour:
   Moving: 0
   TargetLocation: {x: 0, y: 0, z: 0}
   rubbish: {fileID: 8058542260377076183, guid: 195ca270f6928864797398277e31eead, type: 3}
-  spawnPoint: {fileID: 4865878926563528052, guid: c223b40950446b74eab8723fdecdd6cd, type: 3}
+  spawnPoint: {fileID: 192298059522278468}
   boom: {fileID: 35826310256692440, guid: 7a9abb2c68603d545b30e7f79d6ed59c, type: 3}
   health: 2
   distance: 100
+  placable: 10
 --- !u!195 &4619006722528287077
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -139,7 +157,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 5
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &1600138500417907340
@@ -298,6 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1004922274852055736}
   - component: {fileID: 6209441836689966891}
+  - component: {fileID: 7538028454890744642}
   m_Layer: 0
   m_Name: Rubbot_2_SM
   m_TagString: Untagged
@@ -379,9 +398,23 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 4735278074856255409}
   m_AABB:
-    m_Center: {x: 0.0005285591, y: 0.031519175, z: -0.0061394423}
-    m_Extent: {x: 0.06689055, y: 0.072600946, z: 0.04605422}
+    m_Center: {x: 0.0005285591, y: 0.033003703, z: -0.0061394423}
+    m_Extent: {x: 0.06689055, y: 0.07111642, z: 0.04605422}
   m_DirtyAABB: 0
+--- !u!64 &7538028454890744642
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663622701287342236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4989055077731857933
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,9 +695,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8885333756802890609}
-  m_LocalRotation: {x: 0.0000006801719, y: 0.00000023977856, z: 0.94871503, w: -0.31613258}
-  m_LocalPosition: {x: 0.03974445, y: 0.009307522, z: 0.020741923}
-  m_LocalScale: {x: 1.0000012, y: 1.0000005, z: 1}
+  m_LocalRotation: {x: 0.0000006854535, y: 0.0000002384186, z: 0.94871503, w: -0.31613263}
+  m_LocalPosition: {x: 0.03974449, y: 0.009307502, z: 0.020741906}
+  m_LocalScale: {x: 1.0000005, y: 1.0000012, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2166352330305487048}
