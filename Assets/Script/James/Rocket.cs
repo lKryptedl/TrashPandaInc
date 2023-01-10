@@ -24,9 +24,20 @@ public class Rocket : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (!other.CompareTag("Player") || !other.CompareTag("Detection")) //Collision destroying rocket
+        /*if (!other.CompareTag("Player") || !other.CompareTag("Detection")) //Collision destroying rocket
         {
             if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.OnGround == false) 
+            {
+                Vector3 direction = Player.transform.position - transform.position;
+                direction.Normalize();
+                Player.GetComponent<Rigidbody>().AddForce(direction * 5000f);
+            }
+            Debug.Log(other.tag);
+            Destroy(gameObject);
+        }*/
+        else if (!(other.CompareTag("Detection")))
+        {
+            if ((Vector3.Distance(Player.transform.position, transform.position) < 20) && PlayerController.OnGround == false)
             {
                 Vector3 direction = Player.transform.position - transform.position;
                 direction.Normalize();
