@@ -11,7 +11,8 @@ public class Shooting : MonoBehaviour
     public bool suck = false;
     private bool shooting;
 
-    public int shotSpeed = 20;
+    public int shotSpeed;
+    public int rocketSpeed;
     public int rocketCount = 10;
     public Rigidbody rubbish, rocket;
 
@@ -112,7 +113,7 @@ public class Shooting : MonoBehaviour
         if (rocketCount > 0)
         {
             Rigidbody shot = (Rigidbody)Instantiate(rocket, transform.position, transform.rotation * Quaternion.Euler(90f, 0f, 0f));
-            shot.velocity = transform.forward * shotSpeed;
+            shot.velocity = transform.forward * rocketSpeed;
             shot.GetComponent<Rocket>().setObject(Player);
             Physics.IgnoreCollision(shot.GetComponent<Collider>(), GetComponent<Collider>());
             rocketCount--;
