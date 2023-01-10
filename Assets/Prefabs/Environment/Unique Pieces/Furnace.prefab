@@ -10125,6 +10125,7 @@ GameObject:
   - component: {fileID: 6830470816847954024}
   - component: {fileID: 6088697393282886966}
   - component: {fileID: 347342708}
+  - component: {fileID: 3122751395155602915}
   m_Layer: 8
   m_Name: Box001
   m_TagString: Untagged
@@ -10221,6 +10222,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5060444177187149915, guid: edcb34211b0557946a47e2ee8c2d22ec, type: 3}
+--- !u!208 &3122751395155602915
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5574931188134669164}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.44900003, y: 0.35000002, z: 0.323}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.102000006, y: -0.029000001, z: 0.245}
+  m_TimeToStationary: 0.5
 --- !u!1 &6271122110876521391
 GameObject:
   m_ObjectHideFlags: 0
