@@ -6,6 +6,7 @@ public class Rocket : MonoBehaviour
 {
     public GameObject rubbish, Player;
     public Collider rocket;
+    public float force = 5000;
 
     void Start()
     {
@@ -41,7 +42,7 @@ public class Rocket : MonoBehaviour
             {
                 Vector3 direction = Player.transform.position - transform.position;
                 direction.Normalize();
-                Player.GetComponent<Rigidbody>().AddForce(direction * 5000f);
+                Player.GetComponent<Rigidbody>().AddForce(direction * force);
             }
             Destroy(gameObject);
         }
