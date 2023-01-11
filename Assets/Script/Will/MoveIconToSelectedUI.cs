@@ -11,7 +11,7 @@ public class MoveIconToSelectedUI : MonoBehaviour
     void Start()
     {
         thisObj = GameObject.Find("PointToSelectedUI").GetComponent<RectTransform>();
-        thisObj.localPosition = new Vector3(-434, -301, 0);
+        thisObj.localPosition = new Vector3(-1000, -301, 0);
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class MoveIconToSelectedUI : MonoBehaviour
     {
         if (EventSystem.current.currentSelectedGameObject == backButton)
         {
-            thisObj.localPosition = new Vector3(-434, -301, 0);
+            thisObj.localPosition = new Vector3(1000, -301, 0);
         }
         else if (EventSystem.current.currentSelectedGameObject == volume)
         {

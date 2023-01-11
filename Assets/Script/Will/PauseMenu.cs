@@ -12,9 +12,10 @@ public class PauseMenu : MonoBehaviour
     public GameObject Pause;
     [SerializeField] Slider volumeSlider, SensXSlider, SensYSlider;
     public AimControl MaxSpeed;
-    public Button settingsButton, backButton;
+    public Button settingsButton, backButton, ControlsButton;
     private Button SettingsButton;
     private Scene currentScene;
+    public GameObject controlsImage;
 
     private void Start()
     {
@@ -53,7 +54,17 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
-        print(PlayerPrefs.GetFloat("volume"));
+        if (controlsImage.activeInHierarchy)
+        {
+            if (Gamepad.current.bButton.wasPressedThisFrame)
+            {
+                controlsImage.SetActive(false);
+                PlayerController.Pause = false;
+                Time.timeScale = 0;
+                Pause.SetActive(true);
+                ControlsButton.Select();
+            }
+        }
     }
     public void OnResume()
     {

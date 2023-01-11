@@ -70,8 +70,15 @@ public class PlayerController : MonoBehaviour
     private bool IsMapShowing = true;
     public GameObject Map;
     public Animator isSprinting;
+    private bool OnStairs = false;
+    public float StairValue, NotMovingStairValue;
+    private float yOffset;
+    private float groundcheckradius, groundcheckdistance;
+
     void Start()
     {
+        groundcheckdistance = 1.7f;
+        groundcheckradius = 0.5f;
         pauseMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         _rb = GetComponent<Rigidbody>();
@@ -117,11 +124,29 @@ public class PlayerController : MonoBehaviour
 
         //Spherecast to see if player is facing direction of elevator button. After Testing will only run in scenes with elevators
         Gamepad controller = Gamepad.current;
-        RaycastHit hit;
-        if (Physics.SphereCast(Head.position, radius, transform.forward, out hit, SpherecastDistance))
+        /* RaycastHit hit;
+         if (Physics.SphereCast(Head.position, radius, transform.forward, out hit, SpherecastDistance))
+         {
+             if (hit.collider.gameObject.CompareTag("Button"))
+             {
+                 print("Hit Button");
+                 if (!Elevator.PlatformIsMovingDown && !Elevator.PlatformIsMovingUp)
+                 {
+                     if (controller.yButton.isPressed)
+                     {
+                         print("Hit");
+                         ButtonHit = true;
+                     }
+                 }
+             }
+         }*/
+       /* Vector3 fwd = transform.TransformDirection(Vector3.forward) * 10;
+        if (Physics.Raycast(transform.position, fwd, out RaycastHit hit, SpherecastDistance))
         {
-            if (hit.collider.gameObject.CompareTag("Button"))
+            Debug.DrawRay(transform.position, fwd * SpherecastDistance, Color.white);
+            if (hit.transform.CompareTag("Button"))
             {
+                print("Hit Button");
                 if (!Elevator.PlatformIsMovingDown && !Elevator.PlatformIsMovingUp)
                 {
                     if (controller.yButton.isPressed)
@@ -131,12 +156,45 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-        }
+        }*/
 
 
         if(Physics.SphereCast(Center.position, 0.5f, Vector3.down, out RaycastHit Hit, 1.7f, layermask))
         {
             OnGround = true;
+            if (Hit.collider.gameObject.CompareTag("Stairs"))
+            {
+                OnStairs = true;
+                groundcheckdistance = 2.3f;
+                _animator.SetBool("isJumping", false);
+                _animator.SetBool("isGrounded", true);
+                _animator.SetBool("isInAir", true);
+                print("Stairs");
+                if (move.x != 0 || move.y != 0)
+                {
+                    _animator.SetBool("isWalking", true);
+                    /* Vector3 position = transform.position;
+                     position.y = Hit.point.y + yOffset;
+                     transform.position = position;*/
+                    // print("MOVING");
+                    _rb.isKinematic = false;
+                    _speed = walkSpeed;
+                    Physics.gravity = new Vector3(0, -250f, 0);
+                }
+                else
+                {
+                    _animator.SetBool("isWalking", false);
+                    _rb.isKinematic = true;
+                    //Physics.gravit
+                }
+            }
+            else
+            {
+                OnStairs = false;
+                groundcheckdistance = 1.7f;
+                Physics.gravity = new Vector3(0, -9.81f, 0);
+                _rb.isKinematic = false;
+            }
         }
         else { OnGround = false; }
         /*if (Mathf.Abs(_rb.velocity.y) > 0.001f)
@@ -331,26 +389,29 @@ public class PlayerController : MonoBehaviour
         //Animator code. If there is no y velocity and input is detected play walking animation. If player is in the air play jumping animation.
         if (OnGround)
         {
-            _animator.SetBool("isJumping", false);
-            _animator.SetBool("isGrounded", true);
-            _animator.SetBool("isInAir", true);
-            if (!DialogueTrigger.DialogueShowing)
+            if (!OnStairs)
             {
-                if (move.x != 0 || move.y != 0)
+                _animator.SetBool("isJumping", false);
+                _animator.SetBool("isGrounded", true);
+                _animator.SetBool("isInAir", true);
+                if (!DialogueTrigger.DialogueShowing)
                 {
-                    _animator.SetBool("isWalking", true);
-                }
-                else
-                {
-                    walk.Stop();
-                    _rb.velocity = new(0, _rb.velocity.y, 0);
-                    //_rb.velocity = Vector3.zero;
-                    _animator.SetBool("isWalking", false);
+                    if (move.x != 0 || move.y != 0)
+                    {
+                        _animator.SetBool("isWalking", true);
+                    }
+                    else
+                    {
+                        walk.Stop();
+                        _rb.velocity = new(0, _rb.velocity.y, 0);
+                        //_rb.velocity = Vector3.zero;
+                        _animator.SetBool("isWalking", false);
+                    }
                 }
             }
 
         }
-        if (!OnGround)
+        if (!OnGround && !OnStairs)
         {
             walk.Stop();
             _animator.SetBool("isWalking", false);
@@ -519,12 +580,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnDrawGizmos()
+    /*public void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(Head.position + transform.forward * 2, radius);
+        Gizmos.DrawWireSphere(Head.position + transform.forward * SpherecastDistance, radius);
         //Gizmos.DrawWireSphere(Center.position + Vector3.down * dist, radius);
-    }
+    }*/
 
     //Vent Shooting Fix:
     public void Teleported()
