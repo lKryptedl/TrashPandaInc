@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5721532890497017076}
   m_Layer: 8
   m_Name: Stairs_steps_01
-  m_TagString: Untagged
+  m_TagString: Stairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6233839595656163435}
   m_Layer: 8
   m_Name: Collision
-  m_TagString: Untagged
+  m_TagString: Stairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,5 +127,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 8, z: 2}
-  m_Center: {x: 5.5, y: -1, z: -0.8}
+  m_Size: {x: 13.821655, y: 8, z: 2}
+  m_Center: {x: 4.5891724, y: -1, z: -0.79999804}

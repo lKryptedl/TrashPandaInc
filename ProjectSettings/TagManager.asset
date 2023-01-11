@@ -14,6 +14,7 @@ TagManager:
   - Detection
   - Rocket
   - SuckArea
+  - Stairs
   layers:
   - Default
   - TransparentFX
