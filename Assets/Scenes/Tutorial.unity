@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47892183, g: 0.28596056, b: 0.5110954, a: 1}
+  m_IndirectSpecularColor: {r: 0.45444834, g: 0.3193491, b: 0.61195105, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13972,6 +13972,8 @@ MonoBehaviour:
   MaxSpeed: {fileID: 28569123}
   settingsButton: {fileID: 1450445988}
   backButton: {fileID: 1001134381}
+  ControlsButton: {fileID: 0}
+  controlsImage: {fileID: 0}
 --- !u!114 &539762666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60018,15 +60020,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3877683878179099113, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -92.65
+      value: 47.41
       objectReference: {fileID: 0}
     - target: {fileID: 3877683878179099113, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.023
+      value: 5.83
       objectReference: {fileID: 0}
     - target: {fileID: 3877683878179099113, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -91.26
+      value: 132.65
       objectReference: {fileID: 0}
     - target: {fileID: 3877683878179099113, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60205,8 +60207,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 140647310}
     - target: {fileID: 4511371377750543184, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
+      propertyPath: SlowDownTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511371377750543184, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: JumpMultiplier
-      value: 1.9
+      value: 4.2
       objectReference: {fileID: 0}
     - target: {fileID: 4511371377750543184, guid: 61913cf1e87ab9f4abe179716af07849, type: 3}
       propertyPath: SpeedMultiplier
@@ -60979,15 +60985,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.15036
+      value: 179.21036
       objectReference: {fileID: 0}
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7640002
+      value: 6.570999
       objectReference: {fileID: 0}
     - target: {fileID: 1336200274768540905, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.3849945
+      value: 235.295
       objectReference: {fileID: 0}
     - target: {fileID: 1336200274768540916, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_DefaultBlend.m_Time
@@ -61067,15 +61073,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744875, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.15036
+      value: 179.21036
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744875, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7640002
+      value: 6.570999
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744875, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.3849945
+      value: 235.295
       objectReference: {fileID: 0}
     - target: {fileID: 1336200276807744884, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_Follow
@@ -61143,15 +61149,15 @@ PrefabInstance:
       objectReference: {fileID: 4911575025883618633}
     - target: {fileID: 4007463038157573927, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.350357
+      value: 178.41035
       objectReference: {fileID: 0}
     - target: {fileID: 4007463038157573927, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7640002
+      value: 6.570999
       objectReference: {fileID: 0}
     - target: {fileID: 4007463038157573927, guid: 49c6508522f44814f838c1173952da48, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.3849945
+      value: 228.295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c6508522f44814f838c1173952da48, type: 3}
@@ -61268,6 +61274,8 @@ MonoBehaviour:
   walk: {fileID: 0}
   Map: {fileID: 0}
   isSprinting: {fileID: 0}
+  StairValue: 0
+  NotMovingStairValue: 0
 --- !u!114 &4911575025661023771
 MonoBehaviour:
   m_ObjectHideFlags: 0

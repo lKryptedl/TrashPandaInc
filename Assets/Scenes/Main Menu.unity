@@ -795,10 +795,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1499359537}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SensitivityY
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1516,10 +1516,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1499359537}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: SensitivityX
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1612,17 +1612,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1191625853}
   m_HandleRect: {fileID: 1316662931}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1499359537}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: Volume
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2496,14 +2496,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb1b84c8d9e9f34190be8e2dbb2c68c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pause: {fileID: 0}
   SettingsMenu: {fileID: 1193286917}
+  Pause: {fileID: 0}
   volumeSlider: {fileID: 921963141}
   SensXSlider: {fileID: 837076794}
   SensYSlider: {fileID: 388619389}
   MaxSpeed: {fileID: 0}
   settingsButton: {fileID: 110347409}
   backButton: {fileID: 1983434205}
+  ControlsButton: {fileID: 0}
+  controlsImage: {fileID: 0}
 --- !u!1 &1519338803
 GameObject:
   m_ObjectHideFlags: 0
