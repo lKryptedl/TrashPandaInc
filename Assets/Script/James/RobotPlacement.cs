@@ -15,7 +15,7 @@ public class RobotPlacement : MonoBehaviour
     public bool placing = false;
     private bool randomised = false;
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (PlayerController.Pause) //only run when game isnt paused
         {
