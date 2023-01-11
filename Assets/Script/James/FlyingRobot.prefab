@@ -169,9 +169,9 @@ MonoBehaviour:
   rubbish2: {fileID: 8058542260377076183, guid: 520589225c4b6bb409099a9a89367dc2, type: 3}
   spawnPoint: {fileID: 4865878926563528052}
   boom: {fileID: 35826310256692440, guid: 7a9abb2c68603d545b30e7f79d6ed59c, type: 3}
-  health: 2
+  health: 1
   distance: 100
-  placable: 10
+  placable: 5
 --- !u!195 &4865878925054619599
 NavMeshAgent:
   m_ObjectHideFlags: 0

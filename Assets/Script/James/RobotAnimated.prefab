@@ -138,7 +138,7 @@ MonoBehaviour:
   boom: {fileID: 35826310256692440, guid: 7a9abb2c68603d545b30e7f79d6ed59c, type: 3}
   health: 2
   distance: 100
-  placable: 10
+  placable: 5
 --- !u!195 &4619006722528287077
 NavMeshAgent:
   m_ObjectHideFlags: 0
