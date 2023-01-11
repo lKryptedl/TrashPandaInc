@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Shooting : MonoBehaviour
 {
-    public static int RubbishStored = 5;
+    public static int RubbishStored = 0;
     public bool suck = false;
     public static bool shooting;
     public static bool shooting2;
