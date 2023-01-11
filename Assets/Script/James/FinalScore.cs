@@ -7,6 +7,7 @@ public class FinalScore : MonoBehaviour
 {
     public TMP_Text text;
     public GameObject star1, star2, star3;
+    public int onestar = 5000, twostar = 10000, threestar = 15000;
 
     void Start()
     {
