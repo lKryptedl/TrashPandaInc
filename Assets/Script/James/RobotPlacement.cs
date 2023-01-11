@@ -8,10 +8,12 @@ public class RobotPlacement : MonoBehaviour
     public float timer = 5, timer2, countdown = 60;
     public Vector3 TargetLocation;
     public int random = 1, count = 0, randrobo;
+    private int prevRand;
     private float y;
-    public static int PlayersLocation = 1; //1 = Bridge , 2 = Lounge
+    public static int PlayersLocation; //1 = Bridge , 2 = Lounge
     public GameObject robot, flyrobot, RobotWarning;
     public bool placing = false;
+    private bool randomised = false;
 
     public void Update()
     {
@@ -38,9 +40,19 @@ public class RobotPlacement : MonoBehaviour
 
     public void Location()
     {
-        while (PlayersLocation == random)
+        if (randomised == false)
         {
-            random = Random.Range(1, 3);
+            prevRand = random;
+            random = Random.Range(1, 5);
+            randomised = true;
+        }
+        if (PlayersLocation == random || prevRand == random)
+        {
+            while (PlayersLocation == random || prevRand == random)
+            {
+                random = Random.Range(1, 5);
+            }
+            randomised = true;
         }
         if (random == 1)
         {
@@ -49,6 +61,14 @@ public class RobotPlacement : MonoBehaviour
         else if (random == 2)
         {
             transform.position = new Vector3(375, -8, 180); //lounge location
+        }
+        else if (random == 3)
+        {
+            transform.position = new Vector3(390, -112, 415); //Depot location
+        }
+        else if (random == 4)
+        {
+            transform.position = new Vector3(15, -160, 155); //Reactor location
         }
         TargetLocation = Random.insideUnitSphere * 150f + transform.position;
         NavMeshHit hit;
@@ -65,6 +85,7 @@ public class RobotPlacement : MonoBehaviour
             {
                 count = 0;
                 timer = countdown;
+                randomised = false;
                 RobotWarning.SetActive(true);
                 RobotWarning.GetComponent<DialogueAlt>().Display(random);
             }

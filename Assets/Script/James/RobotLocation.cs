@@ -15,5 +15,13 @@ public class RobotLocation : MonoBehaviour
         {
             PlaceLocation = 2;
         }
+        else if (other.GetComponent<Collider>().name == "Depot Detect")
+        {
+            PlaceLocation = 3;
+        }
+        else if (other.GetComponent<Collider>().name == "Reactor Detect")
+        {
+            PlaceLocation = 4;
+        }
     }
 }

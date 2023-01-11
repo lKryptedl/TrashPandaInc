@@ -14,5 +14,13 @@ public class PlayerArea : MonoBehaviour
         {
             RobotPlacement.PlayersLocation = 2;
         }
+        else if (other.GetComponent<Collider>().name == "Depot Detect")
+        {
+            RobotPlacement.PlayersLocation = 3;
+        }
+        else if (other.GetComponent<Collider>().name == "Reactor Detect")
+        {
+            RobotPlacement.PlayersLocation = 4;
+        }
     }
 }

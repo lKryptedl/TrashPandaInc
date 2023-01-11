@@ -15,7 +15,7 @@ public class Shooting : MonoBehaviour
 
     public int shotSpeed;
     public int rocketSpeed;
-    public int rocketCount = 10;
+    public static int rocketCount = 10;
     public Rigidbody rubbish, rubbish2, rocket;
 
     RaycastHit Data;
@@ -27,6 +27,11 @@ public class Shooting : MonoBehaviour
     private bool suckRevved = false;
     public TMP_Text RocketDisplay;
     private float shotdelay = 0;
+    private void Start()
+    {
+        RubbishStored = 5;
+        rocketCount = 10;
+    }
     void Update()
     {
         if (shotdelay > 0)
