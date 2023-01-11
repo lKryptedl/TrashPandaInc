@@ -2885,7 +2885,7 @@ GameObject:
   - component: {fileID: 1981414484}
   - component: {fileID: 1981414483}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PointToSelectedUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
