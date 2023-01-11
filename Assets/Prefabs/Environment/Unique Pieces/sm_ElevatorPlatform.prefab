@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7640991115738879616}
   - component: {fileID: 6747970568857262373}
   - component: {fileID: 8809441312640593391}
-  - component: {fileID: 7480934396851620157}
   - component: {fileID: 4196733567285291331}
   m_Layer: 8
   m_Name: sm_ElevatorPlatform
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7480934396851620157
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7008041113595956282}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3292925553009838691, guid: 244200b9572284448a4707458ccc3b2f, type: 3}
 --- !u!114 &4196733567285291331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e071010fa61fb884c98ac830d2ea3cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSourceLiftMusic: {fileID: 0}
   OnPlatform: 0
   PlatformElevator: {fileID: 0}
   moveup: 0
