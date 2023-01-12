@@ -24,19 +24,22 @@ public class AiMovement : MonoBehaviour
         else if (Moving == true)
         {
             Agent.destination = TargetLocation;
-            if (Mathf.Approximately(1.0f, TargetLocation.x / transform.position.x) && Mathf.Approximately(1.0f, TargetLocation.z /transform.position.z) && placable > 0)
+            if (Mathf.Approximately(1.0f, TargetLocation.x / transform.position.x) && Mathf.Approximately(1.0f, TargetLocation.z /transform.position.z))
             {
-                random = Random.Range(1, 3);
-                if (random == 1)
+                if (placable > 0)
                 {
-                    Instantiate(rubbish, spawnPoint.transform.position, spawnPoint.transform.rotation);
-                }
-                else
-                {
-                    Instantiate(rubbish2, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                    random = Random.Range(1, 3);
+                    if (random == 1)
+                    {
+                        Instantiate(rubbish, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                    }
+                    else
+                    {
+                        Instantiate(rubbish2, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                    }
+                    placable--;
                 }
                 Moving = false;
-                placable--;
             }
         }
         if (health < 1)
