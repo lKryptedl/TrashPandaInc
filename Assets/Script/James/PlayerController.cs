@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        OnGround = true;
         groundcheckdistance = 1.7f;
         groundcheckradius = 0.5f;
         pauseMenu.SetActive(false);
