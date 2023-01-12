@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class RocketStock : MonoBehaviour
 {
+    private int maxBullets = 4;
     public bool collecting = false;
     public float delay = 0;
     public int giveOut = 3;
-    void Update()
+   /* void Update()
     {
         if (collecting == true && delay <= 0)
         {
@@ -18,19 +19,24 @@ public class RocketStock : MonoBehaviour
         {
             delay -= Time.deltaTime;
         }
-    }
+    }*/
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            collecting = true;
+            if(Shooting.rocketCount < maxBullets)
+            {
+                Shooting.rocketCount = maxBullets;
+            }
+            //collecting = true;
+
         }
     }
-    void OnTriggerExit(Collider other)
+    /*void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
         {
-            collecting = false;
+            //collecting = false;
         }
-    }
+    }*/
 }

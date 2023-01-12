@@ -30,7 +30,7 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         RubbishStored = 5;
-        rocketCount = 10;
+        rocketCount = 4;
     }
     void Update()
     {
