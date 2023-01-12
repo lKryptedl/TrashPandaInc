@@ -12,11 +12,6 @@ public class AimControl : MonoBehaviour
     public Cinemachine.AxisState yAxis;
     public Camera aimCamera;
     public float yaw;
-    private void Start()
-    {
-        xAxis.Value = 179.9413f;
-        yAxis.Value = 5.783466f;
-    }
     void Awake()
     {
         controls = new ShootingControls();

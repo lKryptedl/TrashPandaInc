@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PauseScene : MonoBehaviour
 {
-    public GameObject player;
     // Start is called before the first frame update
     public void Update()
     {
@@ -17,6 +16,5 @@ public class PauseScene : MonoBehaviour
         PlayerController.Pause = true;
         Time.timeScale = 1;
         gameObject.SetActive(false);
-        player.SetActive(true);
     }
 }

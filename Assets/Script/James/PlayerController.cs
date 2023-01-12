@@ -74,9 +74,9 @@ public class PlayerController : MonoBehaviour
     public float StairValue, NotMovingStairValue;
     private float yOffset;
     private float groundcheckradius, groundcheckdistance;
+
     void Start()
     {
-        OnGround = true;
         groundcheckdistance = 1.7f;
         groundcheckradius = 0.5f;
         pauseMenu.SetActive(false);
