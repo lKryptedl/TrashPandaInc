@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5643212698004863345}
   - component: {fileID: 8790854508688357076}
   - component: {fileID: 6781177286832046622}
-  - component: {fileID: -8882573602687858302}
+  - component: {fileID: -3888121607097100754}
   m_Layer: 8
   m_Name: sm_Crate_Top
   m_TagString: Untagged
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4979688850906276811}
-  m_Mesh: {fileID: 4068373912626513877, guid: 7902c4b61b29ef04dbaa98c15a50ef35, type: 3}
+  m_Mesh: {fileID: 4068373912626513877, guid: 2bc3b4c59a5e884408c22800e439cb38, type: 3}
 --- !u!23 &6781177286832046622
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-8882573602687858302
-BoxCollider:
+--- !u!64 &-3888121607097100754
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,6 +94,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8, y: 0.5216706, z: 8}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4068373912626513877, guid: 2bc3b4c59a5e884408c22800e439cb38, type: 3}
