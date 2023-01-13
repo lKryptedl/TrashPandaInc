@@ -17,8 +17,8 @@ GameObject:
   m_Name: sm_Belt_Straight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 119
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 127
   m_IsActive: 1
 --- !u!4 &933331714357684781
 Transform:
@@ -111,7 +111,7 @@ NavMeshObstacle:
   m_Shape: 1
   m_Extents: {x: 40, y: 40.22, z: 57.336002}
   m_MoveThreshold: 0.1
-  m_Carve: 0
+  m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.317, y: -0.22000001, z: 57.438004}
   m_TimeToStationary: 0.5

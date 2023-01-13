@@ -23,5 +23,13 @@ public class RobotLocation : MonoBehaviour
         {
             PlaceLocation = 4;
         }
+        else if (other.GetComponent<Collider>().name == "Lower Detect")
+        {
+            PlaceLocation = 5;
+        }
+        else if (other.GetComponent<Collider>().name == "Lounge2 Detect")
+        {
+            PlaceLocation = 6;
+        }
     }
 }

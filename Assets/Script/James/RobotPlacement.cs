@@ -43,7 +43,7 @@ public class RobotPlacement : MonoBehaviour
         if (randomised == false)
         {
             prevRand = random;
-            random = Random.Range(1, 5);
+            random = Random.Range(1, 7);
             randomised = true;
         }
         if (PlayersLocation == random || prevRand == random)
@@ -69,6 +69,14 @@ public class RobotPlacement : MonoBehaviour
         else if (random == 4)
         {
             transform.position = new Vector3(15, -160, 155); //Reactor location
+        }
+        else if (random == 5)
+        {
+            transform.position = new Vector3(135, -128, 405); //Lower Corridor location
+        }
+        else if (random == 6)
+        {
+            transform.position = new Vector3(375, 56, 155); //Upper Lounge location
         }
         TargetLocation = Random.insideUnitSphere * 150f + transform.position;
         NavMeshHit hit;
