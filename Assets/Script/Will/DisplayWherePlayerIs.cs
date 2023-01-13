@@ -17,9 +17,9 @@ public class DisplayWherePlayerIs : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerLocation.position.z < 70 && playerLocation.position.x < 387f && playerLocation.position.x > 26 && playerLocation.position.y < 30)
+        if (playerLocation.position.z < 70 && playerLocation.position.x < 387f && playerLocation.position.x > 26 && playerLocation.position.y < 30 && playerLocation.position.y > - 20)
         {
-            print("Bridge");
+           // print("Bridge");
             if (transform.localPosition != BridgePos)
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, BridgePos, smooth);
@@ -27,7 +27,7 @@ public class DisplayWherePlayerIs : MonoBehaviour
         }
         if (playerLocation.position.z > 70 && playerLocation.position.z < 382.1f && playerLocation.position.x > 195 && playerLocation.position.x < 241)
         {
-            print("Corridor");
+           // print("Corridor");
             if (transform.localPosition != CorridorPos)
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, CorridorPos, smooth);
@@ -35,7 +35,7 @@ public class DisplayWherePlayerIs : MonoBehaviour
         }
         else if (playerLocation.position.x > 247 && playerLocation.position.x < 500 && playerLocation.position.z > 65 && playerLocation.position.z < 259)
         {
-            print("Lounge");
+           // print("Lounge");
             if (transform.localPosition != LoungePos)
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, LoungePos, smooth);
@@ -47,7 +47,7 @@ public class DisplayWherePlayerIs : MonoBehaviour
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, DepotPos, smooth);
             }
-            print("Depot");
+            //print("Depot");
         }
         else if (playerLocation.position.x < 295 && playerLocation.position.z > 382.5567f && playerLocation.position.z < 437.4745)
         {
@@ -55,13 +55,15 @@ public class DisplayWherePlayerIs : MonoBehaviour
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, JustBeforeDepot, smooth);
             }
+            //print("Just before depot");
         }
-        else if (playerLocation.position.x > -24.86115f && playerLocation.position.x < 55 && playerLocation.position.z < 380)
+        else if (playerLocation.position.x > -24.86115f && playerLocation.position.x < 135 && playerLocation.position.z < 380 && playerLocation.position.y < -50)
         { 
             if (transform.localPosition != ReactorPos)
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, ReactorPos, smooth);
             }
+            //print("Reactor");
         }
     }
 }
