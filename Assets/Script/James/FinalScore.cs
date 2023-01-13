@@ -15,18 +15,18 @@ public class FinalScore : MonoBehaviour
         star2.SetActive(false);
         star3.SetActive(false);
         text.text = Score.PlayerScore.ToString();
-        if (Score.PlayerScore >= 15000)
+        if (Score.PlayerScore >= threestar)
         {
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(true);
         }
-        else if (Score.PlayerScore >= 10000)
+        else if (Score.PlayerScore >= twostar)
         {
             star1.SetActive(true);
             star2.SetActive(true);
         }
-        else if (Score.PlayerScore >= 5000)
+        else if (Score.PlayerScore >= onestar)
         {
             star1.SetActive(true);
         }
